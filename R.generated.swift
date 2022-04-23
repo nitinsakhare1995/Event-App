@@ -85,6 +85,7 @@ struct R: Rswift.Validatable {
   }
 
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
 
@@ -114,25 +115,228 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 1 colors.
+  /// This `R.color` struct is generated, and contains static references to 2 colors.
   struct color {
-    /// Color `AccentColor`.
-    static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
+    /// Color `DarkGreen`.
+    static let darkGreen = Rswift.ColorResource(bundle: R.hostingBundle, name: "DarkGreen")
+    /// Color `LightGreen`.
+    static let lightGreen = Rswift.ColorResource(bundle: R.hostingBundle, name: "LightGreen")
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "DarkGreen", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func accentColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.accentColor, compatibleWith: traitCollection)
+    static func darkGreen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.darkGreen, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "LightGreen", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func lightGreen(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.lightGreen, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "DarkGreen", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
-    static func accentColor(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.accentColor.name)
+    static func darkGreen(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.darkGreen.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "LightGreen", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func lightGreen(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.lightGreen.name)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 4 files.
+  struct file {
+    /// Resource file `Gordita Bold.otf`.
+    static let gorditaBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Gordita Bold", pathExtension: "otf")
+    /// Resource file `Gordita Light.otf`.
+    static let gorditaLightOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Gordita Light", pathExtension: "otf")
+    /// Resource file `Gordita Medium.otf`.
+    static let gorditaMediumOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Gordita Medium", pathExtension: "otf")
+    /// Resource file `Gordita Regular.otf`.
+    static let gorditaRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Gordita Regular", pathExtension: "otf")
+
+    /// `bundle.url(forResource: "Gordita Bold", withExtension: "otf")`
+    static func gorditaBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gorditaBoldOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Gordita Light", withExtension: "otf")`
+    static func gorditaLightOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gorditaLightOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Gordita Medium", withExtension: "otf")`
+    static func gorditaMediumOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gorditaMediumOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Gordita Regular", withExtension: "otf")`
+    static func gorditaRegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gorditaRegularOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.font` struct is generated, and contains static references to 4 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `Gordita-Bold`.
+    static let gorditaBold = Rswift.FontResource(fontName: "Gordita-Bold")
+    /// Font `Gordita-Light`.
+    static let gorditaLight = Rswift.FontResource(fontName: "Gordita-Light")
+    /// Font `Gordita-Medium`.
+    static let gorditaMedium = Rswift.FontResource(fontName: "Gordita-Medium")
+    /// Font `Gordita-Regular`.
+    static let gorditaRegular = Rswift.FontResource(fontName: "Gordita-Regular")
+
+    /// `UIFont(name: "Gordita-Bold", size: ...)`
+    static func gorditaBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: gorditaBold, size: size)
+    }
+
+    /// `UIFont(name: "Gordita-Light", size: ...)`
+    static func gorditaLight(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: gorditaLight, size: size)
+    }
+
+    /// `UIFont(name: "Gordita-Medium", size: ...)`
+    static func gorditaMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: gorditaMedium, size: size)
+    }
+
+    /// `UIFont(name: "Gordita-Regular", size: ...)`
+    static func gorditaRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: gorditaRegular, size: size)
+    }
+
+    static func validate() throws {
+      if R.font.gorditaBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Gordita-Bold' could not be loaded, is 'Gordita Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.gorditaLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Gordita-Light' could not be loaded, is 'Gordita Light.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.gorditaMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Gordita-Medium' could not be loaded, is 'Gordita Medium.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.gorditaRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Gordita-Regular' could not be loaded, is 'Gordita Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 11 images.
+  struct image {
+    /// Image `Angela Needle`.
+    static let angelaNeedle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Angela Needle")
+    /// Image `Arrow`.
+    static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "Arrow")
+    /// Image `agenda`.
+    static let agenda = Rswift.ImageResource(bundle: R.hostingBundle, name: "agenda")
+    /// Image `blogs`.
+    static let blogs = Rswift.ImageResource(bundle: R.hostingBundle, name: "blogs")
+    /// Image `drawer`.
+    static let drawer = Rswift.ImageResource(bundle: R.hostingBundle, name: "drawer")
+    /// Image `image 7`.
+    static let image7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "image 7")
+    /// Image `maps`.
+    static let maps = Rswift.ImageResource(bundle: R.hostingBundle, name: "maps")
+    /// Image `notification`.
+    static let notification = Rswift.ImageResource(bundle: R.hostingBundle, name: "notification")
+    /// Image `speakers`.
+    static let speakers = Rswift.ImageResource(bundle: R.hostingBundle, name: "speakers")
+    /// Image `sponsors`.
+    static let sponsors = Rswift.ImageResource(bundle: R.hostingBundle, name: "sponsors")
+    /// Image `videos`.
+    static let videos = Rswift.ImageResource(bundle: R.hostingBundle, name: "videos")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Angela Needle", bundle: ..., traitCollection: ...)`
+    static func angelaNeedle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.angelaNeedle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Arrow", bundle: ..., traitCollection: ...)`
+    static func arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.arrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "agenda", bundle: ..., traitCollection: ...)`
+    static func agenda(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.agenda, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "blogs", bundle: ..., traitCollection: ...)`
+    static func blogs(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.blogs, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "drawer", bundle: ..., traitCollection: ...)`
+    static func drawer(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.drawer, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "image 7", bundle: ..., traitCollection: ...)`
+    static func image7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.image7, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "maps", bundle: ..., traitCollection: ...)`
+    static func maps(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.maps, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "notification", bundle: ..., traitCollection: ...)`
+    static func notification(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.notification, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "speakers", bundle: ..., traitCollection: ...)`
+    static func speakers(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.speakers, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sponsors", bundle: ..., traitCollection: ...)`
+    static func sponsors(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sponsors, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "videos", bundle: ..., traitCollection: ...)`
+    static func videos(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.videos, compatibleWith: traitCollection)
     }
     #endif
 
@@ -170,6 +374,50 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `HomeSpeakersCell`.
+    static let homeSpeakersCell = _R.nib._HomeSpeakersCell()
+    /// Nib `HomeVideosCell`.
+    static let homeVideosCell = _R.nib._HomeVideosCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "HomeSpeakersCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.homeSpeakersCell) instead")
+    static func homeSpeakersCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.homeSpeakersCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "HomeVideosCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.homeVideosCell) instead")
+    static func homeVideosCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.homeVideosCell)
+    }
+    #endif
+
+    static func homeSpeakersCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeSpeakersCell? {
+      return R.nib.homeSpeakersCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeSpeakersCell
+    }
+
+    static func homeVideosCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeVideosCell? {
+      return R.nib.homeVideosCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeVideosCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `HomeSpeakersCell`.
+    static let homeSpeakersCell: Rswift.ReuseIdentifier<HomeSpeakersCell> = Rswift.ReuseIdentifier(identifier: "HomeSpeakersCell")
+    /// Reuse identifier `HomeVideosCell`.
+    static let homeVideosCell: Rswift.ReuseIdentifier<HomeVideosCell> = Rswift.ReuseIdentifier(identifier: "HomeVideosCell")
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -186,9 +434,64 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _HomeSpeakersCell.validate()
+      try _HomeVideosCell.validate()
+    }
+
+    struct _HomeSpeakersCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = HomeSpeakersCell
+
+      let bundle = R.hostingBundle
+      let identifier = "HomeSpeakersCell"
+      let name = "HomeSpeakersCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeSpeakersCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeSpeakersCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Angela Needle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Angela Needle' is used in nib 'HomeSpeakersCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Arrow' is used in nib 'HomeSpeakersCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _HomeVideosCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = HomeVideosCell
+
+      let bundle = R.hostingBundle
+      let identifier = "HomeVideosCell"
+      let name = "HomeVideosCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeVideosCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeVideosCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "image 7", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'image 7' is used in nib 'HomeVideosCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
@@ -219,14 +522,28 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let homeVC = StoryboardViewControllerResource<HomeVC>(identifier: "HomeVC")
       let name = "Main"
 
+      func homeVC(_: Void = ()) -> HomeVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: homeVC)
+      }
+
       static func validate() throws {
+        if UIKit.UIImage(named: "agenda", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'agenda' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "blogs", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'blogs' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "drawer", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'drawer' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "maps", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'maps' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "notification", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'notification' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "speakers", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'speakers' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "sponsors", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sponsors' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "videos", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'videos' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().homeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeVC' could not be loaded from storyboard 'Main' as 'HomeVC'.") }
       }
 
       fileprivate init() {}

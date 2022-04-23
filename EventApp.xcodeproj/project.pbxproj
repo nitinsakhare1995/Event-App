@@ -7,9 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D23B2813DB44007BFB6B /* UIColorExtension.swift */; };
+		1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */; };
+		1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23F2813DC3E007BFB6B /* Gordita Light.otf */; };
+		1858D2442813DC3F007BFB6B /* Gordita Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D2402813DC3E007BFB6B /* Gordita Medium.otf */; };
+		1858D2452813DC3F007BFB6B /* Gordita Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D2412813DC3F007BFB6B /* Gordita Bold.otf */; };
+		1858D2472813E119007BFB6B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D2462813E119007BFB6B /* UIViewExtension.swift */; };
+		1858D24A2813F76B007BFB6B /* HomeVideosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D2482813F76B007BFB6B /* HomeVideosCell.swift */; };
+		1858D24B2813F76B007BFB6B /* HomeVideosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1858D2492813F76B007BFB6B /* HomeVideosCell.xib */; };
+		1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D24C2813FF2D007BFB6B /* HomeSpeakersCell.swift */; };
+		1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1858D24D2813FF2D007BFB6B /* HomeSpeakersCell.xib */; };
 		18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FC82812BB4000360119 /* AppDelegate.swift */; };
 		18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FCA2812BB4000360119 /* SceneDelegate.swift */; };
-		18B49FCD2812BB4000360119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FCC2812BB4000360119 /* ViewController.swift */; };
+		18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FCC2812BB4000360119 /* HomeVC.swift */; };
 		18B49FD02812BB4000360119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B49FCE2812BB4000360119 /* Main.storyboard */; };
 		18B49FD22812BB4200360119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B49FD12812BB4200360119 /* Assets.xcassets */; };
 		18B49FD52812BB4200360119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B49FD32812BB4200360119 /* LaunchScreen.storyboard */; };
@@ -22,10 +32,20 @@
 
 /* Begin PBXFileReference section */
 		16A05B1AE0EE8B5D2837B018 /* Pods-EventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.release.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.release.xcconfig"; sourceTree = "<group>"; };
+		1858D23B2813DB44007BFB6B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Regular.otf"; sourceTree = "<group>"; };
+		1858D23F2813DC3E007BFB6B /* Gordita Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Light.otf"; sourceTree = "<group>"; };
+		1858D2402813DC3E007BFB6B /* Gordita Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Medium.otf"; sourceTree = "<group>"; };
+		1858D2412813DC3F007BFB6B /* Gordita Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Bold.otf"; sourceTree = "<group>"; };
+		1858D2462813E119007BFB6B /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		1858D2482813F76B007BFB6B /* HomeVideosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideosCell.swift; sourceTree = "<group>"; };
+		1858D2492813F76B007BFB6B /* HomeVideosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideosCell.xib; sourceTree = "<group>"; };
+		1858D24C2813FF2D007BFB6B /* HomeSpeakersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSpeakersCell.swift; sourceTree = "<group>"; };
+		1858D24D2813FF2D007BFB6B /* HomeSpeakersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSpeakersCell.xib; sourceTree = "<group>"; };
 		18B49FC52812BB4000360119 /* EventApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B49FC82812BB4000360119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B49FCA2812BB4000360119 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18B49FCC2812BB4000360119 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18B49FCC2812BB4000360119 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		18B49FCF2812BB4000360119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18B49FD12812BB4200360119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18B49FD42812BB4200360119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +70,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1858D23A2813DB34007BFB6B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1858D23B2813DB44007BFB6B /* UIColorExtension.swift */,
+				1858D2462813E119007BFB6B /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1858D23D2813DC32007BFB6B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1858D2412813DC3F007BFB6B /* Gordita Bold.otf */,
+				1858D23F2813DC3E007BFB6B /* Gordita Light.otf */,
+				1858D2402813DC3E007BFB6B /* Gordita Medium.otf */,
+				1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		18B49FBC2812BB4000360119 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +124,8 @@
 		18B49FDD2812C76400360119 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1858D23D2813DC32007BFB6B /* Fonts */,
+				1858D23A2813DB34007BFB6B /* Extensions */,
 				18B49FD32812BB4200360119 /* LaunchScreen.storyboard */,
 				18B49FD12812BB4200360119 /* Assets.xcassets */,
 				18B49FDE2812C77000360119 /* R.generated.swift */,
@@ -113,7 +155,11 @@
 			isa = PBXGroup;
 			children = (
 				18B49FCE2812BB4000360119 /* Main.storyboard */,
-				18B49FCC2812BB4000360119 /* ViewController.swift */,
+				18B49FCC2812BB4000360119 /* HomeVC.swift */,
+				1858D2482813F76B007BFB6B /* HomeVideosCell.swift */,
+				1858D2492813F76B007BFB6B /* HomeVideosCell.xib */,
+				1858D24C2813FF2D007BFB6B /* HomeSpeakersCell.swift */,
+				1858D24D2813FF2D007BFB6B /* HomeSpeakersCell.xib */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -212,8 +258,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */,
+				1858D2442813DC3F007BFB6B /* Gordita Medium.otf in Resources */,
+				1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */,
 				18B49FD52812BB4200360119 /* LaunchScreen.storyboard in Resources */,
 				18B49FD22812BB4200360119 /* Assets.xcassets in Resources */,
+				1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */,
+				1858D2452813DC3F007BFB6B /* Gordita Bold.otf in Resources */,
+				1858D24B2813F76B007BFB6B /* HomeVideosCell.xib in Resources */,
 				18B49FD02812BB4000360119 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,11 +338,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B49FCD2812BB4000360119 /* ViewController.swift in Sources */,
+				18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */,
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */,
+				1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */,
 				18B49FE82812CCD800360119 /* Remote.swift in Sources */,
 				18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */,
+				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
+				1858D24A2813F76B007BFB6B /* HomeVideosCell.swift in Sources */,
+				1858D2472813E119007BFB6B /* UIViewExtension.swift in Sources */,
 				18B49FDF2812C77000360119 /* R.generated.swift in Sources */,
 				18B49FE62812CB0D00360119 /* Constants.swift in Sources */,
 			);

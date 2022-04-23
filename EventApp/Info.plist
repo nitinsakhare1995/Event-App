@@ -21,5 +21,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gordita Bold.otf</string>
+		<string>Gordita Light.otf</string>
+		<string>Gordita Medium.otf</string>
+		<string>Gordita Regular.otf</string>
+	</array>
 </dict>
 </plist>

@@ -9,5 +9,6 @@ target 'EventApp' do
   pod 'R.swift'
   pod 'Alamofire'
   pod 'ObjectMapper'
-  
+  pod 'UIGradient'
+
 end
