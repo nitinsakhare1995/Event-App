@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AKSideMenu
 
 class ResourcesVC: UIViewController {
     
@@ -36,6 +37,10 @@ class ResourcesVC: UIViewController {
         
         
         
+        let menuButtonImage = R.image.drawer()
+        let menuButton = UIBarButtonItem(image: menuButtonImage, style: .plain, target: self, action: #selector(didTapMenuButton))
+        navigationItem.leftBarButtonItem = menuButton
+        
         
     }
     
@@ -44,7 +49,9 @@ class ResourcesVC: UIViewController {
         self.title = ""
     }
     
-    
+    @objc public func didTapMenuButton() {
+        self.sideMenuViewController?.presentLeftMenuViewController()
+    }
     
 }
 

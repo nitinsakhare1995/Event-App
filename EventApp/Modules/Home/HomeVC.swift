@@ -46,6 +46,7 @@ class HomeVC: UIViewController {
         speakersCollectionView.dataSource = self
         
         
+        
     }
     
     

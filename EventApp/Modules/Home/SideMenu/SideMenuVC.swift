@@ -22,11 +22,17 @@ class SideMenuVC: UIViewController {
     }
     
     @IBAction func openResources(_ sender: UIButton) {
-        let firstVC = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ResourcesVC") as! ResourcesVC
-            let contentViewController = UINavigationController(rootViewController: firstVC)
+        let vc = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "ResourcesVC") as! ResourcesVC
+            let contentViewController = UINavigationController(rootViewController: vc)
             sideMenuViewController?.setContentViewController(contentViewController, animated: true)
             sideMenuViewController?.hideMenuViewController()
-        
+    }
+    
+    @IBAction func openHome(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            let contentViewController = UINavigationController(rootViewController: vc)
+            sideMenuViewController?.setContentViewController(contentViewController, animated: true)
+            sideMenuViewController?.hideMenuViewController()
     }
     
 }
