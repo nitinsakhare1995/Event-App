@@ -275,7 +275,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 16 images.
+  /// This `R.image` struct is generated, and contains static references to 17 images.
   struct image {
     /// Image `Angela Needle`.
     static let angelaNeedle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Angela Needle")
@@ -303,6 +303,8 @@ struct R: Rswift.Validatable {
     static let notification = Rswift.ImageResource(bundle: R.hostingBundle, name: "notification")
     /// Image `redirect`.
     static let redirect = Rswift.ImageResource(bundle: R.hostingBundle, name: "redirect")
+    /// Image `resourceThumbnail`.
+    static let resourceThumbnail = Rswift.ImageResource(bundle: R.hostingBundle, name: "resourceThumbnail")
     /// Image `speakers`.
     static let speakers = Rswift.ImageResource(bundle: R.hostingBundle, name: "speakers")
     /// Image `sponsors`.
@@ -402,6 +404,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "resourceThumbnail", bundle: ..., traitCollection: ...)`
+    static func resourceThumbnail(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.resourceThumbnail, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "speakers", bundle: ..., traitCollection: ...)`
     static func speakers(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.speakers, compatibleWith: traitCollection)
@@ -456,7 +465,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `HomeSpeakersCell`.
     static let homeSpeakersCell = _R.nib._HomeSpeakersCell()
@@ -464,6 +473,8 @@ struct R: Rswift.Validatable {
     static let homeVideosCell = _R.nib._HomeVideosCell()
     /// Nib `NotificationsCell`.
     static let notificationsCell = _R.nib._NotificationsCell()
+    /// Nib `ResourcesCell`.
+    static let resourcesCell = _R.nib._ResourcesCell()
     /// Nib `SpeakersCell`.
     static let speakersCell = _R.nib._SpeakersCell()
     /// Nib `SpeakersSessionsCell`.
@@ -492,6 +503,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.notificationsCell) instead")
     static func notificationsCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.notificationsCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ResourcesCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.resourcesCell) instead")
+    static func resourcesCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.resourcesCell)
     }
     #endif
 
@@ -531,6 +550,10 @@ struct R: Rswift.Validatable {
       return R.nib.notificationsCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NotificationsCell
     }
 
+    static func resourcesCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ResourcesCell? {
+      return R.nib.resourcesCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ResourcesCell
+    }
+
     static func speakersCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SpeakersCell? {
       return R.nib.speakersCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SpeakersCell
     }
@@ -546,7 +569,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 7 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `HomeSpeakersCell`.
     static let homeSpeakersCell: Rswift.ReuseIdentifier<HomeSpeakersCell> = Rswift.ReuseIdentifier(identifier: "HomeSpeakersCell")
@@ -554,6 +577,8 @@ struct R: Rswift.Validatable {
     static let homeVideosCell: Rswift.ReuseIdentifier<HomeVideosCell> = Rswift.ReuseIdentifier(identifier: "HomeVideosCell")
     /// Reuse identifier `NotificationsCell`.
     static let notificationsCell: Rswift.ReuseIdentifier<NotificationsCell> = Rswift.ReuseIdentifier(identifier: "NotificationsCell")
+    /// Reuse identifier `ResourcesCell`.
+    static let resourcesCell: Rswift.ReuseIdentifier<ResourcesCell> = Rswift.ReuseIdentifier(identifier: "ResourcesCell")
     /// Reuse identifier `SpeakersCell`.
     static let speakersCell: Rswift.ReuseIdentifier<SpeakersCell> = Rswift.ReuseIdentifier(identifier: "SpeakersCell")
     /// Reuse identifier `SpeakersSessionsCell`.
@@ -593,6 +618,7 @@ struct _R: Rswift.Validatable {
       try _HomeSpeakersCell.validate()
       try _HomeVideosCell.validate()
       try _NotificationsCell.validate()
+      try _ResourcesCell.validate()
       try _SpeakersCell.validate()
       try _SpeakersSessionsCell.validate()
       try _SponsorsCell.validate()
@@ -653,6 +679,27 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Angela Needle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Angela Needle' is used in nib 'NotificationsCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Arrow' is used in nib 'NotificationsCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ResourcesCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = ResourcesCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ResourcesCell"
+      let name = "ResourcesCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ResourcesCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ResourcesCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Arrow' is used in nib 'ResourcesCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "resourceThumbnail", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'resourceThumbnail' is used in nib 'ResourcesCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -797,10 +844,15 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "Other"
       let notificationsVC = StoryboardViewControllerResource<NotificationsVC>(identifier: "NotificationsVC")
+      let resourcesVC = StoryboardViewControllerResource<ResourcesVC>(identifier: "ResourcesVC")
       let sponsorsVC = StoryboardViewControllerResource<SponsorsVC>(identifier: "SponsorsVC")
 
       func notificationsVC(_: Void = ()) -> NotificationsVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: notificationsVC)
+      }
+
+      func resourcesVC(_: Void = ()) -> ResourcesVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: resourcesVC)
       }
 
       func sponsorsVC(_: Void = ()) -> SponsorsVC? {
@@ -812,6 +864,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'Other', but couldn't be loaded.") }
         }
         if _R.storyboard.other().notificationsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'notificationsVC' could not be loaded from storyboard 'Other' as 'NotificationsVC'.") }
+        if _R.storyboard.other().resourcesVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'resourcesVC' could not be loaded from storyboard 'Other' as 'ResourcesVC'.") }
         if _R.storyboard.other().sponsorsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sponsorsVC' could not be loaded from storyboard 'Other' as 'SponsorsVC'.") }
       }
 

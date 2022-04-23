@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gordita Medium.otf">
+            <string>Gordita-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResourcesCell" rowHeight="84" id="KGk-i7-Jjw" customClass="ResourcesCell" customModule="EventApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="348" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="348" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrs-hK-fdX">
+                        <rect key="frame" x="10" y="10" width="328" height="64"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resourceThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="Fbt-JE-4Fq">
+                                <rect key="frame" x="5" y="5" width="60" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="v5Y-34-ef0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="MAf-zE-8gs">
+                                <rect key="frame" x="301" y="26" width="7" height="12"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EU Code of Conduct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eb9-ea-4Kh">
+                                <rect key="frame" x="85" y="24" width="168" height="16"/>
+                                <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Fbt-JE-4Fq" secondAttribute="bottom" constant="5" id="1Lv-BT-4Nu"/>
+                            <constraint firstItem="Eb9-ea-4Kh" firstAttribute="centerY" secondItem="mrs-hK-fdX" secondAttribute="centerY" id="8qQ-9w-Ojz"/>
+                            <constraint firstItem="Fbt-JE-4Fq" firstAttribute="top" secondItem="mrs-hK-fdX" secondAttribute="top" constant="5" id="GzM-O7-oRQ"/>
+                            <constraint firstItem="MAf-zE-8gs" firstAttribute="centerY" secondItem="mrs-hK-fdX" secondAttribute="centerY" id="ZNz-4l-gw3"/>
+                            <constraint firstItem="Eb9-ea-4Kh" firstAttribute="leading" secondItem="Fbt-JE-4Fq" secondAttribute="trailing" constant="20" id="heQ-6U-FkI"/>
+                            <constraint firstAttribute="trailing" secondItem="MAf-zE-8gs" secondAttribute="trailing" constant="20" id="lE5-sD-kyJ"/>
+                            <constraint firstItem="Fbt-JE-4Fq" firstAttribute="leading" secondItem="mrs-hK-fdX" secondAttribute="leading" constant="5" id="xzO-5Y-yy4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="mrs-hK-fdX" secondAttribute="bottom" constant="10" id="D1U-yo-zSP"/>
+                    <constraint firstItem="mrs-hK-fdX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LR9-Dv-7mt"/>
+                    <constraint firstAttribute="trailing" secondItem="mrs-hK-fdX" secondAttribute="trailing" constant="10" id="Vhm-t5-lef"/>
+                    <constraint firstItem="mrs-hK-fdX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="yLi-m6-onN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="mainView" destination="mrs-hK-fdX" id="UeM-Ws-WHA"/>
+            </connections>
+            <point key="canvasLocation" x="157.97101449275362" y="164.0625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Arrow" width="7" height="12"/>
+        <image name="resourceThumbnail" width="70" height="70"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

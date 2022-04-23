@@ -68,6 +68,36 @@
             </objects>
             <point key="canvasLocation" x="772" y="135"/>
         </scene>
+        <!--ResourcesVC-->
+        <scene sceneID="l1t-xg-ndb">
+            <objects>
+                <viewController storyboardIdentifier="ResourcesVC" id="jiv-uX-b4G" customClass="ResourcesVC" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eae-t6-4S0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="97U-Ih-DkU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vzr-TY-8rs"/>
+                        <color key="backgroundColor" name="VCBackground"/>
+                        <constraints>
+                            <constraint firstItem="97U-Ih-DkU" firstAttribute="top" secondItem="Vzr-TY-8rs" secondAttribute="top" id="TRf-YS-8nH"/>
+                            <constraint firstItem="Vzr-TY-8rs" firstAttribute="trailing" secondItem="97U-Ih-DkU" secondAttribute="trailing" id="dTH-8f-m6A"/>
+                            <constraint firstItem="Vzr-TY-8rs" firstAttribute="bottom" secondItem="97U-Ih-DkU" secondAttribute="bottom" id="rbJ-oE-DgG"/>
+                            <constraint firstItem="97U-Ih-DkU" firstAttribute="leading" secondItem="Vzr-TY-8rs" secondAttribute="leading" id="smE-fG-aeu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="97U-Ih-DkU" id="hVf-Gj-9sf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O84-VT-Gix" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1404" y="135"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="VCBackground">
