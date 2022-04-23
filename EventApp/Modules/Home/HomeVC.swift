@@ -74,6 +74,11 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func openSponsorsScreen(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "SponsorsVC") as! SponsorsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 

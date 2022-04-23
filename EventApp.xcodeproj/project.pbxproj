@@ -39,6 +39,9 @@
 		18DBB10428141FB000C91443 /* SpeakersSessionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB10228141FB000C91443 /* SpeakersSessionsCell.swift */; };
 		18DBB10528141FB000C91443 /* SpeakersSessionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB10328141FB000C91443 /* SpeakersSessionsCell.xib */; };
 		18DBB107281425D500C91443 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB106281425D500C91443 /* StringExtension.swift */; };
+		18DBB10A281467F500C91443 /* SponsorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB109281467F500C91443 /* SponsorsVC.swift */; };
+		18DBB1122814683100C91443 /* SponsorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB1102814683100C91443 /* SponsorsCell.swift */; };
+		18DBB1132814683100C91443 /* SponsorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB1112814683100C91443 /* SponsorsCell.xib */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,9 @@
 		18DBB10228141FB000C91443 /* SpeakersSessionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersSessionsCell.swift; sourceTree = "<group>"; };
 		18DBB10328141FB000C91443 /* SpeakersSessionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakersSessionsCell.xib; sourceTree = "<group>"; };
 		18DBB106281425D500C91443 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		18DBB109281467F500C91443 /* SponsorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorsVC.swift; sourceTree = "<group>"; };
+		18DBB1102814683100C91443 /* SponsorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorsCell.swift; sourceTree = "<group>"; };
+		18DBB1112814683100C91443 /* SponsorsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SponsorsCell.xib; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +185,7 @@
 		18B49FE92812CFF900360119 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB1082814673800C91443 /* Sponsors */,
 				18DBB0F6281411C600C91443 /* Speakers */,
 				18DBB0EC28140A9F00C91443 /* Notifications */,
 				18DBB0EA281408E300C91443 /* Home */,
@@ -260,6 +267,24 @@
 				18DBB0FD2814139800C91443 /* SpeakersCell.xib */,
 				18DBB10228141FB000C91443 /* SpeakersSessionsCell.swift */,
 				18DBB10328141FB000C91443 /* SpeakersSessionsCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18DBB1082814673800C91443 /* Sponsors */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB10B281467FE00C91443 /* Cell */,
+				18DBB109281467F500C91443 /* SponsorsVC.swift */,
+			);
+			path = Sponsors;
+			sourceTree = "<group>";
+		};
+		18DBB10B281467FE00C91443 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB1102814683100C91443 /* SponsorsCell.swift */,
+				18DBB1112814683100C91443 /* SponsorsCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -351,6 +376,7 @@
 				18DBB10528141FB000C91443 /* SpeakersSessionsCell.xib in Resources */,
 				1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */,
 				18B49FD52812BB4200360119 /* LaunchScreen.storyboard in Resources */,
+				18DBB1132814683100C91443 /* SponsorsCell.xib in Resources */,
 				18B49FD22812BB4200360119 /* Assets.xcassets in Resources */,
 				1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */,
 				1858D2452813DC3F007BFB6B /* Gordita Bold.otf in Resources */,
@@ -427,12 +453,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DBB1122814683100C91443 /* SponsorsCell.swift in Sources */,
 				18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */,
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */,
 				1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */,
 				18DBB0FA281412D300C91443 /* SpeakersVC.swift in Sources */,
 				18B49FE82812CCD800360119 /* Remote.swift in Sources */,
+				18DBB10A281467F500C91443 /* SponsorsVC.swift in Sources */,
 				18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */,
 				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
 				18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */,

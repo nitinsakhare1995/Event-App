@@ -365,11 +365,22 @@
                                                                                         <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-Vc-pNi">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="85"/>
+                                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                        <connections>
+                                                                                            <action selector="openSponsorsScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHF-Pq-DJi"/>
+                                                                                        </connections>
+                                                                                    </button>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="trailing" secondItem="bOK-b3-jHM" secondAttribute="trailing" constant="2" id="0zI-zl-NWk"/>
+                                                                                    <constraint firstItem="0fa-Vc-pNi" firstAttribute="leading" secondItem="1jk-9T-N8e" secondAttribute="leading" id="EOA-dD-vaZ"/>
                                                                                     <constraint firstItem="bOK-b3-jHM" firstAttribute="leading" secondItem="1jk-9T-N8e" secondAttribute="leading" constant="2" id="GnX-x6-s1Y"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="0fa-Vc-pNi" secondAttribute="trailing" id="Juc-dE-6jD"/>
+                                                                                    <constraint firstItem="0fa-Vc-pNi" firstAttribute="top" secondItem="1jk-9T-N8e" secondAttribute="top" id="RYj-ij-hex"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="0fa-Vc-pNi" secondAttribute="bottom" id="eft-h9-k9o"/>
                                                                                     <constraint firstItem="8D4-he-jzJ" firstAttribute="top" secondItem="1jk-9T-N8e" secondAttribute="top" constant="15" id="iZR-jE-jAv"/>
                                                                                     <constraint firstItem="bOK-b3-jHM" firstAttribute="top" secondItem="8D4-he-jzJ" secondAttribute="bottom" constant="10" id="ifK-Gk-14F"/>
                                                                                     <constraint firstItem="8D4-he-jzJ" firstAttribute="centerX" secondItem="1jk-9T-N8e" secondAttribute="centerX" id="ksy-NK-53A"/>

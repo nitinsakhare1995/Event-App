@@ -38,6 +38,36 @@
             </objects>
             <point key="canvasLocation" x="139" y="135"/>
         </scene>
+        <!--SponsorsVC-->
+        <scene sceneID="BdA-km-jJe">
+            <objects>
+                <viewController storyboardIdentifier="SponsorsVC" id="0qn-Wu-LEw" customClass="SponsorsVC" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B2P-j0-5UH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zHS-Pz-Wj6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vON-Sh-FWM"/>
+                        <color key="backgroundColor" name="VCBackground"/>
+                        <constraints>
+                            <constraint firstItem="vON-Sh-FWM" firstAttribute="bottom" secondItem="zHS-Pz-Wj6" secondAttribute="bottom" id="KbP-yt-fGO"/>
+                            <constraint firstItem="vON-Sh-FWM" firstAttribute="trailing" secondItem="zHS-Pz-Wj6" secondAttribute="trailing" id="Mq3-fh-M5K"/>
+                            <constraint firstItem="zHS-Pz-Wj6" firstAttribute="leading" secondItem="vON-Sh-FWM" secondAttribute="leading" id="fS6-uD-K6a"/>
+                            <constraint firstItem="zHS-Pz-Wj6" firstAttribute="top" secondItem="vON-Sh-FWM" secondAttribute="top" id="vGb-9h-y1n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="zHS-Pz-Wj6" id="uu6-6A-Z1z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLa-Qx-WAT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="135"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="VCBackground">
