@@ -12,7 +12,7 @@ class ResourcesCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        shadow(Vw: mainView, radius: 20)
+        shadow(Vw: mainView, radius: 10)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

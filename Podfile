@@ -10,5 +10,6 @@ target 'EventApp' do
   pod 'Alamofire'
   pod 'ObjectMapper'
   pod 'UIGradient'
+  pod 'AKSideMenu'
 
 end

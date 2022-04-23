@@ -23,19 +23,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrs-hK-fdX">
-                        <rect key="frame" x="10" y="10" width="328" height="64"/>
+                        <rect key="frame" x="10" y="5" width="328" height="74"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resourceThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="Fbt-JE-4Fq">
-                                <rect key="frame" x="5" y="5" width="60" height="54"/>
+                                <rect key="frame" x="5" y="5" width="60" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="v5Y-34-ef0"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="MAf-zE-8gs">
-                                <rect key="frame" x="301" y="26" width="7" height="12"/>
+                                <rect key="frame" x="301" y="31" width="7" height="12"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EU Code of Conduct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eb9-ea-4Kh">
-                                <rect key="frame" x="85" y="24" width="168" height="16"/>
+                                <rect key="frame" x="85" y="29" width="168" height="16"/>
                                 <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,8 +55,8 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="mrs-hK-fdX" secondAttribute="bottom" constant="10" id="D1U-yo-zSP"/>
-                    <constraint firstItem="mrs-hK-fdX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LR9-Dv-7mt"/>
+                    <constraint firstAttribute="bottom" secondItem="mrs-hK-fdX" secondAttribute="bottom" constant="5" id="D1U-yo-zSP"/>
+                    <constraint firstItem="mrs-hK-fdX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="LR9-Dv-7mt"/>
                     <constraint firstAttribute="trailing" secondItem="mrs-hK-fdX" secondAttribute="trailing" constant="10" id="Vhm-t5-lef"/>
                     <constraint firstItem="mrs-hK-fdX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="yLi-m6-onN"/>
                 </constraints>

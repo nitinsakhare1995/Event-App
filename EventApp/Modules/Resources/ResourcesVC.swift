@@ -8,17 +8,17 @@
 import UIKit
 
 class ResourcesVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "ResourcesCell", bundle: nil), forCellReuseIdentifier: "ResourcesCell")
-      
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +34,9 @@ class ResourcesVC: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
         
-
+        
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,7 +45,7 @@ class ResourcesVC: UIViewController {
     }
     
     
-
+    
 }
 
 extension ResourcesVC: UITableViewDataSource {
@@ -53,7 +55,7 @@ extension ResourcesVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,5 +69,5 @@ extension ResourcesVC: UITableViewDataSource {
 }
 
 extension ResourcesVC: UITableViewDelegate {
-   
+    
 }
