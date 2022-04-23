@@ -13,7 +13,7 @@ class HomeSpeakersCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        shadow(Vw: mainView)
+        shadow(Vw: mainView, radius: 10)
     }
 
 }

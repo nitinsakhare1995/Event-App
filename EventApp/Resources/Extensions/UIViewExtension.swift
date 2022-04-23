@@ -36,11 +36,11 @@ extension UIView {
     }
 }
 
-public func shadow(Vw : UIView) {
+public func shadow(Vw: UIView, radius: Float) {
     Vw.layer.masksToBounds = false
     Vw.layer.shadowColor = hexColor(hex: "#C4C4C4").cgColor
     Vw.layer.shadowOffset = CGSize(width: 0, height: 1)
     Vw.layer.shadowRadius = 5.0
     Vw.layer.shadowOpacity = 10.0
-    Vw.layer.cornerRadius = 10.0
+    Vw.layer.cornerRadius = CGFloat(radius)
 }

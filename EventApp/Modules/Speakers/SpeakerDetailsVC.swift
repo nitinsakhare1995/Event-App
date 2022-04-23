@@ -1,54 +1,41 @@
 //
-//  ViewController.swift
+//  SpeakerDetailsVC.swift
 //  EventApp
 //
-//  Created by Nitin Sakhare on 22/04/22.
+//  Created by Nitin Sakhare on 23/04/22.
 //
 
 import UIKit
-import UIGradient
 
-class HomeVC: UIViewController {
+class SpeakerDetailsVC: UIViewController {
     
+   
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var agendaView: UIView!
-    
-    @IBOutlet weak var speakersView: UIView!
-    @IBOutlet weak var mapsView: UIView!
-    @IBOutlet weak var videosView: UIView!
-    @IBOutlet weak var sponsorsView: UIView!
-    @IBOutlet weak var blogsView: UIView!
-    
+    @IBOutlet weak var speakerView: UIView!
+    @IBOutlet weak var descriptionView: UIView!
     @IBOutlet weak var videosCollectionView: UICollectionView!
-    @IBOutlet weak var speakersCollectionView: UICollectionView!
+    @IBOutlet weak var sessionsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
+    
         super.viewDidLoad()
         
-        topView.roundCorners([.layerMaxXMaxYCorner, .layerMinXMaxYCorner], radius: 25)
+        topView.roundCorners([.layerMaxXMaxYCorner, .layerMinXMaxYCorner], radius: 20)
         topView.backgroundColor = UIColor.fromGradientWithDirection(.topToBottom, frame: topView.frame, colors:  [.lightGreen, .darkGreen])
-        shadow(Vw: agendaView, radius: 10)
-        
-        shadow(Vw: speakersView, radius: 10)
-        shadow(Vw: mapsView, radius: 10)
-        shadow(Vw: videosView, radius: 10)
-        shadow(Vw: sponsorsView, radius: 10)
-        shadow(Vw: blogsView, radius: 10)
+        shadow(Vw: speakerView, radius: 20)
+        shadow(Vw: descriptionView, radius: 20)
         
         
         videosCollectionView.register(UINib(nibName: "HomeVideosCell", bundle: nil), forCellWithReuseIdentifier: "HomeVideosCell")
-        speakersCollectionView.register(UINib(nibName: "HomeSpeakersCell", bundle: nil), forCellWithReuseIdentifier: "HomeSpeakersCell")
+        sessionsCollectionView.register(UINib(nibName: "SpeakersSessionsCell", bundle: nil), forCellWithReuseIdentifier: "SpeakersSessionsCell")
         
         videosCollectionView.delegate = self
         videosCollectionView.dataSource = self
         
-        speakersCollectionView.delegate = self
-        speakersCollectionView.dataSource = self
-        
+        sessionsCollectionView.delegate = self
+        sessionsCollectionView.dataSource = self
         
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -64,20 +51,13 @@ class HomeVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    @IBAction func openSpeakersScreen(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "SpeakersVC") as! SpeakersVC
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @IBAction func btnOpenNotificationsTapped(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as! NotificationsVC
-        self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func btnGobackTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
 
-
-extension HomeVC: UICollectionViewDataSource {
+extension SpeakerDetailsVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.videosCollectionView {
@@ -94,7 +74,7 @@ extension HomeVC: UICollectionViewDataSource {
                 return cell
             }
         } else {
-            if let cell = speakersCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.homeSpeakersCell, for: indexPath) as? HomeSpeakersCell {
+            if let cell = sessionsCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.speakersSessionsCell, for: indexPath) as? SpeakersSessionsCell {
                 return cell
             }
         }
@@ -103,12 +83,12 @@ extension HomeVC: UICollectionViewDataSource {
     
 }
 
-extension HomeVC: UICollectionViewDelegate {
+extension SpeakerDetailsVC: UICollectionViewDelegate {
     
 }
 
 
-extension HomeVC: UICollectionViewDelegateFlowLayout {
+extension SpeakerDetailsVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.videosCollectionView {
@@ -116,8 +96,8 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
             let height = self.videosCollectionView.frame.size.height
             return CGSize(width: width, height: height)
         } else {
-            let width = (self.view.frame.size.width - 70)
-            let height = self.speakersCollectionView.frame.size.height
+            let width = (self.view.frame.size.width - 60)
+            let height = self.sessionsCollectionView.frame.size.height
             return CGSize(width: width, height: height)
         }
     }

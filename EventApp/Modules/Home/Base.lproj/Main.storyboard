@@ -204,13 +204,24 @@
                                                                                         <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9n-1x-A5a">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="85"/>
+                                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                        <connections>
+                                                                                            <action selector="openSpeakersScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ND3-Eb-4b7"/>
+                                                                                        </connections>
+                                                                                    </button>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="a9n-1x-A5a" secondAttribute="trailing" id="5lq-c5-rCb"/>
+                                                                                    <constraint firstItem="a9n-1x-A5a" firstAttribute="top" secondItem="S8n-RY-wVc" secondAttribute="top" id="NNW-mb-86N"/>
                                                                                     <constraint firstItem="hZw-nN-seq" firstAttribute="top" secondItem="fXR-LM-RA4" secondAttribute="bottom" constant="10" id="SWg-2T-vYG"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="hZw-nN-seq" secondAttribute="trailing" constant="2" id="SmG-VA-eND"/>
+                                                                                    <constraint firstItem="a9n-1x-A5a" firstAttribute="leading" secondItem="S8n-RY-wVc" secondAttribute="leading" id="T3d-vp-9ra"/>
                                                                                     <constraint firstItem="fXR-LM-RA4" firstAttribute="centerX" secondItem="S8n-RY-wVc" secondAttribute="centerX" id="W2n-Jz-QDA"/>
                                                                                     <constraint firstItem="hZw-nN-seq" firstAttribute="leading" secondItem="S8n-RY-wVc" secondAttribute="leading" constant="2" id="Ycn-Ng-dSS"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="a9n-1x-A5a" secondAttribute="bottom" id="nGa-wE-Psj"/>
                                                                                     <constraint firstItem="fXR-LM-RA4" firstAttribute="top" secondItem="S8n-RY-wVc" secondAttribute="top" constant="15" id="p0Z-31-NT6"/>
                                                                                 </constraints>
                                                                                 <userDefinedRuntimeAttributes>

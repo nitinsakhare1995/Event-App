@@ -31,6 +31,14 @@
 		18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0EF28140ACC00C91443 /* NotificationsCell.swift */; };
 		18DBB0F228140ACC00C91443 /* NotificationsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0F028140ACC00C91443 /* NotificationsCell.xib */; };
 		18DBB0F528140AF200C91443 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0F428140AF200C91443 /* Other.storyboard */; };
+		18DBB0F8281411D300C91443 /* Speakers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0F7281411D300C91443 /* Speakers.storyboard */; };
+		18DBB0FA281412D300C91443 /* SpeakersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0F9281412D300C91443 /* SpeakersVC.swift */; };
+		18DBB0FE2814139800C91443 /* SpeakersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0FC2814139800C91443 /* SpeakersCell.swift */; };
+		18DBB0FF2814139800C91443 /* SpeakersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0FD2814139800C91443 /* SpeakersCell.xib */; };
+		18DBB1012814170400C91443 /* SpeakerDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB1002814170400C91443 /* SpeakerDetailsVC.swift */; };
+		18DBB10428141FB000C91443 /* SpeakersSessionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB10228141FB000C91443 /* SpeakersSessionsCell.swift */; };
+		18DBB10528141FB000C91443 /* SpeakersSessionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB10328141FB000C91443 /* SpeakersSessionsCell.xib */; };
+		18DBB107281425D500C91443 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB106281425D500C91443 /* StringExtension.swift */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +70,14 @@
 		18DBB0EF28140ACC00C91443 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		18DBB0F028140ACC00C91443 /* NotificationsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsCell.xib; sourceTree = "<group>"; };
 		18DBB0F428140AF200C91443 /* Other.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
+		18DBB0F7281411D300C91443 /* Speakers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Speakers.storyboard; sourceTree = "<group>"; };
+		18DBB0F9281412D300C91443 /* SpeakersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersVC.swift; sourceTree = "<group>"; };
+		18DBB0FC2814139800C91443 /* SpeakersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersCell.swift; sourceTree = "<group>"; };
+		18DBB0FD2814139800C91443 /* SpeakersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakersCell.xib; sourceTree = "<group>"; };
+		18DBB1002814170400C91443 /* SpeakerDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailsVC.swift; sourceTree = "<group>"; };
+		18DBB10228141FB000C91443 /* SpeakersSessionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersSessionsCell.swift; sourceTree = "<group>"; };
+		18DBB10328141FB000C91443 /* SpeakersSessionsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakersSessionsCell.xib; sourceTree = "<group>"; };
+		18DBB106281425D500C91443 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +99,7 @@
 			children = (
 				1858D23B2813DB44007BFB6B /* UIColorExtension.swift */,
 				1858D2462813E119007BFB6B /* UIViewExtension.swift */,
+				18DBB106281425D500C91443 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -162,6 +179,7 @@
 		18B49FE92812CFF900360119 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB0F6281411C600C91443 /* Speakers */,
 				18DBB0EC28140A9F00C91443 /* Notifications */,
 				18DBB0EA281408E300C91443 /* Home */,
 				18DBB0F428140AF200C91443 /* Other.storyboard */,
@@ -220,6 +238,28 @@
 			children = (
 				18DBB0F028140ACC00C91443 /* NotificationsCell.xib */,
 				18DBB0EF28140ACC00C91443 /* NotificationsCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18DBB0F6281411C600C91443 /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB0FB2814138600C91443 /* Cell */,
+				18DBB0F7281411D300C91443 /* Speakers.storyboard */,
+				18DBB0F9281412D300C91443 /* SpeakersVC.swift */,
+				18DBB1002814170400C91443 /* SpeakerDetailsVC.swift */,
+			);
+			path = Speakers;
+			sourceTree = "<group>";
+		};
+		18DBB0FB2814138600C91443 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB0FC2814139800C91443 /* SpeakersCell.swift */,
+				18DBB0FD2814139800C91443 /* SpeakersCell.xib */,
+				18DBB10228141FB000C91443 /* SpeakersSessionsCell.swift */,
+				18DBB10328141FB000C91443 /* SpeakersSessionsCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -302,10 +342,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DBB0F8281411D300C91443 /* Speakers.storyboard in Resources */,
 				18DBB0F228140ACC00C91443 /* NotificationsCell.xib in Resources */,
 				1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */,
+				18DBB0FF2814139800C91443 /* SpeakersCell.xib in Resources */,
 				1858D2442813DC3F007BFB6B /* Gordita Medium.otf in Resources */,
 				18DBB0F528140AF200C91443 /* Other.storyboard in Resources */,
+				18DBB10528141FB000C91443 /* SpeakersSessionsCell.xib in Resources */,
 				1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */,
 				18B49FD52812BB4200360119 /* LaunchScreen.storyboard in Resources */,
 				18B49FD22812BB4200360119 /* Assets.xcassets in Resources */,
@@ -388,14 +431,19 @@
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */,
 				1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */,
+				18DBB0FA281412D300C91443 /* SpeakersVC.swift in Sources */,
 				18B49FE82812CCD800360119 /* Remote.swift in Sources */,
 				18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */,
 				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
 				18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */,
 				1858D24A2813F76B007BFB6B /* HomeVideosCell.swift in Sources */,
 				1858D2472813E119007BFB6B /* UIViewExtension.swift in Sources */,
+				18DBB1012814170400C91443 /* SpeakerDetailsVC.swift in Sources */,
+				18DBB0FE2814139800C91443 /* SpeakersCell.swift in Sources */,
 				18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */,
+				18DBB107281425D500C91443 /* StringExtension.swift in Sources */,
 				18B49FDF2812C77000360119 /* R.generated.swift in Sources */,
+				18DBB10428141FB000C91443 /* SpeakersSessionsCell.swift in Sources */,
 				18B49FE62812CB0D00360119 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
