@@ -60,10 +60,15 @@ class HomeVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.title = ""
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     
+    @IBAction func btnOpenNotificationsTapped(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Other", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as! NotificationsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 

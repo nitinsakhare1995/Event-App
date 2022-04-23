@@ -27,6 +27,10 @@
 		18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FE22812CA4D00360119 /* RemoteHelper.swift */; };
 		18B49FE62812CB0D00360119 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FE52812CB0D00360119 /* Constants.swift */; };
 		18B49FE82812CCD800360119 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FE72812CCD800360119 /* Remote.swift */; };
+		18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0ED28140ABA00C91443 /* NotificationsVC.swift */; };
+		18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0EF28140ACC00C91443 /* NotificationsCell.swift */; };
+		18DBB0F228140ACC00C91443 /* NotificationsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0F028140ACC00C91443 /* NotificationsCell.xib */; };
+		18DBB0F528140AF200C91443 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0F428140AF200C91443 /* Other.storyboard */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		18B49FE22812CA4D00360119 /* RemoteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHelper.swift; sourceTree = "<group>"; };
 		18B49FE52812CB0D00360119 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18B49FE72812CCD800360119 /* Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
+		18DBB0ED28140ABA00C91443 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		18DBB0EF28140ACC00C91443 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
+		18DBB0F028140ACC00C91443 /* NotificationsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsCell.xib; sourceTree = "<group>"; };
+		18DBB0F428140AF200C91443 /* Other.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,12 +162,9 @@
 		18B49FE92812CFF900360119 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				18B49FCE2812BB4000360119 /* Main.storyboard */,
-				18B49FCC2812BB4000360119 /* HomeVC.swift */,
-				1858D2482813F76B007BFB6B /* HomeVideosCell.swift */,
-				1858D2492813F76B007BFB6B /* HomeVideosCell.xib */,
-				1858D24C2813FF2D007BFB6B /* HomeSpeakersCell.swift */,
-				1858D24D2813FF2D007BFB6B /* HomeSpeakersCell.xib */,
+				18DBB0EC28140A9F00C91443 /* Notifications */,
+				18DBB0EA281408E300C91443 /* Home */,
+				18DBB0F428140AF200C91443 /* Other.storyboard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -178,6 +183,45 @@
 				18B49FCA2812BB4000360119 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		18DBB0EA281408E300C91443 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB0EB281408E900C91443 /* Cell */,
+				18B49FCE2812BB4000360119 /* Main.storyboard */,
+				18B49FCC2812BB4000360119 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18DBB0EB281408E900C91443 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1858D2482813F76B007BFB6B /* HomeVideosCell.swift */,
+				1858D2492813F76B007BFB6B /* HomeVideosCell.xib */,
+				1858D24C2813FF2D007BFB6B /* HomeSpeakersCell.swift */,
+				1858D24D2813FF2D007BFB6B /* HomeSpeakersCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		18DBB0EC28140A9F00C91443 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB0F328140AD300C91443 /* Cell */,
+				18DBB0ED28140ABA00C91443 /* NotificationsVC.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		18DBB0F328140AD300C91443 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB0F028140ACC00C91443 /* NotificationsCell.xib */,
+				18DBB0EF28140ACC00C91443 /* NotificationsCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		955F94A4F412CCD1E599B5A1 /* Frameworks */ = {
@@ -258,8 +302,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DBB0F228140ACC00C91443 /* NotificationsCell.xib in Resources */,
 				1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */,
 				1858D2442813DC3F007BFB6B /* Gordita Medium.otf in Resources */,
+				18DBB0F528140AF200C91443 /* Other.storyboard in Resources */,
 				1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */,
 				18B49FD52812BB4200360119 /* LaunchScreen.storyboard in Resources */,
 				18B49FD22812BB4200360119 /* Assets.xcassets in Resources */,
@@ -345,8 +391,10 @@
 				18B49FE82812CCD800360119 /* Remote.swift in Sources */,
 				18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */,
 				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
+				18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */,
 				1858D24A2813F76B007BFB6B /* HomeVideosCell.swift in Sources */,
 				1858D2472813E119007BFB6B /* UIViewExtension.swift in Sources */,
+				18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */,
 				18B49FDF2812C77000360119 /* R.generated.swift in Sources */,
 				18B49FE62812CB0D00360119 /* Constants.swift in Sources */,
 			);
