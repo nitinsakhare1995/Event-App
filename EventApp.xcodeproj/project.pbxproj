@@ -57,6 +57,7 @@
 		18DBB17B2815312E00C91443 /* BlogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB17A2815312E00C91443 /* BlogsVC.swift */; };
 		18DBB17F2815314500C91443 /* BlogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB17D2815314500C91443 /* BlogsCell.swift */; };
 		18DBB1802815314500C91443 /* BlogsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB17E2815314500C91443 /* BlogsCell.xib */; };
+		18DBB18328154CF800C91443 /* LoginOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18228154CF800C91443 /* LoginOptionsVC.swift */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		18DBB17A2815312E00C91443 /* BlogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsVC.swift; sourceTree = "<group>"; };
 		18DBB17D2815314500C91443 /* BlogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsCell.swift; sourceTree = "<group>"; };
 		18DBB17E2815314500C91443 /* BlogsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogsCell.xib; sourceTree = "<group>"; };
+		18DBB18228154CF800C91443 /* LoginOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionsVC.swift; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +217,7 @@
 		18B49FE92812CFF900360119 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB18128154CC400C91443 /* Login */,
 				18DBB179281530FB00C91443 /* Blogs */,
 				18DBB1692815190A00C91443 /* Profile */,
 				18DBB11428146DC100C91443 /* Resources */,
@@ -388,6 +391,14 @@
 				18DBB17E2815314500C91443 /* BlogsCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		18DBB18128154CC400C91443 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB18228154CF800C91443 /* LoginOptionsVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		955F94A4F412CCD1E599B5A1 /* Frameworks */ = {
@@ -587,6 +598,7 @@
 				18DBB11A28146DE000C91443 /* ResourcesVC.swift in Sources */,
 				18B49FDF2812C77000360119 /* R.generated.swift in Sources */,
 				18DBB10428141FB000C91443 /* SpeakersSessionsCell.swift in Sources */,
+				18DBB18328154CF800C91443 /* LoginOptionsVC.swift in Sources */,
 				18DBB16E2815193100C91443 /* UserProfileVC.swift in Sources */,
 				18B49FE62812CB0D00360119 /* Constants.swift in Sources */,
 			);

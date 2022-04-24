@@ -284,7 +284,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 28 images.
+  /// This `R.image` struct is generated, and contains static references to 32 images.
   struct image {
     /// Image `Angela Needle`.
     static let angelaNeedle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Angela Needle")
@@ -294,8 +294,14 @@ struct R: Rswift.Validatable {
     static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "Arrow")
     /// Image `Bosch`.
     static let bosch = Rswift.ImageResource(bundle: R.hostingBundle, name: "Bosch")
+    /// Image `FB login`.
+    static let fbLogin = Rswift.ImageResource(bundle: R.hostingBundle, name: "FB login")
     /// Image `Filter`.
     static let filter = Rswift.ImageResource(bundle: R.hostingBundle, name: "Filter")
+    /// Image `Google login`.
+    static let googleLogin = Rswift.ImageResource(bundle: R.hostingBundle, name: "Google login")
+    /// Image `GreenBG`.
+    static let greenBG = Rswift.ImageResource(bundle: R.hostingBundle, name: "GreenBG")
     /// Image `Search Icon`.
     static let searchIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "Search Icon")
     /// Image `agenda`.
@@ -340,6 +346,8 @@ struct R: Rswift.Validatable {
     static let twitter = Rswift.ImageResource(bundle: R.hostingBundle, name: "twitter")
     /// Image `videos`.
     static let videos = Rswift.ImageResource(bundle: R.hostingBundle, name: "videos")
+    /// Image `white_logo`.
+    static let white_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "white_logo")
     /// Image `www`.
     static let www = Rswift.ImageResource(bundle: R.hostingBundle, name: "www")
 
@@ -372,9 +380,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "FB login", bundle: ..., traitCollection: ...)`
+    static func fbLogin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fbLogin, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "Filter", bundle: ..., traitCollection: ...)`
     static func filter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.filter, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Google login", bundle: ..., traitCollection: ...)`
+    static func googleLogin(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.googleLogin, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "GreenBG", bundle: ..., traitCollection: ...)`
+    static func greenBG(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.greenBG, compatibleWith: traitCollection)
     }
     #endif
 
@@ -529,6 +558,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "videos", bundle: ..., traitCollection: ...)`
     static func videos(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.videos, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "white_logo", bundle: ..., traitCollection: ...)`
+    static func white_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.white_logo, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1052,12 +1088,13 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = SideMenuRootVC
+      typealias InitialController = LoginOptionsVC
 
       let bundle = R.hostingBundle
       let contentViewController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "contentViewController")
       let homeVC = StoryboardViewControllerResource<HomeVC>(identifier: "HomeVC")
       let leftMenuViewController = StoryboardViewControllerResource<SideMenuVC>(identifier: "leftMenuViewController")
+      let loginOptionsVC = StoryboardViewControllerResource<LoginOptionsVC>(identifier: "LoginOptionsVC")
       let name = "Main"
       let rootController = StoryboardViewControllerResource<SideMenuRootVC>(identifier: "rootController")
 
@@ -1073,11 +1110,18 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: leftMenuViewController)
       }
 
+      func loginOptionsVC(_: Void = ()) -> LoginOptionsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginOptionsVC)
+      }
+
       func rootController(_: Void = ()) -> SideMenuRootVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: rootController)
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "FB login", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'FB login' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Google login", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Google login' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "GreenBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'GreenBG' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "agenda", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'agenda' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "blogs", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'blogs' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "cancel", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cancel' is used in storyboard 'Main', but couldn't be loaded.") }
@@ -1091,11 +1135,14 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "speakers", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'speakers' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "sponsors", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sponsors' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "videos", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'videos' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "white_logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'white_logo' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "DarkGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'DarkGreen' is used in storyboard 'Main', but couldn't be loaded.") }
           if UIKit.UIColor(named: "LightGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightGreen' is used in storyboard 'Main', but couldn't be loaded.") }
           if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'Main', but couldn't be loaded.") }
         }
         if _R.storyboard.main().homeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeVC' could not be loaded from storyboard 'Main' as 'HomeVC'.") }
+        if _R.storyboard.main().loginOptionsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginOptionsVC' could not be loaded from storyboard 'Main' as 'LoginOptionsVC'.") }
         if _R.storyboard.main().contentViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'contentViewController' could not be loaded from storyboard 'Main' as 'UIKit.UINavigationController'.") }
         if _R.storyboard.main().leftMenuViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'leftMenuViewController' could not be loaded from storyboard 'Main' as 'SideMenuVC'.") }
         if _R.storyboard.main().rootController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'rootController' could not be loaded from storyboard 'Main' as 'SideMenuRootVC'.") }
