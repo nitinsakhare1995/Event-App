@@ -35,4 +35,11 @@ class SideMenuVC: UIViewController {
             sideMenuViewController?.hideMenuViewController()
     }
     
+    @IBAction func openUserProfile(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "UserProfileVC") as! UserProfileVC
+            let contentViewController = UINavigationController(rootViewController: vc)
+            sideMenuViewController?.setContentViewController(contentViewController, animated: true)
+            sideMenuViewController?.hideMenuViewController()
+    }
+    
 }

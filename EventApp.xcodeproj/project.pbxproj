@@ -47,6 +47,13 @@
 		18DBB11A28146DE000C91443 /* ResourcesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB11928146DE000C91443 /* ResourcesVC.swift */; };
 		18DBB11E281473AF00C91443 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB11D281473AF00C91443 /* SideMenuRootVC.swift */; };
 		18DBB120281473BC00C91443 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB11F281473BC00C91443 /* SideMenuVC.swift */; };
+		18DBB16B2815191E00C91443 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB16A2815191D00C91443 /* User.storyboard */; };
+		18DBB16E2815193100C91443 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB16C2815193100C91443 /* UserProfileVC.swift */; };
+		18DBB16F2815193100C91443 /* UserProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB16D2815193100C91443 /* UserProfileVC.xib */; };
+		18DBB173281525BF00C91443 /* ProfileEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB171281525BF00C91443 /* ProfileEventCell.swift */; };
+		18DBB174281525BF00C91443 /* ProfileEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB172281525BF00C91443 /* ProfileEventCell.xib */; };
+		18DBB177281525CE00C91443 /* ProfileResourcesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB175281525CE00C91443 /* ProfileResourcesCell.swift */; };
+		18DBB178281525CE00C91443 /* ProfileResourcesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB176281525CE00C91443 /* ProfileResourcesCell.xib */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +101,13 @@
 		18DBB11928146DE000C91443 /* ResourcesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesVC.swift; sourceTree = "<group>"; };
 		18DBB11D281473AF00C91443 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
 		18DBB11F281473BC00C91443 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		18DBB16A2815191D00C91443 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		18DBB16C2815193100C91443 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		18DBB16D2815193100C91443 /* UserProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileVC.xib; sourceTree = "<group>"; };
+		18DBB171281525BF00C91443 /* ProfileEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEventCell.swift; sourceTree = "<group>"; };
+		18DBB172281525BF00C91443 /* ProfileEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEventCell.xib; sourceTree = "<group>"; };
+		18DBB175281525CE00C91443 /* ProfileResourcesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResourcesCell.swift; sourceTree = "<group>"; };
+		18DBB176281525CE00C91443 /* ProfileResourcesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileResourcesCell.xib; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +209,7 @@
 		18B49FE92812CFF900360119 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB1692815190A00C91443 /* Profile */,
 				18DBB11428146DC100C91443 /* Resources */,
 				18DBB1082814673800C91443 /* Sponsors */,
 				18DBB0F6281411C600C91443 /* Speakers */,
@@ -328,6 +343,28 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		18DBB1692815190A00C91443 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB1702815252600C91443 /* Cell */,
+				18DBB16A2815191D00C91443 /* User.storyboard */,
+				18DBB16C2815193100C91443 /* UserProfileVC.swift */,
+				18DBB16D2815193100C91443 /* UserProfileVC.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		18DBB1702815252600C91443 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB171281525BF00C91443 /* ProfileEventCell.swift */,
+				18DBB172281525BF00C91443 /* ProfileEventCell.xib */,
+				18DBB175281525CE00C91443 /* ProfileResourcesCell.swift */,
+				18DBB176281525CE00C91443 /* ProfileResourcesCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		955F94A4F412CCD1E599B5A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,7 +446,11 @@
 				18DBB0F8281411D300C91443 /* Speakers.storyboard in Resources */,
 				18DBB0F228140ACC00C91443 /* NotificationsCell.xib in Resources */,
 				1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */,
+				18DBB16B2815191E00C91443 /* User.storyboard in Resources */,
+				18DBB174281525BF00C91443 /* ProfileEventCell.xib in Resources */,
+				18DBB178281525CE00C91443 /* ProfileResourcesCell.xib in Resources */,
 				18DBB0FF2814139800C91443 /* SpeakersCell.xib in Resources */,
+				18DBB16F2815193100C91443 /* UserProfileVC.xib in Resources */,
 				1858D2442813DC3F007BFB6B /* Gordita Medium.otf in Resources */,
 				18DBB0F528140AF200C91443 /* Other.storyboard in Resources */,
 				18DBB10528141FB000C91443 /* SpeakersSessionsCell.xib in Resources */,
@@ -497,12 +538,14 @@
 				18DBB1122814683100C91443 /* SponsorsCell.swift in Sources */,
 				18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */,
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
+				18DBB173281525BF00C91443 /* ProfileEventCell.swift in Sources */,
 				18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */,
 				1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */,
 				18DBB0FA281412D300C91443 /* SpeakersVC.swift in Sources */,
 				18B49FE82812CCD800360119 /* Remote.swift in Sources */,
 				18DBB10A281467F500C91443 /* SponsorsVC.swift in Sources */,
 				18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */,
+				18DBB177281525CE00C91443 /* ProfileResourcesCell.swift in Sources */,
 				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
 				18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */,
 				1858D24A2813F76B007BFB6B /* HomeVideosCell.swift in Sources */,
@@ -516,6 +559,7 @@
 				18DBB11A28146DE000C91443 /* ResourcesVC.swift in Sources */,
 				18B49FDF2812C77000360119 /* R.generated.swift in Sources */,
 				18DBB10428141FB000C91443 /* SpeakersSessionsCell.swift in Sources */,
+				18DBB16E2815193100C91443 /* UserProfileVC.swift in Sources */,
 				18B49FE62812CB0D00360119 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -647,15 +647,26 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hR5-7l-6BZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="openUserProfile:" destination="QYK-IV-e5A" eventType="touchUpInside" id="ZIa-64-TrA"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="wS8-hl-pb0" firstAttribute="leading" secondItem="e07-lP-jIw" secondAttribute="trailing" constant="15" id="4uG-rH-BZu"/>
                                             <constraint firstItem="wS8-hl-pb0" firstAttribute="top" secondItem="OP4-wL-3dv" secondAttribute="top" id="G4K-yy-KZM"/>
+                                            <constraint firstAttribute="bottom" secondItem="hR5-7l-6BZ" secondAttribute="bottom" id="GRZ-8b-4tb"/>
                                             <constraint firstAttribute="bottom" secondItem="wS8-hl-pb0" secondAttribute="bottom" id="QmF-Sm-LhH"/>
+                                            <constraint firstItem="hR5-7l-6BZ" firstAttribute="top" secondItem="OP4-wL-3dv" secondAttribute="top" id="fG9-LW-UYT"/>
                                             <constraint firstItem="e07-lP-jIw" firstAttribute="leading" secondItem="OP4-wL-3dv" secondAttribute="leading" constant="25" id="hAb-FP-hdy"/>
                                             <constraint firstAttribute="trailing" secondItem="wS8-hl-pb0" secondAttribute="trailing" constant="8" id="m6h-yi-1vu"/>
                                             <constraint firstItem="e07-lP-jIw" firstAttribute="centerY" secondItem="OP4-wL-3dv" secondAttribute="centerY" id="oAt-Mr-2zi"/>
+                                            <constraint firstItem="hR5-7l-6BZ" firstAttribute="leading" secondItem="OP4-wL-3dv" secondAttribute="leading" id="s2m-tW-TDo"/>
+                                            <constraint firstAttribute="trailing" secondItem="hR5-7l-6BZ" secondAttribute="trailing" id="uAZ-HM-LGi"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmt-5o-5oO">
