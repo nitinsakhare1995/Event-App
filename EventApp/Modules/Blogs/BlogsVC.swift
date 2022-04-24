@@ -36,9 +36,9 @@ class BlogsVC: UIViewController {
         tableView.register(UINib(nibName: "BlogsCell", bundle: nil), forCellReuseIdentifier: "BlogsCell")
         
         
-    
+        
         searchBar.backgroundImage = UIImage()
-       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,13 +53,6 @@ class BlogsVC: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
-        
-        
-        
-        let menuButtonImage = R.image.drawer()
-        let menuButton = UIBarButtonItem(image: menuButtonImage, style: .plain, target: self, action: #selector(didTapMenuButton))
-        navigationItem.leftBarButtonItem = menuButton
-        
         
     }
     
