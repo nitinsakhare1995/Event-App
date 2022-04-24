@@ -80,6 +80,12 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func openBlogsScreen(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "BlogsVC") as! BlogsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
 

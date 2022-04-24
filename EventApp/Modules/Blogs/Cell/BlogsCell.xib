@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gordita Medium.otf">
+            <string>Gordita-Medium</string>
+        </array>
+        <array key="Gordita Regular.otf">
+            <string>Gordita-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BlogsCell" rowHeight="150" id="KGk-i7-Jjw" customClass="BlogsCell" customModule="EventApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwV-wY-g3Y">
+                        <rect key="frame" x="10" y="8" width="333" height="134"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Angela Needle" translatesAutoresizingMaskIntoConstraints="NO" id="IVN-2R-8L6">
+                                <rect key="frame" x="8" y="8" width="90" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="2rM-Ij-8Yh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="ulB-7d-Whw">
+                                <rect key="frame" x="113" y="111" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="B2M-uA-x5q"/>
+                                    <constraint firstAttribute="width" constant="12" id="eRI-T7-kqc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Mins Read " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0y-Lc-BB5">
+                                <rect key="frame" x="131" y="113" width="65" height="10"/>
+                                <fontDescription key="fontDescription" name="Gordita-Regular" family="Gordita" pointSize="10"/>
+                                <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catagory Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mw-YP-4bC">
+                                <rect key="frame" x="209" y="113" width="80" height="10"/>
+                                <fontDescription key="fontDescription" name="Gordita-Regular" family="Gordita" pointSize="10"/>
+                                <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="How could we leverage the benefits of Hydrogen in the modern home " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipv-UV-hJC">
+                                <rect key="frame" x="110" y="15" width="211" height="90"/>
+                                <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="14"/>
+                                <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTS-Dn-7Me">
+                                <rect key="frame" x="200" y="111" width="1" height="12"/>
+                                <color key="backgroundColor" name="DarkGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="3sz-Yr-4En"/>
+                                    <constraint firstAttribute="height" constant="12" id="KAc-4C-BwZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ipv-UV-hJC" firstAttribute="leading" secondItem="IVN-2R-8L6" secondAttribute="trailing" constant="12" id="5N4-sx-u7E"/>
+                            <constraint firstItem="ulB-7d-Whw" firstAttribute="leading" secondItem="IVN-2R-8L6" secondAttribute="trailing" constant="15" id="5gw-cY-jt6"/>
+                            <constraint firstAttribute="bottom" secondItem="ulB-7d-Whw" secondAttribute="bottom" constant="11" id="CZd-sd-tkd"/>
+                            <constraint firstItem="IVN-2R-8L6" firstAttribute="top" secondItem="LwV-wY-g3Y" secondAttribute="top" constant="8" id="O2E-bT-jMC"/>
+                            <constraint firstAttribute="bottom" secondItem="q0y-Lc-BB5" secondAttribute="bottom" constant="11" id="UY1-k5-WqE"/>
+                            <constraint firstItem="IVN-2R-8L6" firstAttribute="leading" secondItem="LwV-wY-g3Y" secondAttribute="leading" constant="8" id="fQh-da-zsD"/>
+                            <constraint firstAttribute="bottom" secondItem="8Mw-YP-4bC" secondAttribute="bottom" constant="11" id="fcI-ef-Q6R"/>
+                            <constraint firstAttribute="bottom" secondItem="QTS-Dn-7Me" secondAttribute="bottom" constant="11" id="gfg-dF-wfU"/>
+                            <constraint firstAttribute="bottom" secondItem="IVN-2R-8L6" secondAttribute="bottom" constant="8" id="hUu-j6-LLW"/>
+                            <constraint firstItem="q0y-Lc-BB5" firstAttribute="leading" secondItem="ulB-7d-Whw" secondAttribute="trailing" constant="6" id="iFe-Lf-SnG"/>
+                            <constraint firstItem="q0y-Lc-BB5" firstAttribute="top" secondItem="Ipv-UV-hJC" secondAttribute="bottom" constant="8" id="iMK-vj-9KU"/>
+                            <constraint firstAttribute="trailing" secondItem="Ipv-UV-hJC" secondAttribute="trailing" constant="12" id="mHU-Xg-hIz"/>
+                            <constraint firstItem="Ipv-UV-hJC" firstAttribute="top" secondItem="LwV-wY-g3Y" secondAttribute="top" constant="15" id="mub-1L-s4I"/>
+                            <constraint firstItem="8Mw-YP-4bC" firstAttribute="leading" secondItem="QTS-Dn-7Me" secondAttribute="trailing" constant="8" id="v82-Cs-Ch4"/>
+                            <constraint firstItem="QTS-Dn-7Me" firstAttribute="leading" secondItem="q0y-Lc-BB5" secondAttribute="trailing" constant="4" id="ybf-hi-vYq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="LwV-wY-g3Y" secondAttribute="bottom" constant="8" id="aOw-51-LQR"/>
+                    <constraint firstItem="LwV-wY-g3Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fv8-8V-suM"/>
+                    <constraint firstAttribute="trailing" secondItem="LwV-wY-g3Y" secondAttribute="trailing" constant="10" id="nbf-8F-6QO"/>
+                    <constraint firstItem="LwV-wY-g3Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xmC-eX-t7O"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="mainView" destination="LwV-wY-g3Y" id="Nns-Id-Vwd"/>
+            </connections>
+            <point key="canvasLocation" x="-125.36231884057972" y="160.04464285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Angela Needle" width="112" height="98"/>
+        <image name="time" width="10" height="10"/>
+        <namedColor name="DarkGreen">
+            <color red="0.086274509803921567" green="0.54509803921568623" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

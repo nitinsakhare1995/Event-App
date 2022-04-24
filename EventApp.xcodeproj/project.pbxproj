@@ -54,6 +54,9 @@
 		18DBB174281525BF00C91443 /* ProfileEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB172281525BF00C91443 /* ProfileEventCell.xib */; };
 		18DBB177281525CE00C91443 /* ProfileResourcesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB175281525CE00C91443 /* ProfileResourcesCell.swift */; };
 		18DBB178281525CE00C91443 /* ProfileResourcesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB176281525CE00C91443 /* ProfileResourcesCell.xib */; };
+		18DBB17B2815312E00C91443 /* BlogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB17A2815312E00C91443 /* BlogsVC.swift */; };
+		18DBB17F2815314500C91443 /* BlogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB17D2815314500C91443 /* BlogsCell.swift */; };
+		18DBB1802815314500C91443 /* BlogsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB17E2815314500C91443 /* BlogsCell.xib */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +111,9 @@
 		18DBB172281525BF00C91443 /* ProfileEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEventCell.xib; sourceTree = "<group>"; };
 		18DBB175281525CE00C91443 /* ProfileResourcesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResourcesCell.swift; sourceTree = "<group>"; };
 		18DBB176281525CE00C91443 /* ProfileResourcesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileResourcesCell.xib; sourceTree = "<group>"; };
+		18DBB17A2815312E00C91443 /* BlogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsVC.swift; sourceTree = "<group>"; };
+		18DBB17D2815314500C91443 /* BlogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsCell.swift; sourceTree = "<group>"; };
+		18DBB17E2815314500C91443 /* BlogsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogsCell.xib; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +215,7 @@
 		18B49FE92812CFF900360119 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB179281530FB00C91443 /* Blogs */,
 				18DBB1692815190A00C91443 /* Profile */,
 				18DBB11428146DC100C91443 /* Resources */,
 				18DBB1082814673800C91443 /* Sponsors */,
@@ -365,6 +372,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		18DBB179281530FB00C91443 /* Blogs */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB17C2815313200C91443 /* Cell */,
+				18DBB17A2815312E00C91443 /* BlogsVC.swift */,
+			);
+			path = Blogs;
+			sourceTree = "<group>";
+		};
+		18DBB17C2815313200C91443 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18DBB17D2815314500C91443 /* BlogsCell.swift */,
+				18DBB17E2815314500C91443 /* BlogsCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		955F94A4F412CCD1E599B5A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +473,7 @@
 				1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */,
 				18DBB16B2815191E00C91443 /* User.storyboard in Resources */,
 				18DBB174281525BF00C91443 /* ProfileEventCell.xib in Resources */,
+				18DBB1802815314500C91443 /* BlogsCell.xib in Resources */,
 				18DBB178281525CE00C91443 /* ProfileResourcesCell.xib in Resources */,
 				18DBB0FF2814139800C91443 /* SpeakersCell.xib in Resources */,
 				18DBB16F2815193100C91443 /* UserProfileVC.xib in Resources */,
@@ -534,8 +560,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DBB17B2815312E00C91443 /* BlogsVC.swift in Sources */,
 				18DBB11728146DD200C91443 /* ResourcesCell.swift in Sources */,
 				18DBB1122814683100C91443 /* SponsorsCell.swift in Sources */,
+				18DBB17F2815314500C91443 /* BlogsCell.swift in Sources */,
 				18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */,
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18DBB173281525BF00C91443 /* ProfileEventCell.swift in Sources */,

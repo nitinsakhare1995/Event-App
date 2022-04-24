@@ -324,9 +324,75 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </scene>
+        <!--BlogsVC-->
+        <scene sceneID="bfp-cn-E9D">
+            <objects>
+                <viewController storyboardIdentifier="BlogsVC" id="5nr-qp-XD1" customClass="BlogsVC" customModule="EventApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8iF-6U-JGi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Px-o9-wLe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIl-Wn-Uee">
+                                        <rect key="frame" x="369" y="12.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="wcJ-9w-orJ"/>
+                                            <constraint firstAttribute="width" constant="25" id="xGJ-hF-dLf"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="Filter"/>
+                                    </button>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8r7-cd-HIh">
+                                        <rect key="frame" x="20" y="5" width="329" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="IHY-3f-TWo"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VIl-Wn-Uee" firstAttribute="leading" secondItem="8r7-cd-HIh" secondAttribute="trailing" constant="20" id="17W-XO-pTP"/>
+                                    <constraint firstItem="VIl-Wn-Uee" firstAttribute="centerY" secondItem="8Px-o9-wLe" secondAttribute="centerY" id="69P-kY-074"/>
+                                    <constraint firstAttribute="trailing" secondItem="VIl-Wn-Uee" secondAttribute="trailing" constant="20" id="GLI-FC-MRK"/>
+                                    <constraint firstItem="8r7-cd-HIh" firstAttribute="leading" secondItem="8Px-o9-wLe" secondAttribute="leading" constant="20" id="fmf-sl-9Yb"/>
+                                    <constraint firstItem="8r7-cd-HIh" firstAttribute="centerY" secondItem="8Px-o9-wLe" secondAttribute="centerY" id="sZ4-SQ-GuX"/>
+                                    <constraint firstAttribute="height" constant="50" id="u3L-Bh-YaT"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8MM-6F-0pz">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="V8m-C3-Jj5"/>
+                        <color key="backgroundColor" name="VCBackground"/>
+                        <constraints>
+                            <constraint firstItem="8Px-o9-wLe" firstAttribute="top" secondItem="V8m-C3-Jj5" secondAttribute="top" id="1yX-kg-R8i"/>
+                            <constraint firstItem="8MM-6F-0pz" firstAttribute="leading" secondItem="V8m-C3-Jj5" secondAttribute="leading" id="2o0-nx-AOe"/>
+                            <constraint firstItem="8MM-6F-0pz" firstAttribute="top" secondItem="8Px-o9-wLe" secondAttribute="bottom" id="FAz-l9-ZbL"/>
+                            <constraint firstItem="V8m-C3-Jj5" firstAttribute="trailing" secondItem="8MM-6F-0pz" secondAttribute="trailing" id="GKk-Ff-4I2"/>
+                            <constraint firstItem="8Px-o9-wLe" firstAttribute="leading" secondItem="V8m-C3-Jj5" secondAttribute="leading" id="Mh1-sm-iet"/>
+                            <constraint firstItem="V8m-C3-Jj5" firstAttribute="bottom" secondItem="8MM-6F-0pz" secondAttribute="bottom" id="aNB-5r-MMr"/>
+                            <constraint firstItem="V8m-C3-Jj5" firstAttribute="trailing" secondItem="8Px-o9-wLe" secondAttribute="trailing" id="vm3-GC-96h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="8r7-cd-HIh" id="CbM-IO-F0o"/>
+                        <outlet property="tableView" destination="8MM-6F-0pz" id="vkR-cE-7pB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mke-ze-hV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.81159420289862" y="-98.4375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Angela Needle" width="112" height="98"/>
+        <image name="Filter" width="24" height="24"/>
         <image name="drawer" width="18" height="16"/>
         <namedColor name="DarkGreen">
             <color red="0.086274509803921567" green="0.54509803921568623" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
