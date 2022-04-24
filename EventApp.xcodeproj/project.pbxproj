@@ -58,6 +58,12 @@
 		18DBB17F2815314500C91443 /* BlogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB17D2815314500C91443 /* BlogsCell.swift */; };
 		18DBB1802815314500C91443 /* BlogsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB17E2815314500C91443 /* BlogsCell.xib */; };
 		18DBB18328154CF800C91443 /* LoginOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18228154CF800C91443 /* LoginOptionsVC.swift */; };
+		18DBB1852815538B00C91443 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB1842815538B00C91443 /* LoginVC.swift */; };
+		18DBB187281557C800C91443 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB186281557C800C91443 /* ForgotPasswordVC.swift */; };
+		18DBB1892815590E00C91443 /* LoginOtpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB1882815590E00C91443 /* LoginOtpVC.swift */; };
+		18DBB18B28155BB900C91443 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18A28155BB900C91443 /* ResetPasswordVC.swift */; };
+		18DBB18D28155D3700C91443 /* LoginSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18C28155D3700C91443 /* LoginSuccessVC.swift */; };
+		18DBB18F28155E0C00C91443 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18E28155E0C00C91443 /* RegisterVC.swift */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +122,12 @@
 		18DBB17D2815314500C91443 /* BlogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsCell.swift; sourceTree = "<group>"; };
 		18DBB17E2815314500C91443 /* BlogsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogsCell.xib; sourceTree = "<group>"; };
 		18DBB18228154CF800C91443 /* LoginOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionsVC.swift; sourceTree = "<group>"; };
+		18DBB1842815538B00C91443 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		18DBB186281557C800C91443 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		18DBB1882815590E00C91443 /* LoginOtpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOtpVC.swift; sourceTree = "<group>"; };
+		18DBB18A28155BB900C91443 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		18DBB18C28155D3700C91443 /* LoginSuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessVC.swift; sourceTree = "<group>"; };
+		18DBB18E28155E0C00C91443 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -397,6 +409,12 @@
 			isa = PBXGroup;
 			children = (
 				18DBB18228154CF800C91443 /* LoginOptionsVC.swift */,
+				18DBB1842815538B00C91443 /* LoginVC.swift */,
+				18DBB186281557C800C91443 /* ForgotPasswordVC.swift */,
+				18DBB1882815590E00C91443 /* LoginOtpVC.swift */,
+				18DBB18A28155BB900C91443 /* ResetPasswordVC.swift */,
+				18DBB18C28155D3700C91443 /* LoginSuccessVC.swift */,
+				18DBB18E28155E0C00C91443 /* RegisterVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -571,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DBB1852815538B00C91443 /* LoginVC.swift in Sources */,
 				18DBB17B2815312E00C91443 /* BlogsVC.swift in Sources */,
 				18DBB11728146DD200C91443 /* ResourcesCell.swift in Sources */,
 				18DBB1122814683100C91443 /* SponsorsCell.swift in Sources */,
@@ -578,12 +597,15 @@
 				18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */,
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18DBB173281525BF00C91443 /* ProfileEventCell.swift in Sources */,
+				18DBB18D28155D3700C91443 /* LoginSuccessVC.swift in Sources */,
 				18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */,
+				18DBB18B28155BB900C91443 /* ResetPasswordVC.swift in Sources */,
 				1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */,
 				18DBB0FA281412D300C91443 /* SpeakersVC.swift in Sources */,
 				18B49FE82812CCD800360119 /* Remote.swift in Sources */,
 				18DBB10A281467F500C91443 /* SponsorsVC.swift in Sources */,
 				18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */,
+				18DBB187281557C800C91443 /* ForgotPasswordVC.swift in Sources */,
 				18DBB177281525CE00C91443 /* ProfileResourcesCell.swift in Sources */,
 				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
 				18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */,
@@ -591,6 +613,7 @@
 				1858D2472813E119007BFB6B /* UIViewExtension.swift in Sources */,
 				18DBB120281473BC00C91443 /* SideMenuVC.swift in Sources */,
 				18DBB1012814170400C91443 /* SpeakerDetailsVC.swift in Sources */,
+				18DBB1892815590E00C91443 /* LoginOtpVC.swift in Sources */,
 				18DBB0FE2814139800C91443 /* SpeakersCell.swift in Sources */,
 				18DBB11E281473AF00C91443 /* SideMenuRootVC.swift in Sources */,
 				18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */,
@@ -599,6 +622,7 @@
 				18B49FDF2812C77000360119 /* R.generated.swift in Sources */,
 				18DBB10428141FB000C91443 /* SpeakersSessionsCell.swift in Sources */,
 				18DBB18328154CF800C91443 /* LoginOptionsVC.swift in Sources */,
+				18DBB18F28155E0C00C91443 /* RegisterVC.swift in Sources */,
 				18DBB16E2815193100C91443 /* UserProfileVC.swift in Sources */,
 				18B49FE62812CB0D00360119 /* Constants.swift in Sources */,
 			);

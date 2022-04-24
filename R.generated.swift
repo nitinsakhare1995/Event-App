@@ -1088,18 +1088,28 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = LoginOptionsVC
+      typealias InitialController = SideMenuRootVC
 
       let bundle = R.hostingBundle
       let contentViewController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "contentViewController")
+      let forgotPasswordVC = StoryboardViewControllerResource<ForgotPasswordVC>(identifier: "ForgotPasswordVC")
       let homeVC = StoryboardViewControllerResource<HomeVC>(identifier: "HomeVC")
       let leftMenuViewController = StoryboardViewControllerResource<SideMenuVC>(identifier: "leftMenuViewController")
       let loginOptionsVC = StoryboardViewControllerResource<LoginOptionsVC>(identifier: "LoginOptionsVC")
+      let loginOtpVC = StoryboardViewControllerResource<LoginOtpVC>(identifier: "LoginOtpVC")
+      let loginSuccessVC = StoryboardViewControllerResource<LoginSuccessVC>(identifier: "LoginSuccessVC")
+      let loginVC = StoryboardViewControllerResource<LoginVC>(identifier: "LoginVC")
       let name = "Main"
+      let registerVC = StoryboardViewControllerResource<RegisterVC>(identifier: "RegisterVC")
+      let resetPasswordVC = StoryboardViewControllerResource<ResetPasswordVC>(identifier: "ResetPasswordVC")
       let rootController = StoryboardViewControllerResource<SideMenuRootVC>(identifier: "rootController")
 
       func contentViewController(_: Void = ()) -> UIKit.UINavigationController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: contentViewController)
+      }
+
+      func forgotPasswordVC(_: Void = ()) -> ForgotPasswordVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: forgotPasswordVC)
       }
 
       func homeVC(_: Void = ()) -> HomeVC? {
@@ -1112,6 +1122,26 @@ struct _R: Rswift.Validatable {
 
       func loginOptionsVC(_: Void = ()) -> LoginOptionsVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginOptionsVC)
+      }
+
+      func loginOtpVC(_: Void = ()) -> LoginOtpVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginOtpVC)
+      }
+
+      func loginSuccessVC(_: Void = ()) -> LoginSuccessVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginSuccessVC)
+      }
+
+      func loginVC(_: Void = ()) -> LoginVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginVC)
+      }
+
+      func registerVC(_: Void = ()) -> RegisterVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: registerVC)
+      }
+
+      func resetPasswordVC(_: Void = ()) -> ResetPasswordVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: resetPasswordVC)
       }
 
       func rootController(_: Void = ()) -> SideMenuRootVC? {
@@ -1141,8 +1171,14 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "LightGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightGreen' is used in storyboard 'Main', but couldn't be loaded.") }
           if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'Main', but couldn't be loaded.") }
         }
+        if _R.storyboard.main().forgotPasswordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'forgotPasswordVC' could not be loaded from storyboard 'Main' as 'ForgotPasswordVC'.") }
         if _R.storyboard.main().homeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeVC' could not be loaded from storyboard 'Main' as 'HomeVC'.") }
         if _R.storyboard.main().loginOptionsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginOptionsVC' could not be loaded from storyboard 'Main' as 'LoginOptionsVC'.") }
+        if _R.storyboard.main().loginOtpVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginOtpVC' could not be loaded from storyboard 'Main' as 'LoginOtpVC'.") }
+        if _R.storyboard.main().loginSuccessVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginSuccessVC' could not be loaded from storyboard 'Main' as 'LoginSuccessVC'.") }
+        if _R.storyboard.main().loginVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginVC' could not be loaded from storyboard 'Main' as 'LoginVC'.") }
+        if _R.storyboard.main().registerVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'registerVC' could not be loaded from storyboard 'Main' as 'RegisterVC'.") }
+        if _R.storyboard.main().resetPasswordVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'resetPasswordVC' could not be loaded from storyboard 'Main' as 'ResetPasswordVC'.") }
         if _R.storyboard.main().contentViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'contentViewController' could not be loaded from storyboard 'Main' as 'UIKit.UINavigationController'.") }
         if _R.storyboard.main().leftMenuViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'leftMenuViewController' could not be loaded from storyboard 'Main' as 'SideMenuVC'.") }
         if _R.storyboard.main().rootController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'rootController' could not be loaded from storyboard 'Main' as 'SideMenuRootVC'.") }
