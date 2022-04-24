@@ -15,24 +15,21 @@ class Remote {
     
     private init(){}
     
-    func getData(){}
+    func login(email: String, password: String, completionHandler: @escaping (_ userData: LoginModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.login(email: email, password: password)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<LoginModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
     
-    //    func getUserMapple(completionHandler: @escaping (_ userData: UserMappable) -> ()) {
-    //
-    //            guard let urlString = URL(string: userUrl) else { return }
-    //
-    //        AF.request(APIRequest.getProjectList).responseJSON { (responce) in
-    //
-    //                switch responce.result {
-    //                case .success(let value):
-    //                    guard let castingValue = value as? [String: Any] else { return }
-    //                    guard let userData = Mapper<UserMappable>().map(JSON: castingValue) else { return }
-    //                completionHandler(userData)
-    //                case .failure(let error):
-    //                    print(error.localizedDescription)
-    //                }
-    //            }
-    //      }
     //
     //
     //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {

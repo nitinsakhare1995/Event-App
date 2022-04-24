@@ -9,6 +9,7 @@ import Foundation
 
 struct Constants {
     
-    static let baseURL = "1234"
-    
+    static let baseURL = "http://unifytrack.com/runtime_events/webservices.php"
+    static let successMsg = "Success"
+    static let failureMsg = "Failed"
 }

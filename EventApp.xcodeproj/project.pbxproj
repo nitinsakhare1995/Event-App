@@ -64,6 +64,8 @@
 		18DBB18B28155BB900C91443 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18A28155BB900C91443 /* ResetPasswordVC.swift */; };
 		18DBB18D28155D3700C91443 /* LoginSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18C28155D3700C91443 /* LoginSuccessVC.swift */; };
 		18DBB18F28155E0C00C91443 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18E28155E0C00C91443 /* RegisterVC.swift */; };
+		18DBB19128156C0500C91443 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB19028156C0500C91443 /* LoginModel.swift */; };
+		18DBB19328156EA400C91443 /* GlobalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB19228156EA400C91443 /* GlobalHelper.swift */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,8 @@
 		18DBB18A28155BB900C91443 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
 		18DBB18C28155D3700C91443 /* LoginSuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessVC.swift; sourceTree = "<group>"; };
 		18DBB18E28155E0C00C91443 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		18DBB19028156C0500C91443 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		18DBB19228156EA400C91443 /* GlobalHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelper.swift; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +209,7 @@
 				18B49FD12812BB4200360119 /* Assets.xcassets */,
 				18B49FDE2812C77000360119 /* R.generated.swift */,
 				18B49FE52812CB0D00360119 /* Constants.swift */,
+				18DBB19228156EA400C91443 /* GlobalHelper.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 		18B49FEA2812D00B00360119 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18DBB19028156C0500C91443 /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */,
 				18DBB18B28155BB900C91443 /* ResetPasswordVC.swift in Sources */,
 				1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */,
+				18DBB19328156EA400C91443 /* GlobalHelper.swift in Sources */,
 				18DBB0FA281412D300C91443 /* SpeakersVC.swift in Sources */,
 				18B49FE82812CCD800360119 /* Remote.swift in Sources */,
 				18DBB10A281467F500C91443 /* SponsorsVC.swift in Sources */,
@@ -621,6 +628,7 @@
 				18DBB11A28146DE000C91443 /* ResourcesVC.swift in Sources */,
 				18B49FDF2812C77000360119 /* R.generated.swift in Sources */,
 				18DBB10428141FB000C91443 /* SpeakersSessionsCell.swift in Sources */,
+				18DBB19128156C0500C91443 /* LoginModel.swift in Sources */,
 				18DBB18328154CF800C91443 /* LoginOptionsVC.swift in Sources */,
 				18DBB18F28155E0C00C91443 /* RegisterVC.swift in Sources */,
 				18DBB16E2815193100C91443 /* UserProfileVC.swift in Sources */,

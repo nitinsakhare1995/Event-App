@@ -11,5 +11,8 @@ target 'EventApp' do
   pod 'ObjectMapper'
   pod 'UIGradient'
   pod 'AKSideMenu'
+  pod 'SVProgressHUD'
+  pod 'IQKeyboardManagerSwift'
+  pod "TTGSnackbar"
 
 end

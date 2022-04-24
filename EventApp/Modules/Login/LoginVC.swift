@@ -8,14 +8,14 @@
 import UIKit
 
 class LoginVC: UIViewController {
-
+    
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         emailTF.layer.borderWidth = 1
         emailTF.layer.borderColor = UIColor.white.cgColor
         passwordTF.layer.borderWidth = 1
@@ -36,10 +36,69 @@ class LoginVC: UIViewController {
         shadowGreen(Vw: btnLogin, radius: 15)
         shadowGreen(Vw: emailTF, radius: 15)
         shadowGreen(Vw: passwordTF, radius: 15)
+        
     }
     
-
-
+    func loginUser() {
+        if validateTextFields() {
+            if let email = emailTF.text, let password = passwordTF.text {
+                Remote.shared.login(email: email, password: password) { userData in
+                    if userData.requestStatus == Constants.successMsg {
+                        let userDefault = UserDefaults.standard
+                        userDefault.set(true, forKey: "isLoggedIn")
+                        userDefault.synchronize()
+                        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "rootController") as! SideMenuRootVC
+                        self.switchRootViewController(rootViewController: vc, animated: true, completion: nil)
+                    } else {
+                        showSnackBar(message: userData.error ?? "", duration: .middle)
+                    }
+                }
+            }
+        }
+    }
+    
+    func switchRootViewController(rootViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        if animated {
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                window.rootViewController = rootViewController
+                UIView.setAnimationsEnabled(oldState)
+            }, completion: { (finished: Bool) -> () in
+                if (completion != nil) {
+                    completion!()
+                }
+            })
+        } else {
+            window.rootViewController = rootViewController
+        }
+    }
+    
+    
+    func validateTextFields() -> Bool{
+        
+        if emailTF.text == "" {
+            showSnackBar(message: "Email required", duration: .middle)
+            return false
+        }else if passwordTF.text == "" {
+            showSnackBar(message: "Password required", duration: .middle)
+            return false
+        }
+        if let email = emailTF.text {
+            if !validateEmail(enteredEmail: email){
+                showSnackBar(message: "Invalid Email", duration: .short)
+                return false
+            }
+        }
+        return true
+    }
+    
+    @IBAction func btnLoginuserTapped(_ sender: UIButton) {
+        self.loginUser()
+    }
+    
 }
 
 

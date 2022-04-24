@@ -28,5 +28,10 @@
 		<string>Gordita Medium.otf</string>
 		<string>Gordita Regular.otf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

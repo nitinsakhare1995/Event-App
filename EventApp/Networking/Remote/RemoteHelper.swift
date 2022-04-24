@@ -10,7 +10,7 @@ import Alamofire
 
 public enum APIRequest: URLRequestConvertible {
     
-    case getProjectList
+    case login(email: String, password: String)
     
     var method: HTTPMethod {
         switch self {
@@ -21,8 +21,8 @@ public enum APIRequest: URLRequestConvertible {
     
     var path: String {
         switch self {
-        case .getProjectList:
-            return "project/v1/list/"
+        case .login(let email, let password):
+            return "?reqAction=login&userregid=2&email=\(email)&pass=\(password)"
             
         }
     }
