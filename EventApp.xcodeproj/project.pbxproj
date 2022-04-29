@@ -66,6 +66,7 @@
 		18DBB18F28155E0C00C91443 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB18E28155E0C00C91443 /* RegisterVC.swift */; };
 		18DBB19128156C0500C91443 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB19028156C0500C91443 /* LoginModel.swift */; };
 		18DBB19328156EA400C91443 /* GlobalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB19228156EA400C91443 /* GlobalHelper.swift */; };
+		18DBB19728157D2C00C91443 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB19628157D2C00C91443 /* SpeakerModel.swift */; };
 		7038124A8A802E49CA91F836 /* Pods_EventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		18DBB18E28155E0C00C91443 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		18DBB19028156C0500C91443 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		18DBB19228156EA400C91443 /* GlobalHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelper.swift; sourceTree = "<group>"; };
+		18DBB19628157D2C00C91443 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		5131318B8EB25EA1553D8959 /* Pods_EventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC110B9F57615C172F9FAA5 /* Pods-EventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.debug.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				18DBB19028156C0500C91443 /* LoginModel.swift */,
+				18DBB19628157D2C00C91443 /* SpeakerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
 				18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */,
 				1858D24A2813F76B007BFB6B /* HomeVideosCell.swift in Sources */,
+				18DBB19728157D2C00C91443 /* SpeakerModel.swift in Sources */,
 				1858D2472813E119007BFB6B /* UIViewExtension.swift in Sources */,
 				18DBB120281473BC00C91443 /* SideMenuVC.swift in Sources */,
 				18DBB1012814170400C91443 /* SpeakerDetailsVC.swift in Sources */,

@@ -11,6 +11,9 @@ import Alamofire
 public enum APIRequest: URLRequestConvertible {
     
     case login(email: String, password: String)
+    case getSpeakersList
+    case registerUser(userName: String, password: String, email: String)
+    case verifyOtp(userId: Int, otp: String)
     
     var method: HTTPMethod {
         switch self {
@@ -23,7 +26,12 @@ public enum APIRequest: URLRequestConvertible {
         switch self {
         case .login(let email, let password):
             return "?reqAction=login&userregid=2&email=\(email)&pass=\(password)"
-            
+        case .getSpeakersList:
+            return "?reqAction=speakers"
+        case .registerUser(let userName, let password, let email):
+            return "?reqAction=signup&name=\(userName)&email_id=\(email)&password=\(password)"
+        case .verifyOtp(let userId, let otp):
+            return "?reqAction=userchkotp&userregid=\(userId)&otp=\(otp)"
         }
     }
     
@@ -43,7 +51,9 @@ public enum APIRequest: URLRequestConvertible {
     
     public func asURLRequest() throws -> URLRequest {
         let url = try Constants.baseURL.asURL()
-        let str = URL(string: url.appendingPathComponent(path).absoluteString.removingPercentEncoding ?? "")
+        var urlPath = url.appendingPathComponent(path).absoluteString.removingPercentEncoding ?? ""
+        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let str = URL(string: urlPath)
         var request = URLRequest(url: str!)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers

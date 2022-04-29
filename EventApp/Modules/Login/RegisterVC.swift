@@ -65,4 +65,68 @@ class RegisterVC: UIViewController {
         shadowGreen(Vw: confirPasswordTF, radius: 15)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = ""
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.title = ""
+    }
+    
+    func validateTextFields() -> Bool{
+        
+        if firstNameTF.text == "" {
+            showSnackBar(message: "First name required", duration: .middle)
+            return false
+        } else if lastNameTF.text == "" {
+            showSnackBar(message: "Last name required", duration: .middle)
+            return false
+        } else if emailTF.text == "" {
+            showSnackBar(message: "Email required", duration: .middle)
+            return false
+        }else if passwordTF.text == "" {
+            showSnackBar(message: "Password required", duration: .middle)
+            return false
+        }else if confirPasswordTF.text == "" {
+            showSnackBar(message: "Confirm password required", duration: .middle)
+            return false
+        }
+        if let email = emailTF.text {
+            if !validateEmail(enteredEmail: email){
+                showSnackBar(message: "Invalid Email", duration: .short)
+                return false
+            }
+        }
+        if let password = passwordTF.text, let confirmPassword = confirPasswordTF.text {
+            if password != confirmPassword {
+                showSnackBar(message: "Passwords do not match", duration: .short)
+                return false
+            }
+        }
+        return true
+    }
+    
+    @IBAction func registerBtnTapped(_ sender: UIButton) {
+        if validateTextFields() {
+            if  let password = confirPasswordTF.text, let email = emailTF.text {
+                let userName = "\(firstNameTF.text ?? "") \(lastNameTF.text ?? "")"
+                Remote.shared.registerUser(userName: userName, password: password, email: email) { userData in
+                    if userData.requestStatus == Constants.successMsg {
+                        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "LoginOtpVC") as! LoginOtpVC
+                        vc.useType = .registration
+                        vc.userID = userData.content?.first?.userregid
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    } else {
+                        showSnackBar(message: userData.error ?? "", duration: .middle)
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
 }

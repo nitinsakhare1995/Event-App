@@ -8,16 +8,20 @@
 import UIKit
 
 class SpeakersVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    var data = [SpeakerContentModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "SpeakersCell", bundle: nil), forCellReuseIdentifier: "SpeakersCell")
+        
+        showSpeakersList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,13 +31,10 @@ class SpeakersVC: UIViewController {
         navigationController?.navigationBar.tintColor = .darkGreen
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGreen,
                                                                    NSAttributedString.Key.font: R.font.gorditaMedium(size: 20.0)]
-        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
-        
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,16 +42,21 @@ class SpeakersVC: UIViewController {
         self.title = ""
     }
     
+    func showSpeakersList() {
+        Remote.shared.getSpeakersList { userData in
+            self.data = userData.content ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
-
-    
-
 }
 
 extension SpeakersVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.data.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,7 +74,7 @@ extension SpeakersVC: UITableViewDataSource {
 }
 
 extension SpeakersVC: UITableViewDelegate {
-   
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "SpeakerDetailsVC") as! SpeakerDetailsVC
         self.navigationController?.pushViewController(vc, animated: true)

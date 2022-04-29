@@ -30,6 +30,51 @@ class Remote {
         }
     }
     
+    func getSpeakersList(completionHandler: @escaping (_ userData: SpeakerModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getSpeakersList).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<SpeakerModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func registerUser(userName: String, password: String, email: String, completionHandler: @escaping (_ userData: LoginModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.registerUser(userName: userName, password: password, email: email)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<LoginModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func verifyOtp(userId: Int, otp: String, completionHandler: @escaping (_ userData: LoginModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.verifyOtp(userId: userId, otp: otp)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<LoginModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     //
     //
     //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {

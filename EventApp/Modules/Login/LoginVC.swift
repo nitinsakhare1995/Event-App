@@ -39,6 +39,20 @@ class LoginVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = ""
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.title = ""
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func loginUser() {
         if validateTextFields() {
             if let email = emailTF.text, let password = passwordTF.text {
@@ -76,6 +90,11 @@ class LoginVC: UIViewController {
         }
     }
     
+    @IBAction func openForgotPasswordScreen(_ sender: UIButton) {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func validateTextFields() -> Bool{
         
