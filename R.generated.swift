@@ -1227,6 +1227,7 @@ struct _R: Rswift.Validatable {
       let name = "Speakers"
       let speakerDetailsVC = StoryboardViewControllerResource<SpeakerDetailsVC>(identifier: "SpeakerDetailsVC")
       let speakersVC = StoryboardViewControllerResource<SpeakersVC>(identifier: "SpeakersVC")
+      let videosVC = StoryboardViewControllerResource<VideosVC>(identifier: "VideosVC")
 
       func speakerDetailsVC(_: Void = ()) -> SpeakerDetailsVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: speakerDetailsVC)
@@ -1234,6 +1235,10 @@ struct _R: Rswift.Validatable {
 
       func speakersVC(_: Void = ()) -> SpeakersVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: speakersVC)
+      }
+
+      func videosVC(_: Void = ()) -> VideosVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: videosVC)
       }
 
       static func validate() throws {
@@ -1249,6 +1254,7 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.speakers().speakerDetailsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'speakerDetailsVC' could not be loaded from storyboard 'Speakers' as 'SpeakerDetailsVC'.") }
         if _R.storyboard.speakers().speakersVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'speakersVC' could not be loaded from storyboard 'Speakers' as 'SpeakersVC'.") }
+        if _R.storyboard.speakers().videosVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'videosVC' could not be loaded from storyboard 'Speakers' as 'VideosVC'.") }
       }
 
       fileprivate init() {}

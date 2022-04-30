@@ -100,6 +100,10 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func openVideosScreen(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "VideosVC") as! VideosVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 
