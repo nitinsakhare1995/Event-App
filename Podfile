@@ -14,5 +14,6 @@ target 'EventApp' do
   pod 'SVProgressHUD'
   pod 'IQKeyboardManagerSwift'
   pod "TTGSnackbar"
-
+  pod 'Kingfisher', '~> 7.0'
+  
 end

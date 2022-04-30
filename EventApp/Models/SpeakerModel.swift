@@ -12,18 +12,18 @@ struct SpeakerModel : Mappable {
     var requestStatus : String?
     var error : String?
     var content : [SpeakerContentModel]?
-
+    
     init?(map: Map) {
-
+        
     }
-
+    
     mutating func mapping(map: Map) {
-
+        
         requestStatus <- map["requestStatus"]
         error <- map["Error"]
         content <- map["Content"]
     }
-
+    
 }
 
 struct SpeakerContentModel : Mappable {
@@ -35,13 +35,14 @@ struct SpeakerContentModel : Mappable {
     var speaker_email : String?
     var designation : String?
     var profile_pic : String?
-
+    var http_url : String?
+    
     init?(map: Map) {
-
+        
     }
-
+    
     mutating func mapping(map: Map) {
-
+        
         speaker_id <- map["speaker_id"]
         name <- map["name"]
         company_name <- map["company_name"]
@@ -50,6 +51,7 @@ struct SpeakerContentModel : Mappable {
         speaker_email <- map["speaker_email"]
         designation <- map["designation"]
         profile_pic <- map["profile_pic"]
+        http_url <- map["http_url"]
     }
-
+    
 }

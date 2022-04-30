@@ -14,6 +14,7 @@ public enum APIRequest: URLRequestConvertible {
     case getSpeakersList
     case registerUser(userName: String, password: String, email: String)
     case verifyOtp(userId: Int, otp: String)
+    case getVideoList(id: Int)
     
     var method: HTTPMethod {
         switch self {
@@ -32,6 +33,8 @@ public enum APIRequest: URLRequestConvertible {
             return "?reqAction=signup&name=\(userName)&email_id=\(email)&password=\(password)"
         case .verifyOtp(let userId, let otp):
             return "?reqAction=userchkotp&userregid=\(userId)&otp=\(otp)"
+        case .getVideoList(let id):
+            return "?reqAction=videos&videotypeid=\(id)"
         }
     }
     

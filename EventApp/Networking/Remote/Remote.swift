@@ -75,6 +75,21 @@ class Remote {
         }
     }
     
+    func getVideoList(id: Int, completionHandler: @escaping (_ userData: VideoModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getVideoList(id: id)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<VideoModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     //
     //
     //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {

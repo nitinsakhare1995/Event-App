@@ -83,6 +83,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="imgSpeaker" destination="pER-G8-iMe" id="den-qK-H20"/>
+                <outlet property="lblDesignation" destination="8WK-bk-mW2" id="L7X-OV-FhV"/>
+                <outlet property="lblSpeakerName" destination="dIY-WJ-Fgg" id="f6c-gL-a2S"/>
                 <outlet property="mainView" destination="VhS-RE-O5a" id="QJV-Bd-UzV"/>
             </connections>
             <point key="canvasLocation" x="203.62318840579712" y="172.09821428571428"/>

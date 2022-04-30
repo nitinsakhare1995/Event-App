@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum VideoType: Int {
+    case featuredVideos = 1
+    case sessionVideo = 2
+    case speakerVideo = 3
+}
+
 struct Constants {
     
     static let baseURL = "http://unifytrack.com/runtime_events/webservices.php"

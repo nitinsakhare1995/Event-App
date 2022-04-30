@@ -14,7 +14,6 @@ public func showLoader() {
     SVProgressHUD.show()
 }
 
-
 public func hideLoader() {
     SVProgressHUD.dismiss()
 }

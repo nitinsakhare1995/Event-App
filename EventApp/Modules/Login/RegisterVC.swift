@@ -118,6 +118,7 @@ class RegisterVC: UIViewController {
                         let vc = mainStoryBoard.instantiateViewController(withIdentifier: "LoginOtpVC") as! LoginOtpVC
                         vc.useType = .registration
                         vc.userID = userData.content?.first?.userregid
+                        vc.email = email
                         self.navigationController?.pushViewController(vc, animated: true)
                     } else {
                         showSnackBar(message: userData.error ?? "", duration: .middle)

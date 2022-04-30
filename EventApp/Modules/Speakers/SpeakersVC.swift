@@ -66,6 +66,7 @@ extension SpeakersVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.speakersCell, for: indexPath) as? SpeakersCell {
             cell.selectionStyle = .none
+            cell.configureCell(data: self.data[indexPath.row])
             return cell
         }
         return UITableViewCell()

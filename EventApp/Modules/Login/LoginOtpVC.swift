@@ -16,6 +16,7 @@ class LoginOtpVC: UIViewController {
     
     var userID: Int?
     var useType: LoginSuccessType?
+    var email: String?
     
     var timer = Timer()
     var second = 30
@@ -82,8 +83,11 @@ class LoginOtpVC: UIViewController {
     }
     
     @IBAction func btnResendEmail(_ sender: UIButton) {
-        print("Resend")
-        startTimer()
+        if let email = self.email {
+            print("Resend")
+            startTimer()
+        }
+        
     }
     
     func validateTextFields() -> Bool{
