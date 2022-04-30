@@ -1,14 +1,14 @@
 //
-//  BlogsVC.swift
+//  MapsVC.swift
 //  EventApp
 //
-//  Created by Nitin Sakhare on 24/04/22.
+//  Created by Nitin Sakhare on 30/04/22.
 //
 
 import UIKit
 
-class BlogsVC: UIViewController {
-    
+class MapsVC: UIViewController {
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet{
@@ -16,9 +16,9 @@ class BlogsVC: UIViewController {
                 searchTextfield.layer.borderColor = UIColor.darkGreen.cgColor
                 searchTextfield.layer.borderWidth = 1
                 searchTextfield.layer.cornerRadius = 18
-                searchTextfield.backgroundColor = .clear
+                searchTextfield.backgroundColor = .white
                 let placeholderAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGreen, NSAttributedString.Key.font: R.font.gorditaRegular(size: 12)]
-                let attributedPlaceholder = NSAttributedString(string: "Search: Topic, Category", attributes: placeholderAttributes)
+                let attributedPlaceholder = NSAttributedString(string: "Search: Venue, Event, Speaker", attributes: placeholderAttributes)
                 searchTextfield.attributedPlaceholder = attributedPlaceholder
                 (searchTextfield.leftView as? UIImageView)?.tintColor = .darkGreen
                 searchTextfield.textColor = .darkGreen
@@ -29,11 +29,10 @@ class BlogsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.register(UINib(nibName: "BlogsCell", bundle: nil), forCellReuseIdentifier: "BlogsCell")
+        tableView.register(UINib(nibName: "MapCell", bundle: nil), forCellReuseIdentifier: "MapCell")
         
         searchBar.backgroundImage = UIImage()
         
@@ -41,7 +40,7 @@ class BlogsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "Blogs"
+        self.title = ""
         
         navigationController?.navigationBar.tintColor = .darkGreen
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGreen,
@@ -58,33 +57,32 @@ class BlogsVC: UIViewController {
         super.viewWillDisappear(animated)
         self.title = ""
     }
-    
-    @objc public func didTapMenuButton() {
-        self.sideMenuViewController?.presentLeftMenuViewController()
-    }
-    
+
 }
 
-extension BlogsVC: UITableViewDataSource {
+extension MapsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 350
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.blogsCell, for: indexPath) as? BlogsCell {
-            cell.selectionStyle = .none
-            return cell
-        }
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell", for: indexPath) as! MapCell
+        cell.selectionStyle = .none
+        return cell
     }
     
 }
 
-extension BlogsVC: UITableViewDelegate {
+extension MapsVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Maps", bundle: nil).instantiateViewController(withIdentifier: "MapDetailVC") as! MapDetailVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

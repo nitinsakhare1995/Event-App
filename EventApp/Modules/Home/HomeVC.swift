@@ -105,6 +105,14 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func openMapsScreen(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Maps", bundle: nil).instantiateViewController(withIdentifier: "MapsVC") as! MapsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func openAgendaScreen(_ sender: UIButton) {
+    }
+    
 }
 
 

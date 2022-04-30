@@ -90,12 +90,14 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `Maps`.
+    static let maps = _R.storyboard.maps()
     /// Storyboard `Other`.
     static let other = _R.storyboard.other()
     /// Storyboard `Speakers`.
@@ -114,6 +116,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Maps", bundle: ...)`
+    static func maps(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.maps)
     }
     #endif
 
@@ -284,7 +293,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 32 images.
+  /// This `R.image` struct is generated, and contains static references to 39 images.
   struct image {
     /// Image `Angela Needle`.
     static let angelaNeedle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Angela Needle")
@@ -308,22 +317,34 @@ struct R: Rswift.Validatable {
     static let agenda = Rswift.ImageResource(bundle: R.hostingBundle, name: "agenda")
     /// Image `blogs`.
     static let blogs = Rswift.ImageResource(bundle: R.hostingBundle, name: "blogs")
+    /// Image `call`.
+    static let call = Rswift.ImageResource(bundle: R.hostingBundle, name: "call")
     /// Image `cancel`.
     static let cancel = Rswift.ImageResource(bundle: R.hostingBundle, name: "cancel")
+    /// Image `direction`.
+    static let direction = Rswift.ImageResource(bundle: R.hostingBundle, name: "direction")
     /// Image `drawer`.
     static let drawer = Rswift.ImageResource(bundle: R.hostingBundle, name: "drawer")
     /// Image `eventsSide`.
     static let eventsSide = Rswift.ImageResource(bundle: R.hostingBundle, name: "eventsSide")
     /// Image `facebook`.
     static let facebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "facebook")
+    /// Image `galleryThumbnail`.
+    static let galleryThumbnail = Rswift.ImageResource(bundle: R.hostingBundle, name: "galleryThumbnail")
     /// Image `image 7`.
     static let image7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "image 7")
     /// Image `linkedin`.
     static let linkedin = Rswift.ImageResource(bundle: R.hostingBundle, name: "linkedin")
     /// Image `linkweb`.
     static let linkweb = Rswift.ImageResource(bundle: R.hostingBundle, name: "linkweb")
+    /// Image `map icon`.
+    static let mapIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "map icon")
+    /// Image `mapsTableThumbnail`.
+    static let mapsTableThumbnail = Rswift.ImageResource(bundle: R.hostingBundle, name: "mapsTableThumbnail")
     /// Image `maps`.
     static let maps = Rswift.ImageResource(bundle: R.hostingBundle, name: "maps")
+    /// Image `navigation`.
+    static let navigation = Rswift.ImageResource(bundle: R.hostingBundle, name: "navigation")
     /// Image `notification`.
     static let notification = Rswift.ImageResource(bundle: R.hostingBundle, name: "notification")
     /// Image `personSide`.
@@ -346,6 +367,8 @@ struct R: Rswift.Validatable {
     static let twitter = Rswift.ImageResource(bundle: R.hostingBundle, name: "twitter")
     /// Image `videos`.
     static let videos = Rswift.ImageResource(bundle: R.hostingBundle, name: "videos")
+    /// Image `web`.
+    static let web = Rswift.ImageResource(bundle: R.hostingBundle, name: "web")
     /// Image `white_logo`.
     static let white_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "white_logo")
     /// Image `www`.
@@ -429,9 +452,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "call", bundle: ..., traitCollection: ...)`
+    static func call(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.call, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "cancel", bundle: ..., traitCollection: ...)`
     static func cancel(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.cancel, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "direction", bundle: ..., traitCollection: ...)`
+    static func direction(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.direction, compatibleWith: traitCollection)
     }
     #endif
 
@@ -457,6 +494,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "galleryThumbnail", bundle: ..., traitCollection: ...)`
+    static func galleryThumbnail(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.galleryThumbnail, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "image 7", bundle: ..., traitCollection: ...)`
     static func image7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.image7, compatibleWith: traitCollection)
@@ -478,9 +522,30 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "map icon", bundle: ..., traitCollection: ...)`
+    static func mapIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mapIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "maps", bundle: ..., traitCollection: ...)`
     static func maps(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.maps, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mapsTableThumbnail", bundle: ..., traitCollection: ...)`
+    static func mapsTableThumbnail(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mapsTableThumbnail, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "navigation", bundle: ..., traitCollection: ...)`
+    static func navigation(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navigation, compatibleWith: traitCollection)
     }
     #endif
 
@@ -562,6 +627,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "web", bundle: ..., traitCollection: ...)`
+    static func web(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.web, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "white_logo", bundle: ..., traitCollection: ...)`
     static func white_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.white_logo, compatibleWith: traitCollection)
@@ -609,7 +681,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
   struct nib {
     /// Nib `BlogsCell`.
     static let blogsCell = _R.nib._BlogsCell()
@@ -617,6 +689,10 @@ struct R: Rswift.Validatable {
     static let homeSpeakersCell = _R.nib._HomeSpeakersCell()
     /// Nib `HomeVideosCell`.
     static let homeVideosCell = _R.nib._HomeVideosCell()
+    /// Nib `MapCell`.
+    static let mapCell = _R.nib._MapCell()
+    /// Nib `MapGalleryCell`.
+    static let mapGalleryCell = _R.nib._MapGalleryCell()
     /// Nib `NotificationsCell`.
     static let notificationsCell = _R.nib._NotificationsCell()
     /// Nib `ProfileEventCell`.
@@ -655,6 +731,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.homeVideosCell) instead")
     static func homeVideosCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.homeVideosCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MapCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mapCell) instead")
+    static func mapCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mapCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MapGalleryCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mapGalleryCell) instead")
+    static func mapGalleryCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mapGalleryCell)
     }
     #endif
 
@@ -732,6 +824,14 @@ struct R: Rswift.Validatable {
 
     static func homeVideosCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HomeVideosCell? {
       return R.nib.homeVideosCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HomeVideosCell
+    }
+
+    static func mapCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MapCell? {
+      return R.nib.mapCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MapCell
+    }
+
+    static func mapGalleryCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MapGalleryCell? {
+      return R.nib.mapGalleryCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MapGalleryCell
     }
 
     static func notificationsCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NotificationsCell? {
@@ -824,6 +924,8 @@ struct _R: Rswift.Validatable {
       try _BlogsCell.validate()
       try _HomeSpeakersCell.validate()
       try _HomeVideosCell.validate()
+      try _MapCell.validate()
+      try _MapGalleryCell.validate()
       try _NotificationsCell.validate()
       try _ProfileResourcesCell.validate()
       try _ResourcesCell.validate()
@@ -888,6 +990,44 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "image 7", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'image 7' is used in nib 'HomeVideosCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MapCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "MapCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MapCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MapCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'call' is used in nib 'MapCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "map icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map icon' is used in nib 'MapCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mapsTableThumbnail", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mapsTableThumbnail' is used in nib 'MapCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "redirect", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'redirect' is used in nib 'MapCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "web", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'web' is used in nib 'MapCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MapGalleryCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "MapGalleryCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> MapGalleryCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MapGalleryCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "galleryThumbnail", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'galleryThumbnail' is used in nib 'MapGalleryCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -1060,6 +1200,9 @@ struct _R: Rswift.Validatable {
       try main.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try maps.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try other.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1182,6 +1325,40 @@ struct _R: Rswift.Validatable {
         if _R.storyboard.main().contentViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'contentViewController' could not be loaded from storyboard 'Main' as 'UIKit.UINavigationController'.") }
         if _R.storyboard.main().leftMenuViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'leftMenuViewController' could not be loaded from storyboard 'Main' as 'SideMenuVC'.") }
         if _R.storyboard.main().rootController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'rootController' could not be loaded from storyboard 'Main' as 'SideMenuRootVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct maps: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let mapDetailVC = StoryboardViewControllerResource<MapDetailVC>(identifier: "MapDetailVC")
+      let mapsVC = StoryboardViewControllerResource<MapsVC>(identifier: "MapsVC")
+      let name = "Maps"
+
+      func mapDetailVC(_: Void = ()) -> MapDetailVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mapDetailVC)
+      }
+
+      func mapsVC(_: Void = ()) -> MapsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mapsVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'call' is used in storyboard 'Maps', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "direction", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'direction' is used in storyboard 'Maps', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "map icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map icon' is used in storyboard 'Maps', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mapsTableThumbnail", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mapsTableThumbnail' is used in storyboard 'Maps', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "navigation", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navigation' is used in storyboard 'Maps', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "redirect", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'redirect' is used in storyboard 'Maps', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "web", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'web' is used in storyboard 'Maps', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'Maps', but couldn't be loaded.") }
+        }
+        if _R.storyboard.maps().mapDetailVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mapDetailVC' could not be loaded from storyboard 'Maps' as 'MapDetailVC'.") }
+        if _R.storyboard.maps().mapsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mapsVC' could not be loaded from storyboard 'Maps' as 'MapsVC'.") }
       }
 
       fileprivate init() {}

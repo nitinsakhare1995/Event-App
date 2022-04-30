@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1829FD43281D38320098BCD4 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1829FD42281D38320098BCD4 /* Maps.storyboard */; };
+		1829FD45281D39280098BCD4 /* MapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829FD44281D39280098BCD4 /* MapsVC.swift */; };
+		1829FD49281D3A710098BCD4 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829FD47281D3A710098BCD4 /* MapCell.swift */; };
+		1829FD4A281D3A710098BCD4 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829FD48281D3A710098BCD4 /* MapCell.xib */; };
+		1829FD4C281D43A30098BCD4 /* MapDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829FD4B281D43A30098BCD4 /* MapDetailVC.swift */; };
+		1829FD4F281D46D80098BCD4 /* MapGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829FD4D281D46D80098BCD4 /* MapGalleryCell.swift */; };
+		1829FD50281D46D80098BCD4 /* MapGalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829FD4E281D46D80098BCD4 /* MapGalleryCell.xib */; };
 		1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D23B2813DB44007BFB6B /* UIColorExtension.swift */; };
 		1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */; };
 		1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23F2813DC3E007BFB6B /* Gordita Light.otf */; };
@@ -75,6 +82,13 @@
 
 /* Begin PBXFileReference section */
 		16A05B1AE0EE8B5D2837B018 /* Pods-EventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventApp.release.xcconfig"; path = "Target Support Files/Pods-EventApp/Pods-EventApp.release.xcconfig"; sourceTree = "<group>"; };
+		1829FD42281D38320098BCD4 /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
+		1829FD44281D39280098BCD4 /* MapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsVC.swift; sourceTree = "<group>"; };
+		1829FD47281D3A710098BCD4 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		1829FD48281D3A710098BCD4 /* MapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
+		1829FD4B281D43A30098BCD4 /* MapDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailVC.swift; sourceTree = "<group>"; };
+		1829FD4D281D46D80098BCD4 /* MapGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGalleryCell.swift; sourceTree = "<group>"; };
+		1829FD4E281D46D80098BCD4 /* MapGalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapGalleryCell.xib; sourceTree = "<group>"; };
 		1858D23B2813DB44007BFB6B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Regular.otf"; sourceTree = "<group>"; };
 		1858D23F2813DC3E007BFB6B /* Gordita Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Light.otf"; sourceTree = "<group>"; };
@@ -156,6 +170,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1829FD41281D38260098BCD4 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				1829FD46281D3A630098BCD4 /* Cell */,
+				1829FD42281D38320098BCD4 /* Maps.storyboard */,
+				1829FD44281D39280098BCD4 /* MapsVC.swift */,
+				1829FD4B281D43A30098BCD4 /* MapDetailVC.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		1829FD46281D3A630098BCD4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1829FD47281D3A710098BCD4 /* MapCell.swift */,
+				1829FD48281D3A710098BCD4 /* MapCell.xib */,
+				1829FD4D281D46D80098BCD4 /* MapGalleryCell.swift */,
+				1829FD4E281D46D80098BCD4 /* MapGalleryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		1858D23A2813DB34007BFB6B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +294,7 @@
 		18B49FE92812CFF900360119 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1829FD41281D38260098BCD4 /* Maps */,
 				189ED9E1281D0241007A3F9A /* Agenda */,
 				189ED9DE281CFB46007A3F9A /* Videos */,
 				18DBB18128154CC400C91443 /* Login */,
@@ -532,8 +569,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DBB0F8281411D300C91443 /* Speakers.storyboard in Resources */,
+				1829FD50281D46D80098BCD4 /* MapGalleryCell.xib in Resources */,
 				18DBB0F228140ACC00C91443 /* NotificationsCell.xib in Resources */,
 				1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */,
+				1829FD4A281D3A710098BCD4 /* MapCell.xib in Resources */,
 				18DBB16B2815191E00C91443 /* User.storyboard in Resources */,
 				18DBB174281525BF00C91443 /* ProfileEventCell.xib in Resources */,
 				18DBB1802815314500C91443 /* BlogsCell.xib in Resources */,
@@ -550,6 +589,7 @@
 				1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */,
 				1858D2452813DC3F007BFB6B /* Gordita Bold.otf in Resources */,
 				18DBB11828146DD200C91443 /* ResourcesCell.xib in Resources */,
+				1829FD43281D38320098BCD4 /* Maps.storyboard in Resources */,
 				1858D24B2813F76B007BFB6B /* HomeVideosCell.xib in Resources */,
 				18B49FD02812BB4000360119 /* Main.storyboard in Resources */,
 			);
@@ -629,6 +669,7 @@
 				189ED9DD281CF74B007A3F9A /* VideoModel.swift in Sources */,
 				18DBB1122814683100C91443 /* SponsorsCell.swift in Sources */,
 				18DBB17F2815314500C91443 /* BlogsCell.swift in Sources */,
+				1829FD49281D3A710098BCD4 /* MapCell.swift in Sources */,
 				18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */,
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18DBB173281525BF00C91443 /* ProfileEventCell.swift in Sources */,
@@ -644,6 +685,7 @@
 				18DBB187281557C800C91443 /* ForgotPasswordVC.swift in Sources */,
 				18DBB177281525CE00C91443 /* ProfileResourcesCell.swift in Sources */,
 				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
+				1829FD45281D39280098BCD4 /* MapsVC.swift in Sources */,
 				18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */,
 				1858D24A2813F76B007BFB6B /* HomeVideosCell.swift in Sources */,
 				18DBB19728157D2C00C91443 /* SpeakerModel.swift in Sources */,
@@ -656,12 +698,14 @@
 				18DBB0FE2814139800C91443 /* SpeakersCell.swift in Sources */,
 				18DBB11E281473AF00C91443 /* SideMenuRootVC.swift in Sources */,
 				18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */,
+				1829FD4F281D46D80098BCD4 /* MapGalleryCell.swift in Sources */,
 				18DBB107281425D500C91443 /* StringExtension.swift in Sources */,
 				18DBB11A28146DE000C91443 /* ResourcesVC.swift in Sources */,
 				18B49FDF2812C77000360119 /* R.generated.swift in Sources */,
 				18DBB10428141FB000C91443 /* SpeakersSessionsCell.swift in Sources */,
 				18DBB19128156C0500C91443 /* LoginModel.swift in Sources */,
 				18DBB18328154CF800C91443 /* LoginOptionsVC.swift in Sources */,
+				1829FD4C281D43A30098BCD4 /* MapDetailVC.swift in Sources */,
 				18DBB18F28155E0C00C91443 /* RegisterVC.swift in Sources */,
 				18DBB16E2815193100C91443 /* UserProfileVC.swift in Sources */,
 				18B49FE62812CB0D00360119 /* Constants.swift in Sources */,
