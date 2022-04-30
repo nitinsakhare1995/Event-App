@@ -90,6 +90,36 @@ class Remote {
         }
     }
     
+    func forgotPassword(email: String, completionHandler: @escaping (_ userData: LoginStrModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.forgotPassword(email: email)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<LoginStrModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func resetPassword(password: String, userId: Int, completionHandler: @escaping (_ userData: LoginStrModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.resetPassword(password: password, userId: userId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<LoginStrModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     //
     //
     //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {

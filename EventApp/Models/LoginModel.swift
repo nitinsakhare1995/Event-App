@@ -42,3 +42,38 @@ struct LoginContentModel : Mappable {
 
 }
 
+struct LoginStrModel : Mappable {
+    var requestStatus : String?
+    var msg : String?
+    var error : String?
+    var content : [LoginStrContentModel]?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        
+        requestStatus <- map["requestStatus"]
+        msg <- map["msg"]
+        error <- map["Error"]
+        content <- map["Content"]
+    }
+    
+}
+
+struct LoginStrContentModel : Mappable {
+    var userregid : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        userregid <- map["userregid"]
+    }
+
+}
+
+

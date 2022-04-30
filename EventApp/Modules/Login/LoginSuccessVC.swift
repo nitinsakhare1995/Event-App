@@ -33,7 +33,7 @@ class LoginSuccessVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.title = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         

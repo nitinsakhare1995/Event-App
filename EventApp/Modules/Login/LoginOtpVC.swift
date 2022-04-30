@@ -37,6 +37,12 @@ class LoginOtpVC: UIViewController {
         shadowGreen(Vw: otpTF, radius: 15)
         
         startTimer()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = ""
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,9 +75,16 @@ class LoginOtpVC: UIViewController {
                 Remote.shared.verifyOtp(userId: userID, otp: otp) { result in
                     if result.requestStatus == Constants.successMsg {
                         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc = mainStoryBoard.instantiateViewController(withIdentifier: "LoginSuccessVC") as! LoginSuccessVC
-                        vc.useType = self.useType
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        if self.useType == .registration {
+                            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "LoginSuccessVC") as! LoginSuccessVC
+                            vc.useType = self.useType
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        } else {
+                            let vc = mainStoryBoard.instantiateViewController(withIdentifier: "ResetPasswordVC") as! ResetPasswordVC
+                            vc.useType = self.useType
+                            vc.userId = self.userID
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
                     } else {
                         showSnackBar(message: result.error ?? "", duration: .middle)
                     }
@@ -84,11 +97,18 @@ class LoginOtpVC: UIViewController {
     
     @IBAction func btnResendEmail(_ sender: UIButton) {
         if let email = self.email {
-            print("Resend")
-            startTimer()
+            Remote.shared.forgotPassword(email: email) { userData in
+                if userData.requestStatus == Constants.successMsg {
+                    self.startTimer()
+                    showSnackBar(message: userData.msg ?? "", duration: .middle)
+                } else {
+                    showSnackBar(message: userData.error ?? "", duration: .middle)
+                }
+            }
         }
         
     }
+    
     
     func validateTextFields() -> Bool{
         
