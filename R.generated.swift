@@ -90,8 +90,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
+    /// Storyboard `Event`.
+    static let event = _R.storyboard.event()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
@@ -104,6 +106,13 @@ struct R: Rswift.Validatable {
     static let speakers = _R.storyboard.speakers()
     /// Storyboard `User`.
     static let user = _R.storyboard.user()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Event", bundle: ...)`
+    static func event(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.event)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -293,7 +302,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 39 images.
+  /// This `R.image` struct is generated, and contains static references to 41 images.
   struct image {
     /// Image `Angela Needle`.
     static let angelaNeedle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Angela Needle")
@@ -325,8 +334,12 @@ struct R: Rswift.Validatable {
     static let direction = Rswift.ImageResource(bundle: R.hostingBundle, name: "direction")
     /// Image `drawer`.
     static let drawer = Rswift.ImageResource(bundle: R.hostingBundle, name: "drawer")
+    /// Image `eventlowerBG`.
+    static let eventlowerBG = Rswift.ImageResource(bundle: R.hostingBundle, name: "eventlowerBG")
     /// Image `eventsSide`.
     static let eventsSide = Rswift.ImageResource(bundle: R.hostingBundle, name: "eventsSide")
+    /// Image `evntDet`.
+    static let evntDet = Rswift.ImageResource(bundle: R.hostingBundle, name: "evntDet")
     /// Image `facebook`.
     static let facebook = Rswift.ImageResource(bundle: R.hostingBundle, name: "facebook")
     /// Image `galleryThumbnail`.
@@ -480,9 +493,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "eventlowerBG", bundle: ..., traitCollection: ...)`
+    static func eventlowerBG(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.eventlowerBG, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "eventsSide", bundle: ..., traitCollection: ...)`
     static func eventsSide(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.eventsSide, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "evntDet", bundle: ..., traitCollection: ...)`
+    static func evntDet(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.evntDet, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1194,6 +1221,9 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try event.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1212,6 +1242,32 @@ struct _R: Rswift.Validatable {
       try user.validate()
       #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct event: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let eventDetailVC = StoryboardViewControllerResource<EventDetailVC>(identifier: "EventDetailVC")
+      let name = "Event"
+
+      func eventDetailVC(_: Void = ()) -> EventDetailVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: eventDetailVC)
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "ArrowWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ArrowWhite' is used in storyboard 'Event', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "eventlowerBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'eventlowerBG' is used in storyboard 'Event', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "evntDet", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'evntDet' is used in storyboard 'Event', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "DarkGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'DarkGreen' is used in storyboard 'Event', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "LightGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightGreen' is used in storyboard 'Event', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'Event', but couldn't be loaded.") }
+        }
+        if _R.storyboard.event().eventDetailVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'eventDetailVC' could not be loaded from storyboard 'Event' as 'EventDetailVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {

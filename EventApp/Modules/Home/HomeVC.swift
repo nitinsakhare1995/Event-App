@@ -113,6 +113,10 @@ class HomeVC: UIViewController {
     @IBAction func openAgendaScreen(_ sender: UIButton) {
     }
     
+    @IBAction func goToEventDetailsScreen(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "Event", bundle: nil).instantiateViewController(withIdentifier: "EventDetailVC") as! EventDetailVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 

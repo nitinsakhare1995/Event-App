@@ -45,6 +45,15 @@ public func shadow(Vw: UIView, radius: Float) {
     Vw.layer.cornerRadius = CGFloat(radius)
 }
 
+public func removeShadow(Vw: UIView, radius: Float) {
+    Vw.layer.masksToBounds = false
+    Vw.layer.shadowColor = hexColor(hex: "#C4C4C4").cgColor
+    Vw.layer.shadowOffset = CGSize(width: 0, height: 0)
+    Vw.layer.shadowRadius = 0.0
+    Vw.layer.shadowOpacity = 0.0
+    Vw.layer.cornerRadius = CGFloat(radius)
+}
+
 public func shadowGreen(Vw: UIView, radius: Float) {
     Vw.layer.masksToBounds = false
     Vw.layer.shadowColor = UIColor.darkGreen.cgColor

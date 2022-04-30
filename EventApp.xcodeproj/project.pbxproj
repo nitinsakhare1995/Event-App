@@ -14,6 +14,8 @@
 		1829FD4C281D43A30098BCD4 /* MapDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829FD4B281D43A30098BCD4 /* MapDetailVC.swift */; };
 		1829FD4F281D46D80098BCD4 /* MapGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829FD4D281D46D80098BCD4 /* MapGalleryCell.swift */; };
 		1829FD50281D46D80098BCD4 /* MapGalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829FD4E281D46D80098BCD4 /* MapGalleryCell.xib */; };
+		1829FD53281D4B830098BCD4 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829FD52281D4B830098BCD4 /* EventDetailVC.swift */; };
+		1829FD55281D4BF40098BCD4 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1829FD54281D4BF40098BCD4 /* Event.storyboard */; };
 		1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D23B2813DB44007BFB6B /* UIColorExtension.swift */; };
 		1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */; };
 		1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23F2813DC3E007BFB6B /* Gordita Light.otf */; };
@@ -89,6 +91,8 @@
 		1829FD4B281D43A30098BCD4 /* MapDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailVC.swift; sourceTree = "<group>"; };
 		1829FD4D281D46D80098BCD4 /* MapGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGalleryCell.swift; sourceTree = "<group>"; };
 		1829FD4E281D46D80098BCD4 /* MapGalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapGalleryCell.xib; sourceTree = "<group>"; };
+		1829FD52281D4B830098BCD4 /* EventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
+		1829FD54281D4BF40098BCD4 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		1858D23B2813DB44007BFB6B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Regular.otf"; sourceTree = "<group>"; };
 		1858D23F2813DC3E007BFB6B /* Gordita Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Light.otf"; sourceTree = "<group>"; };
@@ -190,6 +194,15 @@
 				1829FD4E281D46D80098BCD4 /* MapGalleryCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		1829FD51281D4B680098BCD4 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				1829FD52281D4B830098BCD4 /* EventDetailVC.swift */,
+				1829FD54281D4BF40098BCD4 /* Event.storyboard */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		1858D23A2813DB34007BFB6B /* Extensions */ = {
@@ -294,6 +307,7 @@
 		18B49FE92812CFF900360119 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1829FD51281D4B680098BCD4 /* Event */,
 				1829FD41281D38260098BCD4 /* Maps */,
 				189ED9E1281D0241007A3F9A /* Agenda */,
 				189ED9DE281CFB46007A3F9A /* Videos */,
@@ -589,6 +603,7 @@
 				1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */,
 				1858D2452813DC3F007BFB6B /* Gordita Bold.otf in Resources */,
 				18DBB11828146DD200C91443 /* ResourcesCell.xib in Resources */,
+				1829FD55281D4BF40098BCD4 /* Event.storyboard in Resources */,
 				1829FD43281D38320098BCD4 /* Maps.storyboard in Resources */,
 				1858D24B2813F76B007BFB6B /* HomeVideosCell.xib in Resources */,
 				18B49FD02812BB4000360119 /* Main.storyboard in Resources */,
@@ -674,6 +689,7 @@
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18DBB173281525BF00C91443 /* ProfileEventCell.swift in Sources */,
 				18DBB18D28155D3700C91443 /* LoginSuccessVC.swift in Sources */,
+				1829FD53281D4B830098BCD4 /* EventDetailVC.swift in Sources */,
 				18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */,
 				18DBB18B28155BB900C91443 /* ResetPasswordVC.swift in Sources */,
 				1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */,
