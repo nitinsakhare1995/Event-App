@@ -18,6 +18,9 @@ class EventDetailVC: UIViewController {
     @IBOutlet weak var bottomDescView: UIView!
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     
+    var eventId: Int?
+    var galleryData = [EventDetail1Model]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,17 +28,26 @@ class EventDetailVC: UIViewController {
         galleryCollectionView.dataSource = self
         galleryCollectionView.register(UINib(nibName: "MapGalleryCell", bundle: nil), forCellWithReuseIdentifier: "MapGalleryCell")
         
+        
         topView.roundCorners([.layerMaxXMaxYCorner, .layerMinXMaxYCorner], radius: 20)
         topView.backgroundColor = UIColor.fromGradientWithDirection(.topToBottom, frame: topView.frame, colors:  [.lightGreen, .darkGreen])
         shadow(Vw: descView, radius: 20)
         shadow(Vw: bottomDescView, radius: 20)
-        
-        
        
+        getEventDetail()
         
-       
         setEventButton()
         
+    }
+    
+    func getEventDetail() {
+        Remote.shared.getEventDetails(eventId: 1) { userData in
+            self.galleryData = userData.content?.eventtabImages?.event1 ?? []
+            DispatchQueue.main.async {
+                self.galleryCollectionView.reloadData()
+            }
+            
+        }
     }
     
     func setEventButton() {
@@ -120,11 +132,15 @@ class EventDetailVC: UIViewController {
 extension EventDetailVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return galleryData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier: "MapGalleryCell", for: indexPath) as! MapGalleryCell
+        let baseImgURL = Constants.baseImgURL
+        let imgURL = self.galleryData[indexPath.row].eventgallery_pic ?? ""
+        let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
+        cell.imgGallery.kf.setImage(with: imgURLKF)
         return cell
     }
 }

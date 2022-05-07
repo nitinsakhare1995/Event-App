@@ -16,6 +16,11 @@
 		1829FD50281D46D80098BCD4 /* MapGalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829FD4E281D46D80098BCD4 /* MapGalleryCell.xib */; };
 		1829FD53281D4B830098BCD4 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1829FD52281D4B830098BCD4 /* EventDetailVC.swift */; };
 		1829FD55281D4BF40098BCD4 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1829FD54281D4BF40098BCD4 /* Event.storyboard */; };
+		184D70D82827068100EAA7EF /* EventDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70D72827068100EAA7EF /* EventDetailModel.swift */; };
+		184D70DA28270B0E00EAA7EF /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184D70D928270B0E00EAA7EF /* Agenda.storyboard */; };
+		184D70DE28270B7D00EAA7EF /* AgendaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70DC28270B7D00EAA7EF /* AgendaCell.swift */; };
+		184D70DF28270B7D00EAA7EF /* AgendaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184D70DD28270B7D00EAA7EF /* AgendaCell.xib */; };
+		184D70E128270E5700EAA7EF /* AgendaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70E028270E5700EAA7EF /* AgendaModel.swift */; };
 		1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D23B2813DB44007BFB6B /* UIColorExtension.swift */; };
 		1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */; };
 		1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23F2813DC3E007BFB6B /* Gordita Light.otf */; };
@@ -93,6 +98,11 @@
 		1829FD4E281D46D80098BCD4 /* MapGalleryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapGalleryCell.xib; sourceTree = "<group>"; };
 		1829FD52281D4B830098BCD4 /* EventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
 		1829FD54281D4BF40098BCD4 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		184D70D72827068100EAA7EF /* EventDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailModel.swift; sourceTree = "<group>"; };
+		184D70D928270B0E00EAA7EF /* Agenda.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Agenda.storyboard; sourceTree = "<group>"; };
+		184D70DC28270B7D00EAA7EF /* AgendaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaCell.swift; sourceTree = "<group>"; };
+		184D70DD28270B7D00EAA7EF /* AgendaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgendaCell.xib; sourceTree = "<group>"; };
+		184D70E028270E5700EAA7EF /* AgendaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaModel.swift; sourceTree = "<group>"; };
 		1858D23B2813DB44007BFB6B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Regular.otf"; sourceTree = "<group>"; };
 		1858D23F2813DC3E007BFB6B /* Gordita Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Light.otf"; sourceTree = "<group>"; };
@@ -205,6 +215,15 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		184D70DB28270B6B00EAA7EF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				184D70DC28270B7D00EAA7EF /* AgendaCell.swift */,
+				184D70DD28270B7D00EAA7EF /* AgendaCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		1858D23A2813DB34007BFB6B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +256,9 @@
 		189ED9E1281D0241007A3F9A /* Agenda */ = {
 			isa = PBXGroup;
 			children = (
+				184D70DB28270B6B00EAA7EF /* Cell */,
 				189ED9E2281D0256007A3F9A /* AgendaVC.swift */,
+				184D70D928270B0E00EAA7EF /* Agenda.storyboard */,
 			);
 			path = Agenda;
 			sourceTree = "<group>";
@@ -330,6 +351,8 @@
 				18DBB19028156C0500C91443 /* LoginModel.swift */,
 				18DBB19628157D2C00C91443 /* SpeakerModel.swift */,
 				189ED9DC281CF74B007A3F9A /* VideoModel.swift */,
+				184D70D72827068100EAA7EF /* EventDetailModel.swift */,
+				184D70E028270E5700EAA7EF /* AgendaModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -586,6 +609,7 @@
 				1829FD50281D46D80098BCD4 /* MapGalleryCell.xib in Resources */,
 				18DBB0F228140ACC00C91443 /* NotificationsCell.xib in Resources */,
 				1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */,
+				184D70DA28270B0E00EAA7EF /* Agenda.storyboard in Resources */,
 				1829FD4A281D3A710098BCD4 /* MapCell.xib in Resources */,
 				18DBB16B2815191E00C91443 /* User.storyboard in Resources */,
 				18DBB174281525BF00C91443 /* ProfileEventCell.xib in Resources */,
@@ -598,6 +622,7 @@
 				18DBB10528141FB000C91443 /* SpeakersSessionsCell.xib in Resources */,
 				1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */,
 				18B49FD52812BB4200360119 /* LaunchScreen.storyboard in Resources */,
+				184D70DF28270B7D00EAA7EF /* AgendaCell.xib in Resources */,
 				18DBB1132814683100C91443 /* SponsorsCell.xib in Resources */,
 				18B49FD22812BB4200360119 /* Assets.xcassets in Resources */,
 				1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */,
@@ -685,6 +710,7 @@
 				18DBB1122814683100C91443 /* SponsorsCell.swift in Sources */,
 				18DBB17F2815314500C91443 /* BlogsCell.swift in Sources */,
 				1829FD49281D3A710098BCD4 /* MapCell.swift in Sources */,
+				184D70D82827068100EAA7EF /* EventDetailModel.swift in Sources */,
 				18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */,
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18DBB173281525BF00C91443 /* ProfileEventCell.swift in Sources */,
@@ -712,6 +738,7 @@
 				18DBB1892815590E00C91443 /* LoginOtpVC.swift in Sources */,
 				189ED9E0281CFDDD007A3F9A /* VideosVC.swift in Sources */,
 				18DBB0FE2814139800C91443 /* SpeakersCell.swift in Sources */,
+				184D70E128270E5700EAA7EF /* AgendaModel.swift in Sources */,
 				18DBB11E281473AF00C91443 /* SideMenuRootVC.swift in Sources */,
 				18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */,
 				1829FD4F281D46D80098BCD4 /* MapGalleryCell.swift in Sources */,
@@ -723,6 +750,7 @@
 				18DBB18328154CF800C91443 /* LoginOptionsVC.swift in Sources */,
 				1829FD4C281D43A30098BCD4 /* MapDetailVC.swift in Sources */,
 				18DBB18F28155E0C00C91443 /* RegisterVC.swift in Sources */,
+				184D70DE28270B7D00EAA7EF /* AgendaCell.swift in Sources */,
 				18DBB16E2815193100C91443 /* UserProfileVC.swift in Sources */,
 				18B49FE62812CB0D00360119 /* Constants.swift in Sources */,
 			);
@@ -872,9 +900,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5MQ83N4DSQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HforLife;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -886,7 +915,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eventapp.start.EventApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hydrogenforlife.hforlife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -902,9 +931,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5MQ83N4DSQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HforLife;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -916,7 +946,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eventapp.start.EventApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hydrogenforlife.hforlife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

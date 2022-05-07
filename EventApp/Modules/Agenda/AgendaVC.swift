@@ -9,21 +9,75 @@ import UIKit
 
 class AgendaVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var data = [AgendaContentModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: "AgendaCell", bundle: nil), forCellReuseIdentifier: "AgendaCell")
+       
+        getAgendaList()
+        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Agenda"
+        
+        navigationController?.navigationBar.tintColor = .darkGreen
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGreen,
+                                                                   NSAttributedString.Key.font: R.font.gorditaMedium(size: 20.0)]
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.title = ""
     }
-    */
+    
+    func getAgendaList() {
+        Remote.shared.getAgendaList(eventId: 1) { userData in
+            self.data = userData.content ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+}
 
+extension AgendaVC: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.data.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "AgendaCell", for: indexPath) as? AgendaCell {
+            cell.selectionStyle = .none
+            cell.configureCell(data: self.data[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+}
+
+extension AgendaVC: UITableViewDelegate {
+    
 }

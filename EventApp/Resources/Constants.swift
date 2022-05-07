@@ -16,6 +16,7 @@ enum VideoType: Int {
 struct Constants {
     
     static let baseURL = "http://unifytrack.com/runtime_events/webservices.php"
+    static let baseImgURL = "http://unifytrack.com/runtime_events/"
     static let successMsg = "Success"
     static let failureMsg = "Failed"
 }

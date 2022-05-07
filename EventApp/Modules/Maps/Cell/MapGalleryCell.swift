@@ -10,6 +10,7 @@ import UIKit
 class MapGalleryCell: UICollectionViewCell {
     
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var imgGallery: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

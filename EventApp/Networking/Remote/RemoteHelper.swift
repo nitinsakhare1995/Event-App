@@ -17,6 +17,8 @@ public enum APIRequest: URLRequestConvertible {
     case getVideoList(id: Int)
     case forgotPassword(email: String)
     case resetPassword(password: String, userId: Int)
+    case getEventgDetails(eventId: Int)
+    case getAgendaList(eventId: Int)
     
     var method: HTTPMethod {
         switch self {
@@ -41,6 +43,10 @@ public enum APIRequest: URLRequestConvertible {
             return "?reqAction=forgotpwd&email=\(email)"
         case .resetPassword(let password, let userId):
             return "?reqAction=changepwd&userregid=\(userId)&oldpwd=\(password)&newpwd=\(password)"
+        case .getEventgDetails(let eventId):
+            return "?reqAction=eventdetail&eventid=\(eventId)"
+        case .getAgendaList(let eventId):
+            return "?reqAction=agendacat&eventid=\(eventId)"
         }
     }
     

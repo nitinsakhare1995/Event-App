@@ -90,8 +90,10 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 8 storyboards.
   struct storyboard {
+    /// Storyboard `Agenda`.
+    static let agenda = _R.storyboard.agenda()
     /// Storyboard `Event`.
     static let event = _R.storyboard.event()
     /// Storyboard `LaunchScreen`.
@@ -106,6 +108,13 @@ struct R: Rswift.Validatable {
     static let speakers = _R.storyboard.speakers()
     /// Storyboard `User`.
     static let user = _R.storyboard.user()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Agenda", bundle: ...)`
+    static func agenda(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.agenda)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Event", bundle: ...)`
@@ -708,8 +717,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 14 nibs.
   struct nib {
+    /// Nib `AgendaCell`.
+    static let agendaCell = _R.nib._AgendaCell()
     /// Nib `BlogsCell`.
     static let blogsCell = _R.nib._BlogsCell()
     /// Nib `HomeSpeakersCell`.
@@ -736,6 +747,14 @@ struct R: Rswift.Validatable {
     static let sponsorsCell = _R.nib._SponsorsCell()
     /// Nib `UserProfileVC`.
     static let userProfileVC = _R.nib._UserProfileVC()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AgendaCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.agendaCell) instead")
+    static func agendaCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.agendaCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "BlogsCell", in: bundle)`
@@ -840,6 +859,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.userProfileVC)
     }
     #endif
+
+    static func agendaCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AgendaCell? {
+      return R.nib.agendaCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgendaCell
+    }
 
     static func blogsCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> BlogsCell? {
       return R.nib.blogsCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? BlogsCell
@@ -948,6 +971,7 @@ struct _R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   struct nib: Rswift.Validatable {
     static func validate() throws {
+      try _AgendaCell.validate()
       try _BlogsCell.validate()
       try _HomeSpeakersCell.validate()
       try _HomeVideosCell.validate()
@@ -959,6 +983,23 @@ struct _R: Rswift.Validatable {
       try _SpeakersCell.validate()
       try _SpeakersSessionsCell.validate()
       try _SponsorsCell.validate()
+    }
+
+    struct _AgendaCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AgendaCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AgendaCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AgendaCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Arrow' is used in nib 'AgendaCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
     }
 
     struct _BlogsCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
@@ -1221,6 +1262,9 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
+      try agenda.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try event.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -1242,6 +1286,27 @@ struct _R: Rswift.Validatable {
       try user.validate()
       #endif
     }
+
+    #if os(iOS) || os(tvOS)
+    struct agenda: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let agendaVC = StoryboardViewControllerResource<AgendaVC>(identifier: "AgendaVC")
+      let bundle = R.hostingBundle
+      let name = "Agenda"
+
+      func agendaVC(_: Void = ()) -> AgendaVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: agendaVC)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'Agenda', but couldn't be loaded.") }
+        }
+        if _R.storyboard.agenda().agendaVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'agendaVC' could not be loaded from storyboard 'Agenda' as 'AgendaVC'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     struct event: Rswift.StoryboardResourceType, Rswift.Validatable {
