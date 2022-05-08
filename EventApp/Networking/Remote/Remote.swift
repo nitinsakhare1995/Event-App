@@ -195,6 +195,21 @@ class Remote {
         }
     }
     
+    func getSponsors(completionHandler: @escaping (_ userData: SponsorsModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getSponsors).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<SponsorsModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     //
     //
     //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {

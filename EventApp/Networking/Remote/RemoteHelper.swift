@@ -22,6 +22,7 @@ public enum APIRequest: URLRequestConvertible {
     case getBlogs
     case getBlogDetails(blogId: String)
     case getResources
+    case getSponsors
     
     var method: HTTPMethod {
         switch self {
@@ -56,6 +57,8 @@ public enum APIRequest: URLRequestConvertible {
             return "?reqAction=blogdetail&blogid=\(blogId)"
         case .getResources:
             return "?reqAction=resources"
+        case .getSponsors:
+            return "?reqAction=sponsors"
         }
     }
     

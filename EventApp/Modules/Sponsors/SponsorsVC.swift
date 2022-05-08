@@ -11,6 +11,8 @@ class SponsorsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var data = [SponsorsContentModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,7 @@ class SponsorsVC: UIViewController {
         
         tableView.register(UINib(nibName: "SponsorsCell", bundle: nil), forCellReuseIdentifier: "SponsorsCell")
       
+        getSponsorsList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,14 +45,21 @@ class SponsorsVC: UIViewController {
         self.title = ""
     }
     
-    
+    func getSponsorsList() {
+        Remote.shared.getSponsors { userData in
+            self.data = userData.content ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
 }
 
 extension SponsorsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.data.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -59,6 +69,7 @@ extension SponsorsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.sponsorsCell, for: indexPath) as? SponsorsCell {
             cell.selectionStyle = .none
+            cell.configureCell(data: self.data[indexPath.row])
             return cell
         }
         return UITableViewCell()
@@ -68,4 +79,11 @@ extension SponsorsVC: UITableViewDataSource {
 
 extension SponsorsVC: UITableViewDelegate {
    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let urlString = self.data[indexPath.row].websitelink ?? ""
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
 }

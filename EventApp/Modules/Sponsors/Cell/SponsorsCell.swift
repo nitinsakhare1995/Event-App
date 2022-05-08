@@ -10,6 +10,8 @@ import UIKit
 class SponsorsCell: UITableViewCell {
     
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var imgSponsor: UIImageView!
+    @IBOutlet weak var lblLinl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,11 +19,13 @@ class SponsorsCell: UITableViewCell {
         shadow(Vw: mainView, radius: 20)
         
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-       
+    
+    func configureCell(data: SponsorsContentModel?) {
+        lblLinl.text = data?.websitelink
+        let baseURL = Constants.baseImgURL
+        let imgURL = data?.sponsor_logo ?? ""
+        let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
+        imgSponsor.kf.setImage(with: imgURLKF)
     }
     
 }

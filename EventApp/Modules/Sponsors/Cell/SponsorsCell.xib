@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -102,6 +103,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="imgSponsor" destination="87y-YR-1il" id="lXx-1C-ffK"/>
+                <outlet property="lblLinl" destination="H3x-9r-h24" id="a4x-38-cgN"/>
                 <outlet property="mainView" destination="eqX-e1-Nd8" id="ORS-AW-IKd"/>
             </connections>
             <point key="canvasLocation" x="234.78260869565219" y="105.80357142857143"/>
@@ -110,7 +113,7 @@
     <resources>
         <image name="Bosch" width="320" height="150"/>
         <image name="linkweb" width="28" height="28"/>
-        <image name="redirect" width="15" height="15"/>
+        <image name="redirect" width="19.5" height="19"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
