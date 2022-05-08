@@ -21,6 +21,8 @@
 		184D70DE28270B7D00EAA7EF /* AgendaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70DC28270B7D00EAA7EF /* AgendaCell.swift */; };
 		184D70DF28270B7D00EAA7EF /* AgendaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184D70DD28270B7D00EAA7EF /* AgendaCell.xib */; };
 		184D70E128270E5700EAA7EF /* AgendaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70E028270E5700EAA7EF /* AgendaModel.swift */; };
+		184D70E32827753E00EAA7EF /* BlogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70E22827753E00EAA7EF /* BlogModel.swift */; };
+		184D70E52827781300EAA7EF /* BlogDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70E42827781300EAA7EF /* BlogDetailVC.swift */; };
 		1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D23B2813DB44007BFB6B /* UIColorExtension.swift */; };
 		1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */; };
 		1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23F2813DC3E007BFB6B /* Gordita Light.otf */; };
@@ -103,6 +105,8 @@
 		184D70DC28270B7D00EAA7EF /* AgendaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaCell.swift; sourceTree = "<group>"; };
 		184D70DD28270B7D00EAA7EF /* AgendaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgendaCell.xib; sourceTree = "<group>"; };
 		184D70E028270E5700EAA7EF /* AgendaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaModel.swift; sourceTree = "<group>"; };
+		184D70E22827753E00EAA7EF /* BlogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogModel.swift; sourceTree = "<group>"; };
+		184D70E42827781300EAA7EF /* BlogDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailVC.swift; sourceTree = "<group>"; };
 		1858D23B2813DB44007BFB6B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Regular.otf"; sourceTree = "<group>"; };
 		1858D23F2813DC3E007BFB6B /* Gordita Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Light.otf"; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				189ED9DC281CF74B007A3F9A /* VideoModel.swift */,
 				184D70D72827068100EAA7EF /* EventDetailModel.swift */,
 				184D70E028270E5700EAA7EF /* AgendaModel.swift */,
+				184D70E22827753E00EAA7EF /* BlogModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 			children = (
 				18DBB17C2815313200C91443 /* Cell */,
 				18DBB17A2815312E00C91443 /* BlogsVC.swift */,
+				184D70E42827781300EAA7EF /* BlogDetailVC.swift */,
 			);
 			path = Blogs;
 			sourceTree = "<group>";
@@ -704,6 +710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DBB1852815538B00C91443 /* LoginVC.swift in Sources */,
+				184D70E52827781300EAA7EF /* BlogDetailVC.swift in Sources */,
 				18DBB17B2815312E00C91443 /* BlogsVC.swift in Sources */,
 				18DBB11728146DD200C91443 /* ResourcesCell.swift in Sources */,
 				189ED9DD281CF74B007A3F9A /* VideoModel.swift in Sources */,
@@ -722,6 +729,7 @@
 				18DBB19328156EA400C91443 /* GlobalHelper.swift in Sources */,
 				18DBB0FA281412D300C91443 /* SpeakersVC.swift in Sources */,
 				18B49FE82812CCD800360119 /* Remote.swift in Sources */,
+				184D70E32827753E00EAA7EF /* BlogModel.swift in Sources */,
 				18DBB10A281467F500C91443 /* SponsorsVC.swift in Sources */,
 				18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */,
 				18DBB187281557C800C91443 /* ForgotPasswordVC.swift in Sources */,

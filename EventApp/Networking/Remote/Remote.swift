@@ -150,6 +150,36 @@ class Remote {
         }
     }
     
+    func getBlogs(completionHandler: @escaping (_ userData: BlogModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getBlogs).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<BlogModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getBlogDetail(blogId: String, completionHandler: @escaping (_ userData: BlogDetailModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getBlogDetails(blogId: blogId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<BlogDetailModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     //
     //
     //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {

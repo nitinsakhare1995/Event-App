@@ -1290,6 +1290,7 @@ struct _R: Rswift.Validatable {
     #if os(iOS) || os(tvOS)
     struct agenda: Rswift.StoryboardResourceType, Rswift.Validatable {
       let agendaVC = StoryboardViewControllerResource<AgendaVC>(identifier: "AgendaVC")
+      let blogDetailVC = StoryboardViewControllerResource<BlogDetailVC>(identifier: "BlogDetailVC")
       let bundle = R.hostingBundle
       let name = "Agenda"
 
@@ -1297,11 +1298,18 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: agendaVC)
       }
 
+      func blogDetailVC(_: Void = ()) -> BlogDetailVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: blogDetailVC)
+      }
+
       static func validate() throws {
+        if UIKit.UIImage(named: "time", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'time' is used in storyboard 'Agenda', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "DarkGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'DarkGreen' is used in storyboard 'Agenda', but couldn't be loaded.") }
           if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'Agenda', but couldn't be loaded.") }
         }
         if _R.storyboard.agenda().agendaVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'agendaVC' could not be loaded from storyboard 'Agenda' as 'AgendaVC'.") }
+        if _R.storyboard.agenda().blogDetailVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'blogDetailVC' could not be loaded from storyboard 'Agenda' as 'BlogDetailVC'.") }
       }
 
       fileprivate init() {}
