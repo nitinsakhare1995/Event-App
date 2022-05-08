@@ -85,6 +85,7 @@ class AgendaDetailsVC: UIViewController {
     
     @IBAction func opnNavigationScreen(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Maps", bundle: nil).instantiateViewController(withIdentifier: "MapDetailVC") as! MapDetailVC
+        vc.agendaId = self.agendaId
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

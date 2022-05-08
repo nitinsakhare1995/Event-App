@@ -101,6 +101,11 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="h4i-Oa-hm5"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Stage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-IO-uMx">
                                                         <rect key="frame" x="20" y="152" width="344" height="20"/>
@@ -199,6 +204,9 @@
                                                                         </constraints>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" image="redirect"/>
+                                                                        <connections>
+                                                                            <action selector="openLink:" destination="CNs-PY-F8t" eventType="touchUpInside" id="Q0B-Ri-Nqx"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -395,6 +403,11 @@
                         <outlet property="cardInfoView" destination="deN-G8-eK1" id="01G-we-Ln7"/>
                         <outlet property="directionsView" destination="89D-b9-qO5" id="gBQ-Ly-pWu"/>
                         <outlet property="galleryCollectionView" destination="8Cs-Fi-HP0" id="jDx-73-Iyy"/>
+                        <outlet property="imgBanner" destination="8GS-6e-qyL" id="g6P-wf-ht8"/>
+                        <outlet property="lblAddress" destination="zrY-B5-3EK" id="H1R-S9-XMc"/>
+                        <outlet property="lblName" destination="Wgy-IO-uMx" id="TF0-dn-dXn"/>
+                        <outlet property="lblPhone" destination="CgK-Gl-BBK" id="2A6-kO-Rvg"/>
+                        <outlet property="lblWebsite" destination="whb-eZ-3Yp" id="Y8Z-TT-oKf"/>
                         <outlet property="navigationView" destination="lqP-Ss-CfC" id="ZPq-t3-KJA"/>
                     </connections>
                 </viewController>

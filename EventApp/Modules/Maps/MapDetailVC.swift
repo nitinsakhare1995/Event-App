@@ -13,6 +13,15 @@ class MapDetailVC: UIViewController {
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var directionsView: UIView!
     @IBOutlet weak var galleryCollectionView: UICollectionView!
+    @IBOutlet weak var imgBanner: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lblWebsite: UILabel!
+    @IBOutlet weak var lblPhone: UILabel!
+    
+    var gallery = [MapDetailGalleryImagesModel]()
+    var content: MapDetailContentModel?
+    var agendaId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +33,8 @@ class MapDetailVC: UIViewController {
         galleryCollectionView.delegate = self
         galleryCollectionView.dataSource = self
         galleryCollectionView.register(UINib(nibName: "MapGalleryCell", bundle: nil), forCellWithReuseIdentifier: "MapGalleryCell")
+        
+        getData()
         
     }
     
@@ -47,16 +58,47 @@ class MapDetailVC: UIViewController {
         self.title = ""
     }
     
+    func getData() {
+        if let agendaId = self.agendaId {
+            Remote.shared.getMapDetails(eventId: "1", agendaId: agendaId) { userData in
+                self.gallery = userData.content?.galleryImages ?? []
+                DispatchQueue.main.async {
+                    self.galleryCollectionView.reloadData()
+                }
+                self.content = userData.content
+                let baseURL = Constants.baseImgURL
+                let imgURL = userData.content?.map0?.banner_img ?? ""
+                let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
+                self.imgBanner.kf.setImage(with: imgURLKF)
+                self.lblName.text = userData.content?.map0?.agenda_category ?? ""
+                self.lblAddress.text = userData.content?.map0?.agenda_address ?? ""
+                self.lblWebsite.text = userData.content?.map0?.agenda_websiteurl ?? ""
+                self.lblPhone.text = userData.content?.map0?.agenda_phone ?? ""
+            }
+        }
+    }
+    
+    @IBAction func openLink(_ sender: UIButton) {
+        let urlString = self.content?.map0?.agenda_websiteurl ?? ""
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
 }
 
 extension MapDetailVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.gallery.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier: "MapGalleryCell", for: indexPath) as! MapGalleryCell
+        let baseURL = Constants.baseImgURL
+        let imgURL = self.gallery[indexPath.row].gallery_img ?? ""
+        let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
+        cell.imgGallery.kf.setImage(with: imgURLKF)
         return cell
     }
 }

@@ -125,6 +125,25 @@ extension VideosVC: UICollectionViewDataSource {
 
 extension VideosVC: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.featuredVideosCollectionView {
+            let urlString = self.featuredVideos[indexPath.row].video_url ?? ""
+            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        } else if collectionView == self.sessionsVideoCollectionView {
+            let urlString = self.sessionVideos[indexPath.row].video_url ?? ""
+            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        } else {
+            let urlString = self.speakerVideos[indexPath.row].video_url ?? ""
+            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
+    
 }
 
 
