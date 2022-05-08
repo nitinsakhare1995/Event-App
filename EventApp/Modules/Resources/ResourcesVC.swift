@@ -7,10 +7,13 @@
 
 import UIKit
 import AKSideMenu
+import PDFKit
 
 class ResourcesVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var data = [ResourcesContentModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class ResourcesVC: UIViewController {
         
         tableView.register(UINib(nibName: "ResourcesCell", bundle: nil), forCellReuseIdentifier: "ResourcesCell")
         
+        getResourcesList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,12 +57,21 @@ class ResourcesVC: UIViewController {
         self.sideMenuViewController?.presentLeftMenuViewController()
     }
     
+    func getResourcesList() {
+        Remote.shared.getResources { userData in
+            self.data = userData.content ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 }
 
 extension ResourcesVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.data.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,6 +81,7 @@ extension ResourcesVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.resourcesCell, for: indexPath) as? ResourcesCell {
             cell.selectionStyle = .none
+            cell.lblName.text = self.data[indexPath.row].resource_title
             return cell
         }
         return UITableViewCell()
@@ -76,5 +90,65 @@ extension ResourcesVC: UITableViewDataSource {
 }
 
 extension ResourcesVC: UITableViewDelegate {
+ 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let baseURL = Constants.baseImgURL
+        let pdfURL = self.data[indexPath.row].resource_pdf ?? ""
+        let finalURL = "\(baseURL)\(pdfURL)"
+        storeAndShare(withURLString: finalURL)
+    }
     
+}
+
+extension ResourcesVC: UIDocumentInteractionControllerDelegate {
+    /// If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner consistent with the rest of the platform
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        guard let navVC = self.navigationController else {
+            return self
+        }
+        return navVC
+    }
+}
+
+extension ResourcesVC {
+    /// This function will set all the required properties, and then provide a preview for the document
+    func share(url: URL) {
+        let documentInteractionController = UIDocumentInteractionController()
+        documentInteractionController.delegate = self
+        documentInteractionController.url = url
+        documentInteractionController.uti = url.typeIdentifier ?? "public.data, public.content"
+        documentInteractionController.name = url.localizedName ?? url.lastPathComponent
+        documentInteractionController.presentPreview(animated: true)
+    }
+    
+    /// This function will store your document to some temporary URL and then provide sharing, copying, printing, saving options to the user
+    func storeAndShare(withURLString: String) {
+        guard let url = URL(string: withURLString) else { return }
+        showLoader()
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                hideLoader()
+                return }
+            let tmpURL = FileManager.default.temporaryDirectory
+                .appendingPathComponent(response?.suggestedFilename ?? "fileName.png")
+            do {
+                try data.write(to: tmpURL)
+            } catch {
+                print(error)
+            }
+            DispatchQueue.main.async {
+                hideLoader()
+                self.share(url: tmpURL)
+            }
+            }.resume()
+    }
+}
+
+extension URL {
+    var typeIdentifier: String? {
+        return (try? resourceValues(forKeys: [.typeIdentifierKey]))?.typeIdentifier
+    }
+    var localizedName: String? {
+        return (try? resourceValues(forKeys: [.localizedNameKey]))?.localizedName
+    }
 }

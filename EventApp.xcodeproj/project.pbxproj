@@ -23,6 +23,7 @@
 		184D70E128270E5700EAA7EF /* AgendaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70E028270E5700EAA7EF /* AgendaModel.swift */; };
 		184D70E32827753E00EAA7EF /* BlogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70E22827753E00EAA7EF /* BlogModel.swift */; };
 		184D70E52827781300EAA7EF /* BlogDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70E42827781300EAA7EF /* BlogDetailVC.swift */; };
+		184D70E728277DAD00EAA7EF /* ResourcesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D70E628277DAD00EAA7EF /* ResourcesModel.swift */; };
 		1858D23C2813DB44007BFB6B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858D23B2813DB44007BFB6B /* UIColorExtension.swift */; };
 		1858D2422813DC3F007BFB6B /* Gordita Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */; };
 		1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1858D23F2813DC3E007BFB6B /* Gordita Light.otf */; };
@@ -107,6 +108,7 @@
 		184D70E028270E5700EAA7EF /* AgendaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaModel.swift; sourceTree = "<group>"; };
 		184D70E22827753E00EAA7EF /* BlogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogModel.swift; sourceTree = "<group>"; };
 		184D70E42827781300EAA7EF /* BlogDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailVC.swift; sourceTree = "<group>"; };
+		184D70E628277DAD00EAA7EF /* ResourcesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesModel.swift; sourceTree = "<group>"; };
 		1858D23B2813DB44007BFB6B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1858D23E2813DC3E007BFB6B /* Gordita Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Regular.otf"; sourceTree = "<group>"; };
 		1858D23F2813DC3E007BFB6B /* Gordita Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Light.otf"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				184D70D72827068100EAA7EF /* EventDetailModel.swift */,
 				184D70E028270E5700EAA7EF /* AgendaModel.swift */,
 				184D70E22827753E00EAA7EF /* BlogModel.swift */,
+				184D70E628277DAD00EAA7EF /* ResourcesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				18B49FCD2812BB4000360119 /* HomeVC.swift in Sources */,
 				18B49FC92812BB4000360119 /* AppDelegate.swift in Sources */,
 				18DBB173281525BF00C91443 /* ProfileEventCell.swift in Sources */,
+				184D70E728277DAD00EAA7EF /* ResourcesModel.swift in Sources */,
 				18DBB18D28155D3700C91443 /* LoginSuccessVC.swift in Sources */,
 				1829FD53281D4B830098BCD4 /* EventDetailVC.swift in Sources */,
 				18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */,

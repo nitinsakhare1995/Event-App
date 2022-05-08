@@ -180,6 +180,21 @@ class Remote {
         }
     }
     
+    func getResources(completionHandler: @escaping (_ userData: ResourcesModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getResources).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<ResourcesModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     //
     //
     //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {
