@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gordita Bold.otf">
+            <string>Gordita-Bold</string>
+        </array>
+        <array key="Gordita Medium.otf">
+            <string>Gordita-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="SessionsCell" customModule="EventApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="107"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tw1-kH-edM">
+                        <rect key="frame" x="20" y="0.0" width="295" height="107"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BzA-uj-ZeX">
+                                <rect key="frame" x="0.0" y="106" width="295" height="1"/>
+                                <color key="backgroundColor" name="LightGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="sXC-9U-7S0"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.30AM " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoP-IJ-ybm">
+                                <rect key="frame" x="15" y="47.5" width="54" height="12"/>
+                                <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="12"/>
+                                <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Session" translatesAutoresizingMaskIntoConstraints="NO" id="JkP-9n-I2H">
+                                <rect key="frame" x="265" y="46" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="A4s-dL-Rt9"/>
+                                    <constraint firstAttribute="height" constant="15" id="qbT-2M-ZsQ"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkn-bl-Wv2">
+                                <rect key="frame" x="84" y="43.5" width="1" height="20"/>
+                                <color key="backgroundColor" name="DarkGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="aYl-ek-ped"/>
+                                    <constraint firstAttribute="width" constant="1" id="goa-WP-dza"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Press Conference " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtP-dc-3tk">
+                                <rect key="frame" x="100" y="47.5" width="157" height="12"/>
+                                <fontDescription key="fontDescription" name="Gordita-Bold" family="Gordita" pointSize="12"/>
+                                <color key="textColor" red="0.42745098039215684" green="0.42745098039215684" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hkn-bl-Wv2" firstAttribute="leading" secondItem="xoP-IJ-ybm" secondAttribute="trailing" constant="15" id="3RI-VH-hgv"/>
+                            <constraint firstAttribute="trailing" secondItem="JkP-9n-I2H" secondAttribute="trailing" constant="15" id="4gc-QB-ZST"/>
+                            <constraint firstItem="BzA-uj-ZeX" firstAttribute="leading" secondItem="Tw1-kH-edM" secondAttribute="leading" id="TVq-U9-oWc"/>
+                            <constraint firstItem="JkP-9n-I2H" firstAttribute="leading" secondItem="MtP-dc-3tk" secondAttribute="trailing" constant="8" id="VmJ-Ry-Kb7"/>
+                            <constraint firstItem="MtP-dc-3tk" firstAttribute="leading" secondItem="hkn-bl-Wv2" secondAttribute="trailing" constant="15" id="X51-ci-ALg"/>
+                            <constraint firstItem="xoP-IJ-ybm" firstAttribute="centerY" secondItem="Tw1-kH-edM" secondAttribute="centerY" id="e53-s0-jx4"/>
+                            <constraint firstItem="xoP-IJ-ybm" firstAttribute="leading" secondItem="Tw1-kH-edM" secondAttribute="leading" constant="15" id="eP2-Jr-dSW"/>
+                            <constraint firstAttribute="bottom" secondItem="BzA-uj-ZeX" secondAttribute="bottom" id="gat-Af-cVE"/>
+                            <constraint firstItem="MtP-dc-3tk" firstAttribute="centerY" secondItem="Tw1-kH-edM" secondAttribute="centerY" id="i1k-kT-9kx"/>
+                            <constraint firstItem="JkP-9n-I2H" firstAttribute="centerY" secondItem="Tw1-kH-edM" secondAttribute="centerY" id="p1x-9A-Ol6"/>
+                            <constraint firstItem="hkn-bl-Wv2" firstAttribute="centerY" secondItem="Tw1-kH-edM" secondAttribute="centerY" id="pTc-be-WZa"/>
+                            <constraint firstAttribute="trailing" secondItem="BzA-uj-ZeX" secondAttribute="trailing" id="vRx-3b-jdM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Tw1-kH-edM" secondAttribute="bottom" id="0qn-EQ-Ngc"/>
+                    <constraint firstItem="Tw1-kH-edM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="E2H-NC-lsr"/>
+                    <constraint firstItem="Tw1-kH-edM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hc2-96-Uvl"/>
+                    <constraint firstAttribute="trailing" secondItem="Tw1-kH-edM" secondAttribute="trailing" constant="20" id="pG1-mV-atf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lbTitle" destination="MtP-dc-3tk" id="Jbd-GD-UVK"/>
+                <outlet property="lblTime" destination="xoP-IJ-ybm" id="rno-Es-KoJ"/>
+            </connections>
+            <point key="canvasLocation" x="148.55072463768118" y="151.00446428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Session" width="28.5" height="28.5"/>
+        <namedColor name="DarkGreen">
+            <color red="0.086274509803921567" green="0.54509803921568623" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightGreen">
+            <color red="0.49411764705882355" green="0.85098039215686272" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

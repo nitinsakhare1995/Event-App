@@ -210,6 +210,36 @@ class Remote {
         }
     }
     
+    func getAgendaDetails(eventId: String, agendaId: String, completionHandler: @escaping (_ userData: AgendaDetailModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getAgendaDetail(eventId: eventId, agendaId: agendaId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<AgendaDetailModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getSessions(agendaId: String, completionHandler: @escaping (_ userData: SessionsModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getSessions(agendaId: agendaId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<SessionsModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     //
     //
     //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {
