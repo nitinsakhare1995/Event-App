@@ -605,6 +605,9 @@
                     <connections>
                         <outlet property="agendaView" destination="bby-LO-JcS" id="KaG-gD-tI1"/>
                         <outlet property="blogsView" destination="rSd-7d-X5X" id="Rhs-Ke-0M6"/>
+                        <outlet property="lblEventDate" destination="wIW-E7-UqI" id="Fdk-Ms-04r"/>
+                        <outlet property="lblEventLocstion" destination="I9o-fl-VBQ" id="XjP-9g-1fE"/>
+                        <outlet property="lblEventTitle" destination="lhI-u3-1Fi" id="dBG-CR-Kp5"/>
                         <outlet property="mapsView" destination="w4e-TS-Di5" id="Ww7-bB-dB7"/>
                         <outlet property="speakersCollectionView" destination="Ayu-N4-Cg7" id="9dU-Sr-cFw"/>
                         <outlet property="speakersView" destination="S8n-RY-wVc" id="PpY-k2-H9t"/>
@@ -792,18 +795,29 @@
                                                     <constraint firstAttribute="width" constant="20" id="qmG-Iv-C2q"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUX-ck-HsT">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUX-ck-HsT">
                                                 <rect key="frame" x="60" y="0.0" width="346" height="50"/>
                                                 <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3a-ed-qre">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="btnLogoutTapped:" destination="QYK-IV-e5A" eventType="touchUpInside" id="Y5C-aF-Uy2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Pc8-y2-4zI" firstAttribute="leading" secondItem="1k7-9P-xwK" secondAttribute="leading" constant="25" id="3dP-wT-PoV"/>
+                                            <constraint firstItem="N3a-ed-qre" firstAttribute="top" secondItem="1k7-9P-xwK" secondAttribute="top" id="JLH-ed-Jxz"/>
                                             <constraint firstItem="Pc8-y2-4zI" firstAttribute="centerY" secondItem="1k7-9P-xwK" secondAttribute="centerY" id="Li6-X2-hTH"/>
                                             <constraint firstItem="SUX-ck-HsT" firstAttribute="top" secondItem="1k7-9P-xwK" secondAttribute="top" id="QJV-9X-wrl"/>
+                                            <constraint firstAttribute="trailing" secondItem="N3a-ed-qre" secondAttribute="trailing" id="VcV-fr-a7U"/>
+                                            <constraint firstItem="N3a-ed-qre" firstAttribute="leading" secondItem="1k7-9P-xwK" secondAttribute="leading" id="Yye-bl-wYR"/>
+                                            <constraint firstAttribute="bottom" secondItem="N3a-ed-qre" secondAttribute="bottom" id="cuT-sG-MVk"/>
                                             <constraint firstAttribute="bottom" secondItem="SUX-ck-HsT" secondAttribute="bottom" id="hfa-tF-wfm"/>
                                             <constraint firstAttribute="trailing" secondItem="SUX-ck-HsT" secondAttribute="trailing" constant="8" id="hfy-Sa-I3W"/>
                                             <constraint firstItem="SUX-ck-HsT" firstAttribute="leading" secondItem="Pc8-y2-4zI" secondAttribute="trailing" constant="15" id="qC9-GH-FNT"/>
@@ -828,7 +842,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8l-6S-tfb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="33"/>
+            <point key="canvasLocation" x="1500.0000000000002" y="32.8125"/>
         </scene>
         <!--Side Menu RootVC-->
         <scene sceneID="MZA-af-MrA">

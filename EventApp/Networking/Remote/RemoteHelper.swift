@@ -26,6 +26,8 @@ public enum APIRequest: URLRequestConvertible {
     case getAgendaDetail(eventId: String, agendaId: String)
     case getSessions(agendaId: String)
     case getMapDetails(eventId: String, agendaId: String)
+    case getSpeakerDetails(speakerId: String)
+    case getEventList
     
     var method: HTTPMethod {
         switch self {
@@ -68,6 +70,10 @@ public enum APIRequest: URLRequestConvertible {
             return "?reqAction=agendasession&agendaid=\(agendaId)"
         case .getMapDetails(let eventId, let agendaId):
             return "?reqAction=agendanavigation&agendaid=\(agendaId)&eventid=\(eventId)"
+        case .getSpeakerDetails(let speakerId):
+            return "?reqAction=speakerdetail&speakerid=\(speakerId)"
+        case .getEventList:
+            return "?reqAction=events"
         }
     }
     

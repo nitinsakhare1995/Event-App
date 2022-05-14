@@ -255,22 +255,34 @@ class Remote {
         }
     }
     
-    //
-    //
-    //        func getUserMapple(completionHandler: @escaping (_ dotaData: [DotaModelMapable]) -> ()) {
-    //
-    //            guard let urlString = URL(string: dotaUrl) else { return }
-    //
-    //            AF.request(urlString).responseJSON { response in
-    //
-    //                switch response.result {
-    //                case .success(let value):
-    //                    guard let dotaData = Mapper<DotaModelMapable>().mapArray(JSONObject: value) else { return }
-    //                    completionHandler(dotaData)
-    //                case .failure(let error):
-    //                    print(error.localizedDescription)
-    //                }
-    //            }
-    //      }
+    func getSpeakerDetails(speakerId: String, completionHandler: @escaping (_ userData: SpeakerDetailModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getSpeakerDetails(speakerId: speakerId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<SpeakerDetailModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getEventList(completionHandler: @escaping (_ userData: EventModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getEventList).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<EventModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
     
 }

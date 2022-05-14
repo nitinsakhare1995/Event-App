@@ -9,15 +9,22 @@ import UIKit
 
 class SpeakerDetailsVC: UIViewController {
     
-   
+    
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var speakerView: UIView!
     @IBOutlet weak var descriptionView: UIView!
     @IBOutlet weak var videosCollectionView: UICollectionView!
     @IBOutlet weak var sessionsCollectionView: UICollectionView!
+    @IBOutlet weak var imgSpeaker: UIImageView!
+    @IBOutlet weak var lblSpeakerName: UILabel!
+    @IBOutlet weak var lblProfession: UILabel!
+    @IBOutlet weak var txtDescription: UITextView!
+    
+    var speakerId: String?
+    var data = [SpeakerDetailContentModel]()
     
     override func viewDidLoad() {
-    
+        
         super.viewDidLoad()
         
         topView.roundCorners([.layerMaxXMaxYCorner, .layerMinXMaxYCorner], radius: 20)
@@ -35,14 +42,13 @@ class SpeakerDetailsVC: UIViewController {
         sessionsCollectionView.delegate = self
         sessionsCollectionView.dataSource = self
         
+        getSpeakerDetails()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.setNavigationBarHidden(true, animated: true)
-        
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,9 +57,53 @@ class SpeakerDetailsVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    func getSpeakerDetails() {
+        if let speakerId = self.speakerId {
+            Remote.shared.getSpeakerDetails(speakerId: speakerId) { userData in
+                self.data = userData.content ?? []
+                self.lblSpeakerName.text = self.data.first?.name
+                self.lblProfession.text = self.data.first?.speaker_profession
+                let baseImgURL = Constants.baseImgURL
+                let imgURL = self.data.first?.profile_pic ?? ""
+                let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
+                self.imgSpeaker.kf.setImage(with: imgURLKF)
+                self.txtDescription.text = self.data.first?.speaker_description
+            }
+        }
+    }
+    
     @IBAction func btnGobackTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func btnLinkedinTapped(_ sender: UIButton) {
+        let urlString = self.data.first?.speaker_linkedin ?? ""
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @IBAction func btnFacebookTapped(_ sender: UIButton) {
+        let urlString = self.data.first?.speaker_facebook ?? ""
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @IBAction func btnTwitterTapped(_ sender: UIButton) {
+        let urlString = self.data.first?.speaker_twitter ?? ""
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @IBAction func btnWeblinkTapped(_ sender: UIButton) {
+        let urlString = self.data.first?.speaker_websitelink ?? ""
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
     
 }
 

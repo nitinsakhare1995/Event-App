@@ -15,7 +15,7 @@ class MapsVC: UIViewController {
             if let searchTextfield = self.searchBar.value(forKey: "searchField") as? UITextField  {
                 searchTextfield.layer.borderColor = UIColor.darkGreen.cgColor
                 searchTextfield.layer.borderWidth = 1
-                searchTextfield.layer.cornerRadius = 18
+                searchTextfield.layer.cornerRadius = 10
                 searchTextfield.backgroundColor = .white
                 let placeholderAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGreen, NSAttributedString.Key.font: R.font.gorditaRegular(size: 12)]
                 let attributedPlaceholder = NSAttributedString(string: "Search: Venue, Event, Speaker", attributes: placeholderAttributes)

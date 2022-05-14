@@ -105,6 +105,11 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="hiQ-1d-4qx"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr Angela Needle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ4-aw-7Mj">
                                                         <rect key="frame" x="140" y="43" width="229" height="14"/>
@@ -140,21 +145,33 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="60"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="linkedin"/>
+                                                        <connections>
+                                                            <action selector="btnLinkedinTapped:" destination="XaQ-U3-yvT" eventType="touchUpInside" id="3Ui-9H-7DF"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mf3-tI-vDS">
                                                         <rect key="frame" x="83.5" y="0.0" width="83.5" height="60"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="facebook"/>
+                                                        <connections>
+                                                            <action selector="btnFacebookTapped:" destination="XaQ-U3-yvT" eventType="touchUpInside" id="yKV-He-aA8"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-Ld-LMr">
                                                         <rect key="frame" x="167" y="0.0" width="83.5" height="60"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="twitter"/>
+                                                        <connections>
+                                                            <action selector="btnTwitterTapped:" destination="XaQ-U3-yvT" eventType="touchUpInside" id="I8w-8Q-6v5"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNu-Tn-Thg">
                                                         <rect key="frame" x="250.5" y="0.0" width="83.5" height="60"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="www"/>
+                                                        <connections>
+                                                            <action selector="btnWeblinkTapped:" destination="XaQ-U3-yvT" eventType="touchUpInside" id="LXw-vB-KY5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -164,7 +181,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mZ-Nw-cHu">
                                                 <rect key="frame" x="20" y="340" width="374" height="250"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0VV-fB-HX1">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0VV-fB-HX1">
                                                         <rect key="frame" x="15" y="20" width="344" height="210"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <string key="text">Dr Angela Needle is a key part of the event, who champions the importance and benefits of hydrogen in our life.
@@ -276,9 +293,13 @@ In more recent years, her focus has been on studying how exponentially increase 
                     <size key="freeformSize" width="414" height="1300"/>
                     <connections>
                         <outlet property="descriptionView" destination="3mZ-Nw-cHu" id="qE4-Vo-IKv"/>
+                        <outlet property="imgSpeaker" destination="IZI-8R-bUa" id="JRG-0w-pOh"/>
+                        <outlet property="lblProfession" destination="Zli-rC-KNJ" id="YTC-pR-QAK"/>
+                        <outlet property="lblSpeakerName" destination="Zli-rC-KNJ" id="B5z-8i-1oc"/>
                         <outlet property="sessionsCollectionView" destination="CZt-Pd-DXw" id="fjC-4k-2qx"/>
                         <outlet property="speakerView" destination="PJu-Yy-x2P" id="jHy-hZ-yOA"/>
                         <outlet property="topView" destination="QkE-VH-sle" id="6pc-xO-KyQ"/>
+                        <outlet property="txtDescription" destination="0VV-fB-HX1" id="pI0-x7-bzY"/>
                         <outlet property="videosCollectionView" destination="BdM-Px-FnL" id="ldN-ti-VXm"/>
                     </connections>
                 </viewController>

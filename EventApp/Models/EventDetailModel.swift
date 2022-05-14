@@ -8,6 +8,52 @@
 import Foundation
 import ObjectMapper
 
+struct EventModel : Mappable {
+    var requestStatus : String?
+    var error : String?
+    var content : [EventContentModel]?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        requestStatus <- map["requestStatus"]
+        error <- map["Error"]
+        content <- map["Content"]
+    }
+
+}
+
+struct EventContentModel : Mappable {
+    var event_id : String?
+    var event_title : String?
+    var event_conductname : String?
+    var event_date : String?
+    var event_location : String?
+    var event_intro : String?
+    var http_url : String?
+    var event_time : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        event_id <- map["event_id"]
+        event_title <- map["event_title"]
+        event_conductname <- map["event_conductname"]
+        event_date <- map["event_date"]
+        event_location <- map["event_location"]
+        event_intro <- map["event_intro"]
+        http_url <- map["http_url"]
+        event_time <- map["event_time"]
+    }
+
+}
+
 struct EventDetailModel : Mappable {
     var requestStatus : String?
     var error : String?

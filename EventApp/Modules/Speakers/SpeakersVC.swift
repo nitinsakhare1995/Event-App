@@ -78,6 +78,7 @@ extension SpeakersVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "SpeakerDetailsVC") as! SpeakerDetailsVC
+        vc.speakerId = self.data[indexPath.row].speaker_id
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

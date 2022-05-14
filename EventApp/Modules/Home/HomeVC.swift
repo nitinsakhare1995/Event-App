@@ -19,9 +19,13 @@ class HomeVC: UIViewController {
     @IBOutlet weak var blogsView: UIView!
     @IBOutlet weak var videosCollectionView: UICollectionView!
     @IBOutlet weak var speakersCollectionView: UICollectionView!
+    @IBOutlet weak var lblEventTitle: UILabel!
+    @IBOutlet weak var lblEventDate: UILabel!
+    @IBOutlet weak var lblEventLocstion: UILabel!
     
     var featuredVideos = [VideoContentModel]()
     var speakers = [SpeakerContentModel]()
+    var eventsList = [EventContentModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,7 @@ class HomeVC: UIViewController {
         speakersCollectionView.delegate = self
         speakersCollectionView.dataSource = self
         
+        getEventList()
         getFeaturedVideoList()
         getSpeakersList()
         
@@ -60,6 +65,20 @@ class HomeVC: UIViewController {
         super.viewWillDisappear(animated)
         self.title = ""
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func getEventList() {
+        Remote.shared.getEventList() { userData in
+            self.eventsList = userData.content ?? []
+            
+            self.lblEventTitle.text = self.eventsList.first?.event_title
+            self.lblEventDate.text = self.eventsList.first?.event_date
+            self.lblEventLocstion.text = self.eventsList.first?.event_location
+            
+            DispatchQueue.main.async {
+                self.videosCollectionView.reloadData()
+            }
+        }
     }
     
     func getFeaturedVideoList() {
@@ -151,6 +170,20 @@ extension HomeVC: UICollectionViewDataSource {
 }
 
 extension HomeVC: UICollectionViewDelegate {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.videosCollectionView {
+            let urlString = self.featuredVideos[indexPath.row].video_url ?? ""
+            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        } else {
+            let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "SpeakerDetailsVC") as! SpeakerDetailsVC
+            vc.speakerId = self.speakers[indexPath.row].speaker_id
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
 }
 
