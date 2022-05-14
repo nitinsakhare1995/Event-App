@@ -78,6 +78,11 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evntDet" translatesAutoresizingMaskIntoConstraints="NO" id="K8h-1L-Nij">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="240"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,7 +138,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-JD-Bfv">
                                                 <rect key="frame" x="20" y="460" width="374" height="250"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jgy-Cw-w1Q">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jgy-Cw-w1Q">
                                                         <rect key="frame" x="15" y="20" width="344" height="210"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <string key="text">Dr Angela Needle is a key part of the event, who champions the importance and benefits of hydrogen in our life.
@@ -178,7 +183,7 @@ In more recent years, her focus has been on studying how exponentially increase 
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmJ-tW-FXh">
                                                 <rect key="frame" x="20" y="1040" width="374" height="230"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T8D-tJ-jYZ">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T8D-tJ-jYZ">
                                                         <rect key="frame" x="15" y="20" width="344" height="190"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <string key="text">Dr Angela Needle is a key part of the event, who champions the importance and benefits of hydrogen in our life.
@@ -257,7 +262,10 @@ In more recent years, her focus has been on studying how exponentially increase 
                         <outlet property="btVenue" destination="ma3-Db-mkg" id="iCN-6M-n6E"/>
                         <outlet property="descView" destination="bPQ-JD-Bfv" id="IdE-J4-FbC"/>
                         <outlet property="galleryCollectionView" destination="zt4-lP-Fgd" id="m3m-9p-Mdb"/>
+                        <outlet property="imgTopView" destination="K8h-1L-Nij" id="wFX-XQ-O0u"/>
                         <outlet property="topView" destination="AkW-GR-b0M" id="gV1-4Q-fyl"/>
+                        <outlet property="txtBottom" destination="T8D-tJ-jYZ" id="q8v-nk-THq"/>
+                        <outlet property="txtTop" destination="jgy-Cw-w1Q" id="1BM-EG-L6Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqq-bv-Qpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

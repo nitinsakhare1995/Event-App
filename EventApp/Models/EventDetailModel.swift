@@ -26,38 +26,6 @@ struct EventDetailModel : Mappable {
 
 }
 
-struct EventDetailEventtabImagesModel : Mappable {
-    var event1 : [EventDetail1Model]?
-
-    init?(map: Map) {
-
-    }
-
-    mutating func mapping(map: Map) {
-
-        event1 <- map["1"]
-    }
-
-}
-
-struct EventDetail1Model : Mappable {
-    var eventtabimg_id : String?
-    var eventtabimg_description : String?
-    var eventgallery_pic : String?
-
-    init?(map: Map) {
-
-    }
-
-    mutating func mapping(map: Map) {
-
-        eventtabimg_id <- map["eventtabimg_id"]
-        eventtabimg_description <- map["eventtabimg_description"]
-        eventgallery_pic <- map["eventgallery_pic"]
-    }
-
-}
-
 struct EventDetailEventtabsDataModel : Mappable {
     var eventtabs_id : String?
     var eventtabs_title : String?
@@ -76,6 +44,24 @@ struct EventDetailEventtabsDataModel : Mappable {
         eventtabs_getinvolved <- map["eventtabs_getinvolved"]
         eventtabs_description <- map["eventtabs_description"]
         eventtabs_pic <- map["eventtabs_pic"]
+    }
+
+}
+
+struct EventDetailContentModel : Mappable {
+    var ed0 : EventDetail0Model?
+    var eventtabsData : [EventDetailEventtabsDataModel]?
+    var eventtabImages : EventDetailEventtabImagesModel?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        ed0 <- map["0"]
+        eventtabsData <- map["eventtabsData"]
+        eventtabImages <- map["eventtabImages"]
     }
 
 }
@@ -110,10 +96,10 @@ struct EventDetail0Model : Mappable {
 
 }
 
-struct EventDetailContentModel : Mappable {
-    var event0 : EventDetail0Model?
-    var eventtabsData : [EventDetailEventtabsDataModel]?
-    var eventtabImages : EventDetailEventtabImagesModel?
+struct EventDetail1Model : Mappable {
+    var eventtabimg_id : String?
+    var eventtabimg_description : String?
+    var eventgallery_pic : String?
 
     init?(map: Map) {
 
@@ -121,9 +107,63 @@ struct EventDetailContentModel : Mappable {
 
     mutating func mapping(map: Map) {
 
-        event0 <- map["0"]
-        eventtabsData <- map["eventtabsData"]
-        eventtabImages <- map["eventtabImages"]
+        eventtabimg_id <- map["eventtabimg_id"]
+        eventtabimg_description <- map["eventtabimg_description"]
+        eventgallery_pic <- map["eventgallery_pic"]
+    }
+
+}
+
+struct EventDetail2Model : Mappable {
+    var eventtabimg_id : String?
+    var eventtabimg_description : String?
+    var eventgallery_pic : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        eventtabimg_id <- map["eventtabimg_id"]
+        eventtabimg_description <- map["eventtabimg_description"]
+        eventgallery_pic <- map["eventgallery_pic"]
+    }
+
+}
+
+struct EventDetail3Model : Mappable {
+    var eventtabimg_id : String?
+    var eventtabimg_description : String?
+    var eventgallery_pic : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        eventtabimg_id <- map["eventtabimg_id"]
+        eventtabimg_description <- map["eventtabimg_description"]
+        eventgallery_pic <- map["eventgallery_pic"]
+    }
+
+}
+
+struct EventDetailEventtabImagesModel : Mappable {
+    var em1 : [EventDetail1Model]?
+    var em2 : [EventDetail1Model]?
+    var em3 : [EventDetail1Model]?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        em1 <- map["1"]
+        em2 <- map["2"]
+        em3 <- map["3"]
     }
 
 }

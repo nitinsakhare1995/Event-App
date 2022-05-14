@@ -17,9 +17,21 @@ class EventDetailVC: UIViewController {
     @IBOutlet weak var descView: UIView!
     @IBOutlet weak var bottomDescView: UIView!
     @IBOutlet weak var galleryCollectionView: UICollectionView!
+    @IBOutlet weak var imgTopView: UIImageView!
+    @IBOutlet weak var txtTop: UITextView!
+    @IBOutlet weak var txtBottom: UITextView!
     
     var eventId: Int?
+    var galleryData1 = [EventDetail1Model]()
+    var galleryData2 = [EventDetail1Model]()
+    var galleryData3 = [EventDetail1Model]()
     var galleryData = [EventDetail1Model]()
+    
+    var tabData: EventDetailEventtabsDataModel?
+    
+    var tabData1: EventDetailEventtabsDataModel?
+    var tabData2: EventDetailEventtabsDataModel?
+    var tabData3: EventDetailEventtabsDataModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,24 +45,71 @@ class EventDetailVC: UIViewController {
         topView.backgroundColor = UIColor.fromGradientWithDirection(.topToBottom, frame: topView.frame, colors:  [.lightGreen, .darkGreen])
         shadow(Vw: descView, radius: 20)
         shadow(Vw: bottomDescView, radius: 20)
-       
+        
         getEventDetail()
         
         setEventButton()
         
     }
     
+    func setFirstData() {
+        self.tabData = self.tabData1
+        self.galleryData = self.galleryData1
+        DispatchQueue.main.async {
+            self.galleryCollectionView.reloadData()
+        }
+        let baseImgURL = Constants.baseImgURL
+        let imgURL = self.galleryData.first?.eventgallery_pic ?? ""
+        let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
+        imgTopView.kf.setImage(with: imgURLKF)
+        txtTop.text = self.tabData?.eventtabs_description
+        txtBottom.text = self.tabData?.eventtabs_getinvolved
+    }
+    
+    func setSecondData() {
+        self.tabData = self.tabData2
+        self.galleryData = self.galleryData2
+        DispatchQueue.main.async {
+            self.galleryCollectionView.reloadData()
+        }
+        let baseImgURL = Constants.baseImgURL
+        let imgURL = self.galleryData.first?.eventgallery_pic ?? ""
+        let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
+        imgTopView.kf.setImage(with: imgURLKF)
+        txtTop.text = self.tabData?.eventtabs_description
+        txtBottom.text = self.tabData?.eventtabs_getinvolved
+    }
+    
+    func setThirdData() {
+        self.tabData = self.tabData3
+        self.galleryData = self.galleryData3
+        DispatchQueue.main.async {
+            self.galleryCollectionView.reloadData()
+        }
+        let baseImgURL = Constants.baseImgURL
+        let imgURL = self.galleryData3.first?.eventgallery_pic ?? ""
+        let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
+        imgTopView.kf.setImage(with: imgURLKF)
+        txtTop.text = self.tabData?.eventtabs_description
+        txtBottom.text = self.tabData?.eventtabs_getinvolved
+    }
+    
     func getEventDetail() {
         Remote.shared.getEventDetails(eventId: 1) { userData in
-            self.galleryData = userData.content?.eventtabImages?.event1 ?? []
-            DispatchQueue.main.async {
-                self.galleryCollectionView.reloadData()
-            }
-            
+            self.galleryData1 = userData.content?.eventtabImages?.em1 ?? []
+            self.galleryData2 = userData.content?.eventtabImages?.em2 ?? []
+            self.galleryData3 = userData.content?.eventtabImages?.em3 ?? []
+            self.tabData1 = userData.content?.eventtabsData?.first
+            self.tabData2 = userData.content?.eventtabsData?[1]
+            self.tabData3 = userData.content?.eventtabsData?[2]
+            self.setFirstData()
         }
     }
     
     func setEventButton() {
+        
+        setFirstData()
+        
         btEvent.backgroundColor = UIColor.darkGreen
         btEvent.setTitleColor(.white, for: .normal)
         btEvent.layer.cornerRadius = 25
@@ -68,6 +127,9 @@ class EventDetailVC: UIViewController {
     }
     
     func setFutureButton() {
+        
+        setSecondData()
+        
         btEvent.backgroundColor = UIColor.white
         btEvent.setTitleColor(.darkGreen, for: .normal)
         btEvent.layer.cornerRadius = 25
@@ -85,6 +147,9 @@ class EventDetailVC: UIViewController {
     }
     
     func setVenueButton() {
+        
+        setThirdData()
+        
         btEvent.backgroundColor = UIColor.white
         btEvent.setTitleColor(.darkGreen, for: .normal)
         btEvent.layer.cornerRadius = 25
