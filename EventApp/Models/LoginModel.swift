@@ -29,7 +29,7 @@ struct LoginModel : Mappable {
 }
 
 struct LoginContentModel : Mappable {
-    var userregid : Int?
+    var userregid : String?
 
     init?(map: Map) {
 

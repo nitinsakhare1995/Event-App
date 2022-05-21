@@ -60,7 +60,7 @@ class Remote {
         }
     }
     
-    func verifyOtp(userId: Int, otp: String, completionHandler: @escaping (_ userData: LoginModel) -> ()) {
+    func verifyOtp(userId: String, otp: String, completionHandler: @escaping (_ userData: LoginModel) -> ()) {
         showLoader()
         AF.request(APIRequest.verifyOtp(userId: userId, otp: otp)).responseJSON { (response) in
             hideLoader()
@@ -105,7 +105,7 @@ class Remote {
         }
     }
     
-    func resetPassword(password: String, userId: Int, completionHandler: @escaping (_ userData: LoginStrModel) -> ()) {
+    func resetPassword(password: String, userId: String, completionHandler: @escaping (_ userData: LoginStrModel) -> ()) {
         showLoader()
         AF.request(APIRequest.resetPassword(password: password, userId: userId)).responseJSON { (response) in
             hideLoader()

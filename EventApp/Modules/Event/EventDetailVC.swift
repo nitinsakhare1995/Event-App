@@ -59,7 +59,7 @@ class EventDetailVC: UIViewController {
             self.galleryCollectionView.reloadData()
         }
         let baseImgURL = Constants.baseImgURL
-        let imgURL = self.galleryData.first?.eventgallery_pic ?? ""
+        let imgURL = self.tabData?.eventtabs_pic ?? ""
         let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
         imgTopView.kf.setImage(with: imgURLKF)
         txtTop.text = self.tabData?.eventtabs_description
@@ -73,7 +73,7 @@ class EventDetailVC: UIViewController {
             self.galleryCollectionView.reloadData()
         }
         let baseImgURL = Constants.baseImgURL
-        let imgURL = self.galleryData.first?.eventgallery_pic ?? ""
+        let imgURL = self.tabData?.eventtabs_pic ?? ""
         let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
         imgTopView.kf.setImage(with: imgURLKF)
         txtTop.text = self.tabData?.eventtabs_description
@@ -87,7 +87,7 @@ class EventDetailVC: UIViewController {
             self.galleryCollectionView.reloadData()
         }
         let baseImgURL = Constants.baseImgURL
-        let imgURL = self.galleryData3.first?.eventgallery_pic ?? ""
+        let imgURL = self.tabData?.eventtabs_pic ?? ""
         let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
         imgTopView.kf.setImage(with: imgURLKF)
         txtTop.text = self.tabData?.eventtabs_description

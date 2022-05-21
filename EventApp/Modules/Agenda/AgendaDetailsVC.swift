@@ -61,7 +61,7 @@ class AgendaDetailsVC: UIViewController {
         if let agendaId = self.agendaId {
             Remote.shared.getAgendaDetails(eventId: "1", agendaId: agendaId) { userData in
                 let baseURL = Constants.baseImgURL
-                let imgURL = userData.content?.first?.agenda_image ?? ""
+                let imgURL = userData.content?.first?.banner_img ?? ""
                 let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
                 self.imgAgenda.kf.setImage(with: imgURLKF)
                 self.lblAgendaName.text = userData.content?.first?.agenda_category ?? ""

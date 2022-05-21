@@ -14,7 +14,7 @@ class LoginOtpVC: UIViewController {
     @IBOutlet weak var otpTF: UITextField!
     @IBOutlet weak var resendOtpView: UIView!
     
-    var userID: Int?
+    var userID: String?
     var useType: LoginSuccessType?
     var email: String?
     

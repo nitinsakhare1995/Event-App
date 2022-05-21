@@ -14,7 +14,7 @@ class ResetPasswordVC: UIViewController {
     @IBOutlet weak var btnSubmit: UIButton!
     
     var useType: LoginSuccessType?
-    var userId: Int?
+    var userId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

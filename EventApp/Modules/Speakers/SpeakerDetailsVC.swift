@@ -21,7 +21,9 @@ class SpeakerDetailsVC: UIViewController {
     @IBOutlet weak var txtDescription: UITextView!
     
     var speakerId: String?
-    var data = [SpeakerDetailContentModel]()
+    var data: SpeakerDetail0Model?
+    var sessionData = [SpeakerDetailSessionspeakerDataModel]()
+    var featuredVideos = [VideoContentModel]()
     
     override func viewDidLoad() {
         
@@ -43,6 +45,7 @@ class SpeakerDetailsVC: UIViewController {
         sessionsCollectionView.dataSource = self
         
         getSpeakerDetails()
+        getFeaturedVideoList()
         
     }
     
@@ -57,17 +60,30 @@ class SpeakerDetailsVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    func getFeaturedVideoList() {
+        Remote.shared.getVideoList(id: VideoType.featuredVideos.rawValue) { userData in
+            self.featuredVideos = userData.content ?? []
+            DispatchQueue.main.async {
+                self.videosCollectionView.reloadData()
+            }
+        }
+    }
+    
     func getSpeakerDetails() {
         if let speakerId = self.speakerId {
             Remote.shared.getSpeakerDetails(speakerId: speakerId) { userData in
-                self.data = userData.content ?? []
-                self.lblSpeakerName.text = self.data.first?.name
-                self.lblProfession.text = self.data.first?.speaker_profession
+                self.data = userData.content?.SpeakerDetail0Model
+                self.sessionData = userData.content?.sessionspeakerData ?? []
+                DispatchQueue.main.async {
+                    self.sessionsCollectionView.reloadData()
+                }
+                self.lblSpeakerName.text = self.data?.name
+                self.lblProfession.text = self.data?.speaker_profession
                 let baseImgURL = Constants.baseImgURL
-                let imgURL = self.data.first?.profile_pic ?? ""
+                let imgURL = self.data?.profile_pic ?? ""
                 let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
                 self.imgSpeaker.kf.setImage(with: imgURLKF)
-                self.txtDescription.text = self.data.first?.speaker_description
+                self.txtDescription.text = self.data?.speaker_description
             }
         }
     }
@@ -77,28 +93,28 @@ class SpeakerDetailsVC: UIViewController {
     }
     
     @IBAction func btnLinkedinTapped(_ sender: UIButton) {
-        let urlString = self.data.first?.speaker_linkedin ?? ""
+        let urlString = self.data?.speaker_linkedin ?? ""
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }
     
     @IBAction func btnFacebookTapped(_ sender: UIButton) {
-        let urlString = self.data.first?.speaker_facebook ?? ""
+        let urlString = self.data?.speaker_facebook ?? ""
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }
     
     @IBAction func btnTwitterTapped(_ sender: UIButton) {
-        let urlString = self.data.first?.speaker_twitter ?? ""
+        let urlString = self.data?.speaker_twitter ?? ""
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
     }
     
     @IBAction func btnWeblinkTapped(_ sender: UIButton) {
-        let urlString = self.data.first?.speaker_websitelink ?? ""
+        let urlString = self.data?.speaker_websitelink ?? ""
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }
@@ -111,9 +127,9 @@ extension SpeakerDetailsVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.videosCollectionView {
-            return 5
+            return self.featuredVideos.count
         } else {
-            return 5
+            return self.sessionData.count
         }
         
     }
@@ -121,10 +137,12 @@ extension SpeakerDetailsVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.videosCollectionView {
             if let cell = videosCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.homeVideosCell, for: indexPath) as? HomeVideosCell {
+                cell.configureCell(data: self.featuredVideos[indexPath.row])
                 return cell
             }
         } else {
             if let cell = sessionsCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.speakersSessionsCell, for: indexPath) as? SpeakersSessionsCell {
+                cell.configureCell(data: self.sessionData[indexPath.item])
                 return cell
             }
         }
@@ -134,6 +152,15 @@ extension SpeakerDetailsVC: UICollectionViewDataSource {
 }
 
 extension SpeakerDetailsVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.videosCollectionView {
+            let urlString = self.featuredVideos[indexPath.row].video_url ?? ""
+            if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
     
 }
 

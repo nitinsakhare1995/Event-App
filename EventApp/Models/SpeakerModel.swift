@@ -59,22 +59,38 @@ struct SpeakerContentModel : Mappable {
 struct SpeakerDetailModel : Mappable {
     var requestStatus : String?
     var error : String?
-    var content : [SpeakerDetailContentModel]?
-
+    var content : SpeakerDetailContentModel?
+    
     init?(map: Map) {
-
+        
     }
-
+    
     mutating func mapping(map: Map) {
-
+        
         requestStatus <- map["requestStatus"]
         error <- map["Error"]
         content <- map["Content"]
     }
-
+    
 }
 
 struct SpeakerDetailContentModel : Mappable {
+    var SpeakerDetail0Model : SpeakerDetail0Model?
+    var sessionspeakerData : [SpeakerDetailSessionspeakerDataModel]?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        
+        SpeakerDetail0Model <- map["0"]
+        sessionspeakerData <- map["sessionspeakerData"]
+    }
+    
+}
+
+struct SpeakerDetail0Model : Mappable {
     var speaker_id : String?
     var name : String?
     var company_name : String?
@@ -92,13 +108,13 @@ struct SpeakerDetailContentModel : Mappable {
     var profile_pic : String?
     var banner_img : String?
     var speaker_description : String?
-
+    
     init?(map: Map) {
-
+        
     }
-
+    
     mutating func mapping(map: Map) {
-
+        
         speaker_id <- map["speaker_id"]
         name <- map["name"]
         company_name <- map["company_name"]
@@ -117,5 +133,27 @@ struct SpeakerDetailContentModel : Mappable {
         banner_img <- map["banner_img"]
         speaker_description <- map["speaker_description"]
     }
+    
+}
 
+struct SpeakerDetailSessionspeakerDataModel : Mappable {
+    var session_id : String?
+    var session_agendaid : String?
+    var session_time : String?
+    var session_title : String?
+    var session_description : String?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        
+        session_id <- map["session_id"]
+        session_agendaid <- map["session_agendaid"]
+        session_time <- map["session_time"]
+        session_title <- map["session_title"]
+        session_description <- map["session_description"]
+    }
+    
 }

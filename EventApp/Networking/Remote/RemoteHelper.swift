@@ -13,10 +13,10 @@ public enum APIRequest: URLRequestConvertible {
     case login(email: String, password: String)
     case getSpeakersList
     case registerUser(userName: String, password: String, email: String)
-    case verifyOtp(userId: Int, otp: String)
+    case verifyOtp(userId: String, otp: String)
     case getVideoList(id: Int)
     case forgotPassword(email: String)
-    case resetPassword(password: String, userId: Int)
+    case resetPassword(password: String, userId: String)
     case getEventgDetails(eventId: Int)
     case getAgendaList(eventId: Int)
     case getBlogs

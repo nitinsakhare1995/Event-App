@@ -100,7 +100,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJu-Yy-x2P">
                                                 <rect key="frame" x="20" y="120" width="374" height="120"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Angela Needle" translatesAutoresizingMaskIntoConstraints="NO" id="IZI-8R-bUa">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IZI-8R-bUa">
                                                         <rect key="frame" x="10" y="10" width="110" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="hiQ-1d-4qx"/>
@@ -478,7 +478,6 @@ In more recent years, her focus has been on studying how exponentially increase 
         </scene>
     </scenes>
     <resources>
-        <image name="Angela Needle" width="112" height="98"/>
         <image name="ArrowWhite" width="13" height="23"/>
         <image name="facebook" width="43" height="43"/>
         <image name="linkedin" width="35" height="35"/>

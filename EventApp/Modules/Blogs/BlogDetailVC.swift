@@ -40,7 +40,7 @@ class BlogDetailVC: UIViewController {
         if let blogId = self.blogId {
             Remote.shared.getBlogDetail(blogId: blogId) { userData in
                 let baseURL = Constants.baseImgURL
-                let imgURL = userData.content?.first?.blog_image ?? ""
+                let imgURL = userData.content?.first?.banner_img ?? ""
                 let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
                 self.imgBlog.kf.setImage(with: imgURLKF)
                 self.lblBolgTopic.text = userData.content?.first?.blog_topic ?? ""

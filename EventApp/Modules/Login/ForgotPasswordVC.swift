@@ -48,7 +48,7 @@ class ForgotPasswordVC: UIViewController {
                         let vc = mainStoryBoard.instantiateViewController(withIdentifier: "LoginOtpVC") as! LoginOtpVC
                         vc.email = email
                         if let userID = userData.content?.first?.userregid {
-                            vc.userID = Int(userID)
+                            vc.userID = userID
                         }
                         vc.useType = .password
                         self.navigationController?.pushViewController(vc, animated: true)

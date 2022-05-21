@@ -642,7 +642,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cL1-Cv-g3Y">
-                                <rect key="frame" x="0.0" y="174" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUm-bB-8Fo">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -720,18 +720,18 @@
                                             <constraint firstAttribute="trailing" secondItem="hR5-7l-6BZ" secondAttribute="trailing" id="uAZ-HM-LGi"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmt-5o-5oO">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="50"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmt-5o-5oO">
+                                        <rect key="frame" x="0.0" y="100" width="414" height="0.0"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventsSide" translatesAutoresizingMaskIntoConstraints="NO" id="921-BT-ZL5">
-                                                <rect key="frame" x="25" y="15" width="20" height="20"/>
+                                                <rect key="frame" x="25" y="-10" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="N8k-ww-tIz"/>
                                                     <constraint firstAttribute="width" constant="20" id="Uii-wf-Pp8"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-Bc-PX6">
-                                                <rect key="frame" x="60" y="0.0" width="346" height="50"/>
+                                                <rect key="frame" x="60" y="0.0" width="346" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -748,7 +748,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDe-6o-Q5r">
-                                        <rect key="frame" x="0.0" y="150" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="100" width="414" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resourcesSide" translatesAutoresizingMaskIntoConstraints="NO" id="lqb-vB-A7n">
                                                 <rect key="frame" x="25" y="15" width="20" height="20"/>
@@ -786,7 +786,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1k7-9P-xwK">
-                                        <rect key="frame" x="0.0" y="200" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="414" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingsSide" translatesAutoresizingMaskIntoConstraints="NO" id="Pc8-y2-4zI">
                                                 <rect key="frame" x="25" y="15" width="20" height="20"/>
@@ -825,7 +825,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="pLP-3v-lDK"/>
+                                    <constraint firstAttribute="height" constant="200" id="pLP-3v-lDK"/>
                                 </constraints>
                             </stackView>
                         </subviews>
