@@ -92,6 +92,9 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="redirect"/>
+                                                <connections>
+                                                    <action selector="callOption:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Swc-DV-gjK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -129,6 +132,9 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="redirect"/>
+                                                <connections>
+                                                    <action selector="openLink:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uQn-bL-XuO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -173,6 +179,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="imgAgenda" destination="2cC-Zr-Ipb" id="IbB-hx-9zE"/>
+                <outlet property="lblAddress" destination="50A-e3-wzG" id="kTS-cb-1n5"/>
+                <outlet property="lblLink" destination="32E-d5-DNd" id="bKw-2R-Lrs"/>
+                <outlet property="lblPhone" destination="BuT-JA-pds" id="3OD-jE-QbT"/>
+                <outlet property="lblTitle" destination="OEO-bk-bue" id="tjC-0N-3ai"/>
                 <outlet property="mainView" destination="ZQ6-sO-gw0" id="mpR-FQ-PN8"/>
             </connections>
             <point key="canvasLocation" x="190.57971014492756" y="263.83928571428572"/>

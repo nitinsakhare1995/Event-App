@@ -311,7 +311,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 42 images.
+  /// This `R.image` struct is generated, and contains static references to 43 images.
   struct image {
     /// Image `Angela Needle`.
     static let angelaNeedle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Angela Needle")
@@ -389,6 +389,8 @@ struct R: Rswift.Validatable {
     static let time = Rswift.ImageResource(bundle: R.hostingBundle, name: "time")
     /// Image `twitter`.
     static let twitter = Rswift.ImageResource(bundle: R.hostingBundle, name: "twitter")
+    /// Image `userPlaceholder`.
+    static let userPlaceholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "userPlaceholder")
     /// Image `videos`.
     static let videos = Rswift.ImageResource(bundle: R.hostingBundle, name: "videos")
     /// Image `web`.
@@ -661,6 +663,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "twitter", bundle: ..., traitCollection: ...)`
     static func twitter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.twitter, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "userPlaceholder", bundle: ..., traitCollection: ...)`
+    static func userPlaceholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.userPlaceholder, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1139,7 +1148,6 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Angela Needle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Angela Needle' is used in nib 'NotificationsCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Arrow' is used in nib 'NotificationsCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
@@ -1643,9 +1651,9 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Angela Needle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Angela Needle' is used in storyboard 'User', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Filter", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Filter' is used in storyboard 'User', but couldn't be loaded.") }
         if UIKit.UIImage(named: "drawer", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'drawer' is used in storyboard 'User', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "userPlaceholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'userPlaceholder' is used in storyboard 'User', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "DarkGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'DarkGreen' is used in storyboard 'User', but couldn't be loaded.") }
           if UIKit.UIColor(named: "LightGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'LightGreen' is used in storyboard 'User', but couldn't be loaded.") }

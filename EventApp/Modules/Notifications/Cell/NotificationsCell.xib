@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,7 +29,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwS-cM-d5y">
                         <rect key="frame" x="20" y="8" width="365" height="118"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Angela Needle" translatesAutoresizingMaskIntoConstraints="NO" id="OCa-Zq-FyG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OCa-Zq-FyG">
                                 <rect key="frame" x="10" y="10" width="80" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="gp2-nN-anE"/>
@@ -93,13 +94,15 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="lblSubTitle" destination="mvh-MO-nbR" id="tyo-rY-1FL"/>
+                <outlet property="lblTimeAgo" destination="Hw7-WI-q8w" id="TOv-3M-r9s"/>
+                <outlet property="lblTitle" destination="1hk-bM-2QF" id="zsC-0Y-Oyn"/>
                 <outlet property="mainView" destination="xwS-cM-d5y" id="7wg-gN-wqf"/>
             </connections>
             <point key="canvasLocation" x="197.82608695652175" y="73.660714285714278"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Angela Needle" width="112" height="98"/>
         <image name="Arrow" width="7" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

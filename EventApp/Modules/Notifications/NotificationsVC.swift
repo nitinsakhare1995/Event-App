@@ -11,6 +11,8 @@ class NotificationsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var data = [NotificationContentModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,9 @@ class NotificationsVC: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "NotificationsCell", bundle: nil), forCellReuseIdentifier: "NotificationsCell")
+        
+        getData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +46,14 @@ class NotificationsVC: UIViewController {
         self.title = ""
     }
     
-    
+    func getData() {
+        Remote.shared.getNotifictions { userData in
+            self.data = userData.content ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     
 
@@ -50,7 +62,7 @@ class NotificationsVC: UIViewController {
 extension NotificationsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.data.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -60,6 +72,7 @@ extension NotificationsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.notificationsCell, for: indexPath) as? NotificationsCell {
             cell.selectionStyle = .none
+            cell.configureCell(data: self.data[indexPath.row])
             return cell
         }
         return UITableViewCell()

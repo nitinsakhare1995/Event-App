@@ -78,6 +78,24 @@ class MapDetailVC: UIViewController {
         }
     }
     
+    @IBAction func opneNavigation(_ sender: UIButton) {
+        showlocationAction()
+    }
+    
+    @IBAction func openDirection(_ sender: UIButton) {
+        showlocationAction()
+    }
+    
+    func showlocationAction() {
+        let address = self.content?.map0?.agenda_address ?? ""
+        let mapURLStr = String(format: "https://maps.google.com/?q=\(address)")
+        if let url = URL(string: mapURLStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
+    
     @IBAction func openLink(_ sender: UIButton) {
         let urlString = self.content?.map0?.agenda_websiteurl ?? ""
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {

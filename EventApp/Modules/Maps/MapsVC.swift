@@ -27,6 +27,8 @@ class MapsVC: UIViewController {
         }
     }
     
+    var data = [AgendaContentModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +37,8 @@ class MapsVC: UIViewController {
         tableView.register(UINib(nibName: "MapCell", bundle: nil), forCellReuseIdentifier: "MapCell")
         
         searchBar.backgroundImage = UIImage()
+        
+        getMapList()
         
     }
     
@@ -57,13 +61,22 @@ class MapsVC: UIViewController {
         super.viewWillDisappear(animated)
         self.title = ""
     }
+    
+    func getMapList() {
+        Remote.shared.getAgendaList(eventId: 1) { userData in
+            self.data = userData.content ?? []
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
 }
 
 extension MapsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.data.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -73,6 +86,7 @@ extension MapsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell", for: indexPath) as! MapCell
         cell.selectionStyle = .none
+        cell.configureCell(data: self.data[indexPath.row])
         return cell
     }
     

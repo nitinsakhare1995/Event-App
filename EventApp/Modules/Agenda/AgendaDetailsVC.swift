@@ -114,6 +114,12 @@ extension AgendaDetailsVC: UICollectionViewDataSource {
 
 extension AgendaDetailsVC: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let urlString = self.eventVideos[indexPath.row].video_url ?? ""
+        if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
 }
 
 

@@ -159,7 +159,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="4ZK-Vb-TMK"/>
                                                 </constraints>
-                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" name="Gordita-Regular" family="Gordita" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -281,7 +281,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="West Hampstead Thameslink,  Camden Town, Greater London, London" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32n-q7-jo1">
-                                                        <rect key="frame" x="48" y="69" width="240.5" height="24"/>
+                                                        <rect key="frame" x="48" y="69" width="281" height="24"/>
                                                         <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="12"/>
                                                         <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -308,6 +308,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="XW9-Pf-mE7" firstAttribute="leading" secondItem="32n-q7-jo1" secondAttribute="trailing" constant="12" id="1dG-Vc-TxA"/>
                                                     <constraint firstAttribute="trailing" secondItem="RYT-VH-2ts" secondAttribute="trailing" constant="20" id="1p4-CT-3Dv"/>
                                                     <constraint firstAttribute="trailing" secondItem="XW9-Pf-mE7" secondAttribute="trailing" constant="8" id="34P-oS-gXD"/>
                                                     <constraint firstItem="RYT-VH-2ts" firstAttribute="top" secondItem="IlM-2x-CUe" secondAttribute="bottom" constant="20" id="3ll-Xc-Wl3"/>
@@ -448,19 +449,25 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeg-rM-Bc7">
                                                         <rect key="frame" x="20" y="58" width="374" height="122"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I0H-vN-B5m">
+                                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I0H-vN-B5m">
                                                                 <rect key="frame" x="10" y="10" width="140" height="102"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="140" id="Ozy-Qr-Ec4"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stream ONLINE  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgR-cj-9td">
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stream ONLINE  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgR-cj-9td">
                                                                 <rect key="frame" x="162" y="20" width="102.5" height="12"/>
                                                                 <fontDescription key="fontDescription" name="Gordita-Regular" family="Gordita" pointSize="12"/>
                                                                 <color key="textColor" name="DarkGreen"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cant Make it in person? Join the Virtual Event live no matter where you are." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFE-Tq-Rhe">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIK-hC-pk5">
+                                                                <rect key="frame" x="139" y="54" width="96.5" height="14"/>
+                                                                <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="14"/>
+                                                                <color key="textColor" name="DarkGreen"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cant Make it in person? Join the Virtual Event live no matter where you are." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFE-Tq-Rhe">
                                                                 <rect key="frame" x="162" y="52" width="202" height="36"/>
                                                                 <fontDescription key="fontDescription" name="Gordita-Regular" family="Gordita" pointSize="12"/>
                                                                 <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -477,6 +484,8 @@
                                                             <constraint firstItem="dFE-Tq-Rhe" firstAttribute="top" secondItem="XgR-cj-9td" secondAttribute="bottom" constant="20" id="V3E-8a-wPe"/>
                                                             <constraint firstItem="dFE-Tq-Rhe" firstAttribute="leading" secondItem="I0H-vN-B5m" secondAttribute="trailing" constant="12" id="V4G-V1-t4x"/>
                                                             <constraint firstAttribute="bottom" secondItem="I0H-vN-B5m" secondAttribute="bottom" constant="10" id="cfj-cy-Mnh"/>
+                                                            <constraint firstItem="FIK-hC-pk5" firstAttribute="centerX" secondItem="xeg-rM-Bc7" secondAttribute="centerX" id="fKJ-k9-h8U"/>
+                                                            <constraint firstItem="FIK-hC-pk5" firstAttribute="centerY" secondItem="xeg-rM-Bc7" secondAttribute="centerY" id="vUx-OQ-6rw"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>

@@ -60,6 +60,7 @@ class LoginVC: UIViewController {
                     if userData.requestStatus == Constants.successMsg {
                         let userDefault = UserDefaults.standard
                         userDefault.set(true, forKey: "isLoggedIn")
+                        userDefault.set(userData.content?.first?.userregid, forKey: "UDUserId")
                         userDefault.synchronize()
                         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = mainStoryBoard.instantiateViewController(withIdentifier: "rootController") as! SideMenuRootVC

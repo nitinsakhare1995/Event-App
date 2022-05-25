@@ -70,6 +70,7 @@ class SideMenuVC: UIViewController {
     func clearUserDefaults() {
         let userDefault = UserDefaults.standard
         userDefault.removeObject(forKey: "isLoggedIn")
+        userDefault.removeObject(forKey: "UDUserId")
         let domain = Bundle.main.bundleIdentifier!
         userDefault.removePersistentDomain(forName: domain)
         userDefault.synchronize()

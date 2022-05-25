@@ -295,7 +295,7 @@ In more recent years, her focus has been on studying how exponentially increase 
                         <outlet property="descriptionView" destination="3mZ-Nw-cHu" id="qE4-Vo-IKv"/>
                         <outlet property="imgSpeaker" destination="IZI-8R-bUa" id="JRG-0w-pOh"/>
                         <outlet property="lblProfession" destination="Zli-rC-KNJ" id="YTC-pR-QAK"/>
-                        <outlet property="lblSpeakerName" destination="Zli-rC-KNJ" id="B5z-8i-1oc"/>
+                        <outlet property="lblSpeakerName" destination="aJ4-aw-7Mj" id="QNR-nF-yiT"/>
                         <outlet property="sessionsCollectionView" destination="CZt-Pd-DXw" id="fjC-4k-2qx"/>
                         <outlet property="speakerView" destination="PJu-Yy-x2P" id="jHy-hZ-yOA"/>
                         <outlet property="topView" destination="QkE-VH-sle" id="6pc-xO-KyQ"/>

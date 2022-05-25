@@ -285,4 +285,34 @@ class Remote {
         }
     }
     
+    func getProfileData(userId: String, completionHandler: @escaping (_ userData: ProfileModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getProfile(userId: userId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<ProfileModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getNotifictions(completionHandler: @escaping (_ userData: NotificationModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getNotifications).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<NotificationModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
 }

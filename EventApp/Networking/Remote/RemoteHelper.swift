@@ -28,6 +28,8 @@ public enum APIRequest: URLRequestConvertible {
     case getMapDetails(eventId: String, agendaId: String)
     case getSpeakerDetails(speakerId: String)
     case getEventList
+    case getProfile(userId: String)
+    case getNotifications
     
     var method: HTTPMethod {
         switch self {
@@ -74,6 +76,10 @@ public enum APIRequest: URLRequestConvertible {
             return "?reqAction=speakerdetail&speakerid=\(speakerId)"
         case .getEventList:
             return "?reqAction=events"
+        case .getProfile(let userId):
+            return "?reqAction=userprofile&userregid=\(userId)"
+        case .getNotifications:
+            return "?reqAction=notification"
         }
     }
     

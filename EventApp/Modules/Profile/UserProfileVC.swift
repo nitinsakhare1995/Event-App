@@ -15,6 +15,10 @@ class UserProfileVC: UIViewController {
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     @IBOutlet weak var resourcesCollectionView: UICollectionView!
     @IBOutlet weak var videosCollectionView: UICollectionView!
+    @IBOutlet weak var imgUser: UIImageView!
+    @IBOutlet weak var lblUsername: UILabel!
+    @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var lblMobileNumber: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,8 @@ class UserProfileVC: UIViewController {
         videosCollectionView.delegate = self
         videosCollectionView.dataSource = self
         
+        getProfileData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +57,21 @@ class UserProfileVC: UIViewController {
         super.viewWillDisappear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func getProfileData() {
+        let userDefaults = UserDefaults.standard
+        if let userId = userDefaults.string(forKey: "UDUserId") {
+            Remote.shared.getProfileData(userId: userId) { userData in
+//                let baseURL = Constants.baseImgURL
+//                let imgURL = userData.content?.first?.banner_img ?? ""
+//                let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
+//                self.imgUser.kf.setImage(with: imgURLKF)
+                self.lblUsername.text = userData.content?.first?.fullname
+                self.lblEmail.text = userData.content?.first?.email_id
+                self.lblMobileNumber.text = userData.content?.first?.mobile
+            }
+        }
     }
     
 }
