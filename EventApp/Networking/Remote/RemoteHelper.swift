@@ -30,6 +30,8 @@ public enum APIRequest: URLRequestConvertible {
     case getEventList
     case getProfile(userId: String)
     case getNotifications
+    case saveVideo(userId: String)
+    case saveResource(userId: String)
     
     var method: HTTPMethod {
         switch self {
@@ -80,6 +82,10 @@ public enum APIRequest: URLRequestConvertible {
             return "?reqAction=userprofile&userregid=\(userId)"
         case .getNotifications:
             return "?reqAction=notification"
+        case .saveVideo(let userId):
+            return "?reqAction=savedvideos&userregid=\(userId)"
+        case .saveResource(let userId):
+            return "?reqAction=savedresources&userregid=\(userId)"
         }
     }
     

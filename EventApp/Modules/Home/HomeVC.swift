@@ -155,7 +155,7 @@ extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.videosCollectionView {
             if let cell = videosCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.homeVideosCell, for: indexPath) as? HomeVideosCell {
-                cell.configureCell(data: self.featuredVideos[indexPath.row])
+                cell.configureCell(data: self.featuredVideos[indexPath.row], isVideoList: false)
                 return cell
             }
         } else {

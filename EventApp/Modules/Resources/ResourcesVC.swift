@@ -75,13 +75,26 @@ extension ResourcesVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 110
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.resourcesCell, for: indexPath) as? ResourcesCell {
             cell.selectionStyle = .none
             cell.lblName.text = self.data[indexPath.row].resource_title
+            cell.saveResource = {
+                let userDefaults = UserDefaults.standard
+                if let userId = userDefaults.string(forKey: "UDUserId") {
+                    Remote.shared.saveResource(userId: userId) { userData in
+                        if userData.requestStatus == "Success" {
+                            showSnackBar(message: "Resource saved", duration: .middle)
+                        } else {
+                            showSnackBar(message: "Something went wrong", duration: .middle)
+                        }
+                    }
+                }
+               
+            }
             return cell
         }
         return UITableViewCell()

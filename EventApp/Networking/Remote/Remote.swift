@@ -315,4 +315,34 @@ class Remote {
         }
     }
     
+    func saveVideo(userId: String, completionHandler: @escaping (_ userData: NotificationModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.saveVideo(userId: userId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<NotificationModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func saveResource(userId: String, completionHandler: @escaping (_ userData: NotificationModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.saveResource(userId: userId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<NotificationModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
 }

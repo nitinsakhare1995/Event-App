@@ -104,21 +104,43 @@ extension VideosVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.featuredVideosCollectionView {
             if let cell = featuredVideosCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.homeVideosCell, for: indexPath) as? HomeVideosCell {
-                cell.configureCell(data: self.featuredVideos[indexPath.row])
+                cell.configureCell(data: self.featuredVideos[indexPath.row], isVideoList: true)
+                cell.saveVideo = {
+                    self.saveVideo()
+                }
                 return cell
             }
         } else if collectionView == self.sessionsVideoCollectionView {
             if let cell = sessionsVideoCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.homeVideosCell, for: indexPath) as? HomeVideosCell {
-                cell.configureCell(data: self.sessionVideos[indexPath.row])
+                cell.configureCell(data: self.sessionVideos[indexPath.row], isVideoList: true)
+                cell.saveVideo = {
+                    self.saveVideo()
+                }
                 return cell
             }
         } else {
             if let cell = speakerVideosCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.homeVideosCell, for: indexPath) as? HomeVideosCell {
-                cell.configureCell(data: self.speakerVideos[indexPath.row])
+                cell.configureCell(data: self.speakerVideos[indexPath.row], isVideoList: true)
+                cell.saveVideo = {
+                    self.saveVideo()
+                }
                 return cell
             }
         }
         return UICollectionViewCell()
+    }
+    
+    func saveVideo() {
+        let userDefaults = UserDefaults.standard
+        if let userId = userDefaults.string(forKey: "UDUserId") {
+            Remote.shared.saveVideo(userId: userId) { userData in
+                if userData.requestStatus == "Success" {
+                    showSnackBar(message: "Video saved", duration: .middle)
+                } else {
+                    showSnackBar(message: "Something went wrong", duration: .middle)
+                }
+            }
+        }
     }
     
 }

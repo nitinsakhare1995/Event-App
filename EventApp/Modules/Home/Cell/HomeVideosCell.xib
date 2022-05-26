@@ -38,20 +38,34 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helen Neal &amp; Mark Selby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrT-Xb-VDk">
-                                <rect key="frame" x="20" y="296" width="324" height="10"/>
+                                <rect key="frame" x="20" y="296" width="283" height="10"/>
                                 <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="10"/>
                                 <color key="textColor" red="0.086274509803921567" green="0.54509803921568623" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67x-CN-hoY">
+                                <rect key="frame" x="313" y="289" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="55j-iT-tXq"/>
+                                    <constraint firstAttribute="height" constant="25" id="ASG-3n-GxQ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                <state key="normal" image="savee"/>
+                                <connections>
+                                    <action selector="btnSaveTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nRR-Xv-hxO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="crE-L9-Zf9" secondAttribute="trailing" constant="5" id="6Tc-vS-ALV"/>
                             <constraint firstAttribute="trailing" secondItem="1Kd-B5-Tc7" secondAttribute="trailing" constant="8" id="QiC-iZ-xT4"/>
                             <constraint firstItem="vrT-Xb-VDk" firstAttribute="leading" secondItem="Yru-U0-4gp" secondAttribute="leading" constant="20" id="Rit-x5-X5F"/>
+                            <constraint firstItem="67x-CN-hoY" firstAttribute="leading" secondItem="vrT-Xb-VDk" secondAttribute="trailing" constant="10" id="W03-Nj-n8G"/>
                             <constraint firstItem="crE-L9-Zf9" firstAttribute="leading" secondItem="Yru-U0-4gp" secondAttribute="leading" constant="5" id="YIg-9L-HgM"/>
+                            <constraint firstAttribute="bottom" secondItem="67x-CN-hoY" secondAttribute="bottom" constant="12" id="dbr-EK-zbO"/>
                             <constraint firstItem="1Kd-B5-Tc7" firstAttribute="leading" secondItem="Yru-U0-4gp" secondAttribute="leading" constant="20" id="f43-Sw-L4r"/>
-                            <constraint firstAttribute="trailing" secondItem="vrT-Xb-VDk" secondAttribute="trailing" constant="8" id="hPS-3t-0Ay"/>
+                            <constraint firstAttribute="trailing" secondItem="67x-CN-hoY" secondAttribute="trailing" constant="14" id="fkm-bC-0Qp"/>
                             <constraint firstItem="crE-L9-Zf9" firstAttribute="top" secondItem="Yru-U0-4gp" secondAttribute="top" constant="5" id="o8G-Eb-MoE"/>
                             <constraint firstItem="1Kd-B5-Tc7" firstAttribute="top" secondItem="crE-L9-Zf9" secondAttribute="bottom" constant="15" id="sCS-Mq-s5I"/>
                             <constraint firstAttribute="bottom" secondItem="vrT-Xb-VDk" secondAttribute="bottom" constant="20" id="sfG-lC-XSf"/>
@@ -74,6 +88,7 @@
             </constraints>
             <size key="customSize" width="372" height="336"/>
             <connections>
+                <outlet property="btnSave" destination="67x-CN-hoY" id="Dzn-IZ-AtW"/>
                 <outlet property="imgThumbnail" destination="crE-L9-Zf9" id="Mgy-aP-wtK"/>
                 <outlet property="lblVideoAuthor" destination="vrT-Xb-VDk" id="cIa-5A-dcO"/>
                 <outlet property="lblVideoTitle" destination="1Kd-B5-Tc7" id="1zA-5w-RWR"/>
@@ -84,5 +99,6 @@
     </objects>
     <resources>
         <image name="image 7" width="253" height="180"/>
+        <image name="savee" width="64" height="64"/>
     </resources>
 </document>

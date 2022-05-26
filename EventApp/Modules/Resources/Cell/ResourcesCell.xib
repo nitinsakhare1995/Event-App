@@ -41,15 +41,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDR-l8-6kn">
+                                <rect key="frame" x="293" y="10" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="cqz-4r-9mG"/>
+                                    <constraint firstAttribute="width" constant="25" id="qTg-ox-vTA"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                <state key="normal" image="savee"/>
+                                <connections>
+                                    <action selector="btnSaveTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="diJ-yU-5wG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Fbt-JE-4Fq" secondAttribute="bottom" constant="5" id="1Lv-BT-4Nu"/>
                             <constraint firstItem="Eb9-ea-4Kh" firstAttribute="centerY" secondItem="mrs-hK-fdX" secondAttribute="centerY" id="8qQ-9w-Ojz"/>
+                            <constraint firstItem="VDR-l8-6kn" firstAttribute="top" secondItem="mrs-hK-fdX" secondAttribute="top" constant="10" id="Cap-XS-9gG"/>
                             <constraint firstItem="Fbt-JE-4Fq" firstAttribute="top" secondItem="mrs-hK-fdX" secondAttribute="top" constant="5" id="GzM-O7-oRQ"/>
                             <constraint firstItem="MAf-zE-8gs" firstAttribute="centerY" secondItem="mrs-hK-fdX" secondAttribute="centerY" id="ZNz-4l-gw3"/>
                             <constraint firstItem="Eb9-ea-4Kh" firstAttribute="leading" secondItem="Fbt-JE-4Fq" secondAttribute="trailing" constant="20" id="heQ-6U-FkI"/>
                             <constraint firstAttribute="trailing" secondItem="MAf-zE-8gs" secondAttribute="trailing" constant="20" id="lE5-sD-kyJ"/>
+                            <constraint firstAttribute="trailing" secondItem="VDR-l8-6kn" secondAttribute="trailing" constant="10" id="wVv-bL-ZfC"/>
                             <constraint firstItem="Fbt-JE-4Fq" firstAttribute="leading" secondItem="mrs-hK-fdX" secondAttribute="leading" constant="5" id="xzO-5Y-yy4"/>
                         </constraints>
                     </view>
@@ -68,12 +82,13 @@
                 <outlet property="lblName" destination="Eb9-ea-4Kh" id="BEa-MV-3M0"/>
                 <outlet property="mainView" destination="mrs-hK-fdX" id="UeM-Ws-WHA"/>
             </connections>
-            <point key="canvasLocation" x="157.97101449275362" y="164.0625"/>
+            <point key="canvasLocation" x="155.07246376811597" y="164.0625"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Arrow" width="7" height="12"/>
         <image name="resourceThumbnail" width="70" height="70"/>
+        <image name="savee" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

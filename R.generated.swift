@@ -311,7 +311,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 43 images.
+  /// This `R.image` struct is generated, and contains static references to 45 images.
   struct image {
     /// Image `Angela Needle`.
     static let angelaNeedle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Angela Needle")
@@ -379,8 +379,12 @@ struct R: Rswift.Validatable {
     static let resourceThumbnail = Rswift.ImageResource(bundle: R.hostingBundle, name: "resourceThumbnail")
     /// Image `resourcesSide`.
     static let resourcesSide = Rswift.ImageResource(bundle: R.hostingBundle, name: "resourcesSide")
+    /// Image `savee`.
+    static let savee = Rswift.ImageResource(bundle: R.hostingBundle, name: "savee")
     /// Image `settingsSide`.
     static let settingsSide = Rswift.ImageResource(bundle: R.hostingBundle, name: "settingsSide")
+    /// Image `sharee`.
+    static let sharee = Rswift.ImageResource(bundle: R.hostingBundle, name: "sharee")
     /// Image `speakers`.
     static let speakers = Rswift.ImageResource(bundle: R.hostingBundle, name: "speakers")
     /// Image `sponsors`.
@@ -632,9 +636,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "savee", bundle: ..., traitCollection: ...)`
+    static func savee(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.savee, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "settingsSide", bundle: ..., traitCollection: ...)`
     static func settingsSide(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.settingsSide, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sharee", bundle: ..., traitCollection: ...)`
+    static func sharee(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sharee, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1091,6 +1109,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "image 7", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'image 7' is used in nib 'HomeVideosCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "savee", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'savee' is used in nib 'HomeVideosCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -1204,6 +1223,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "Arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Arrow' is used in nib 'ResourcesCell', but couldn't be loaded.") }
         if UIKit.UIImage(named: "resourceThumbnail", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'resourceThumbnail' is used in nib 'ResourcesCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "savee", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'savee' is used in nib 'ResourcesCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

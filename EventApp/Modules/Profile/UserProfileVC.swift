@@ -74,6 +74,14 @@ class UserProfileVC: UIViewController {
         }
     }
     
+    @IBAction func showAllResources(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func showAllVideos(_ sender: UIButton) {
+        
+    }
+    
 }
 
 extension UserProfileVC: UICollectionViewDataSource {

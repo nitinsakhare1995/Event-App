@@ -8,11 +8,14 @@
 import UIKit
 
 class HomeVideosCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var imgThumbnail: UIImageView!
     @IBOutlet weak var lblVideoTitle: UILabel!
     @IBOutlet weak var lblVideoAuthor: UILabel!
+    @IBOutlet weak var btnSave: UIButton!
+    
+    var saveVideo: (() -> ()) = {}
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,10 +24,19 @@ class HomeVideosCell: UICollectionViewCell {
         
     }
     
-    func configureCell(data: VideoContentModel?) {
+    func configureCell(data: VideoContentModel?, isVideoList: Bool?) {
         let imgURL = URL(string: "\(data?.http_url ?? "")\(data?.video_thumbnail ?? "")")
         imgThumbnail.kf.setImage(with: imgURL)
+        if isVideoList == true {
+            btnSave.isHidden = false
+        } else {
+            btnSave.isHidden = true
+        }
         lblVideoTitle.text = data?.video_title
     }
-
+    
+    @IBAction func btnSaveTapped(_ sender: UIButton) {
+        saveVideo()
+    }
+    
 }

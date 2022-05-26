@@ -8,7 +8,7 @@
 import UIKit
 
 class MapsVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet{
@@ -28,16 +28,18 @@ class MapsVC: UIViewController {
     }
     
     var data = [AgendaContentModel]()
+    var searchData = [AgendaContentModel]()
+    var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MapCell", bundle: nil), forCellReuseIdentifier: "MapCell")
         
         searchBar.backgroundImage = UIImage()
-        
+        searchBar.delegate = self
         getMapList()
         
     }
@@ -65,18 +67,23 @@ class MapsVC: UIViewController {
     func getMapList() {
         Remote.shared.getAgendaList(eventId: 1) { userData in
             self.data = userData.content ?? []
+            self.searchData = userData.content ?? []
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
-
+    
 }
 
 extension MapsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        if searching {
+            return self.searchData.count
+        } else {
+            return self.data.count
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,7 +93,11 @@ extension MapsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell", for: indexPath) as! MapCell
         cell.selectionStyle = .none
-        cell.configureCell(data: self.data[indexPath.row])
+        if searching {
+            cell.configureCell(data: self.searchData[indexPath.row])
+        } else {
+            cell.configureCell(data: self.data[indexPath.row])
+        }
         return cell
     }
     
@@ -96,7 +107,37 @@ extension MapsVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Maps", bundle: nil).instantiateViewController(withIdentifier: "MapDetailVC") as! MapDetailVC
+        if searching {
+            vc.agendaId = self.searchData[indexPath.row].agenda_id
+        } else {
+            vc.agendaId = self.data[indexPath.row].agenda_id
+        }
+        
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+extension MapsVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            searching = false
+            view.endEditing(true)
+            self.tableView.reloadData()
+        } else {
+            searching = true
+            let searchText = searchText.lowercased()
+            searchData = self.data.filter ({$0.agenda_category?.lowercased().range(of: searchText.lowercased()) != nil})
+            self.tableView.reloadData()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        self.tableView.reloadData()
+        self.navigationItem.titleView = nil
     }
     
 }
