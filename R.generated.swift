@@ -1660,10 +1660,15 @@ struct _R: Rswift.Validatable {
       let blogsVC = StoryboardViewControllerResource<BlogsVC>(identifier: "BlogsVC")
       let bundle = R.hostingBundle
       let name = "User"
+      let sessionReminderBottomSheet = StoryboardViewControllerResource<SessionReminderBottomSheet>(identifier: "SessionReminderBottomSheet")
       let userProfileVC = StoryboardViewControllerResource<UserProfileVC>(identifier: "UserProfileVC")
 
       func blogsVC(_: Void = ()) -> BlogsVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: blogsVC)
+      }
+
+      func sessionReminderBottomSheet(_: Void = ()) -> SessionReminderBottomSheet? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: sessionReminderBottomSheet)
       }
 
       func userProfileVC(_: Void = ()) -> UserProfileVC? {
@@ -1680,6 +1685,7 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'User', but couldn't be loaded.") }
         }
         if _R.storyboard.user().blogsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'blogsVC' could not be loaded from storyboard 'User' as 'BlogsVC'.") }
+        if _R.storyboard.user().sessionReminderBottomSheet() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'sessionReminderBottomSheet' could not be loaded from storyboard 'User' as 'SessionReminderBottomSheet'.") }
         if _R.storyboard.user().userProfileVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'userProfileVC' could not be loaded from storyboard 'User' as 'UserProfileVC'.") }
       }
 

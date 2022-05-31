@@ -159,6 +159,13 @@ extension SpeakerDetailsVC: UICollectionViewDelegate {
             if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url)
             }
+        } else if collectionView == self.sessionsCollectionView {
+            let vc = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "SessionReminderBottomSheet") as! SessionReminderBottomSheet
+            vc.speakerController = self
+            vc.speakerId = self.speakerId
+            vc.sessionid = self.sessionData[indexPath.item].session_id
+            vc.speakerData = self.data
+            self.openBottomSheet(sheetSize: [.fixed(230)], viewController: vc)
         }
     }
     

@@ -20,6 +20,8 @@ class UserProfileVC: UIViewController {
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblMobileNumber: UILabel!
     
+    var sessions = [SessionsReminderContentModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +47,7 @@ class UserProfileVC: UIViewController {
         videosCollectionView.dataSource = self
         
         getProfileData()
+        getSessionsReminder()
         
     }
     
@@ -59,14 +62,26 @@ class UserProfileVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    func getSessionsReminder() {
+        let userDefaults = UserDefaults.standard
+        if let userId = userDefaults.string(forKey: "UDUserId") {
+            Remote.shared.getSessionsReminder(userId: userId) { userData in
+                self.sessions = userData.content ?? []
+                DispatchQueue.main.async {
+                    self.sessionsCollectionView.reloadData()
+                }
+            }
+        }
+    }
+    
     func getProfileData() {
         let userDefaults = UserDefaults.standard
         if let userId = userDefaults.string(forKey: "UDUserId") {
             Remote.shared.getProfileData(userId: userId) { userData in
-//                let baseURL = Constants.baseImgURL
-//                let imgURL = userData.content?.first?.banner_img ?? ""
-//                let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
-//                self.imgUser.kf.setImage(with: imgURLKF)
+                //                let baseURL = Constants.baseImgURL
+                //                let imgURL = userData.content?.first?.banner_img ?? ""
+                //                let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
+                //                self.imgUser.kf.setImage(with: imgURLKF)
                 self.lblUsername.text = userData.content?.first?.fullname
                 self.lblEmail.text = userData.content?.first?.email_id
                 self.lblMobileNumber.text = userData.content?.first?.mobile
@@ -88,7 +103,7 @@ extension UserProfileVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.sessionsCollectionView {
-            return 5
+            return self.sessions.count
         } else if collectionView == self.eventsCollectionView {
             return 5
         } else if collectionView == self.resourcesCollectionView {
@@ -103,6 +118,7 @@ extension UserProfileVC: UICollectionViewDataSource {
         
         if collectionView == self.sessionsCollectionView {
             if let cell = sessionsCollectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.speakersSessionsCell, for: indexPath) as? SpeakersSessionsCell {
+                cell.configureProfileSessionCell(data: self.sessions[indexPath.row])
                 return cell
             }
         } else if collectionView == self.eventsCollectionView {

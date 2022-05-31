@@ -82,4 +82,13 @@ extension SessionsVC: UITableViewDataSource {
 
 extension SessionsVC: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "SessionReminderBottomSheet") as! SessionReminderBottomSheet
+        vc.sessionid = self.data[indexPath.row].session_id
+        vc.speakerId = self.data[indexPath.row].session_speakerid
+        vc.speakerName = self.data[indexPath.row].speaker_name
+        vc.speakerDesignataion = self.data[indexPath.row].speaker_designation
+        self.openBottomSheet(sheetSize: [.fixed(230)], viewController: vc)
+    }
+    
 }

@@ -15,5 +15,6 @@ target 'EventApp' do
   pod 'IQKeyboardManagerSwift'
   pod "TTGSnackbar"
   pod 'Kingfisher', '~> 7.0'
+  pod 'FittedSheets'
   
 end

@@ -32,6 +32,8 @@ public enum APIRequest: URLRequestConvertible {
     case getNotifications
     case saveVideo(userId: String)
     case saveResource(userId: String)
+    case getSessionsReminder(userId: String)
+    case setReminder(userId: String, sessionId: String, speakerId: String)
     
     var method: HTTPMethod {
         switch self {
@@ -86,6 +88,10 @@ public enum APIRequest: URLRequestConvertible {
             return "?reqAction=savedvideos&userregid=\(userId)"
         case .saveResource(let userId):
             return "?reqAction=savedresources&userregid=\(userId)"
+        case .getSessionsReminder(let userId):
+            return "?reqAction=getreminder&userregid=\(userId)"
+        case .setReminder(let userId, let sessionId, let speakerId):
+            return "?reqAction=sessionreminder&userregid=\(userId)&sessionid=\(sessionId)&speakerid=\(speakerId)"
         }
     }
     

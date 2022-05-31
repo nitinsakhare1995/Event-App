@@ -36,6 +36,18 @@ class SpeakersSessionsCell: UICollectionViewCell {
         
     }
     
+    func configureProfileSessionCell(data: SessionsReminderContentModel?) {
+        lblSessionNme.text = "Session \(data?.sessionid ?? "")"
+        let sessionTitle = data?.session_title ?? ""
+        let sessionTime = data?.session_time ?? ""
+        let panelText = "Panel  \(sessionTitle)".attributedStringWithColor(["\(sessionTitle)"], color: UIColor.darkGreen, font: R.font.gorditaBold(size: 12.0)!)
+        let timeText = "Time  \(sessionTime)".attributedStringWithColor(["\(sessionTime)"], color: UIColor.darkGreen, font: R.font.gorditaBold(size: 12.0)!)
+
+        lblPanel.attributedText = panelText
+        lblTime.attributedText = timeText
+        
+    }
+    
 }
 
 

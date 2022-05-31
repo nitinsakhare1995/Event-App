@@ -345,4 +345,34 @@ class Remote {
         }
     }
     
+    func getSessionsReminder(userId: String, completionHandler: @escaping (_ userData: SessionsReminderModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getSessionsReminder(userId: userId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<SessionsReminderModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func setReminder(userId: String, sessionId: String, speakerId: String, completionHandler: @escaping (_ userData: LoginModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.setReminder(userId: userId, sessionId: sessionId, speakerId: speakerId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<LoginModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
 }
