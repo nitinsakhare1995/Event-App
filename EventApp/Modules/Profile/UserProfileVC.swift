@@ -49,6 +49,10 @@ class UserProfileVC: UIViewController {
         getProfileData()
         getSessionsReminder()
         
+         lblUsername.text = ""
+        lblEmail.text = ""
+        lblMobileNumber.text = ""
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

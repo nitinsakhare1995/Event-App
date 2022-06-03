@@ -144,14 +144,25 @@ In more recent years, her focus has been on studying how exponentially increase 
                                                         <fontDescription key="fontDescription" name="Gordita-Regular" family="Gordita" pointSize="12"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFu-UQ-MbN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="220"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="btnShowVenueLocation:" destination="R6r-4M-7Ix" eventType="touchUpInside" id="WRL-WM-tIh"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="220" id="DLo-CO-Xmc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MFu-UQ-MbN" secondAttribute="trailing" id="HpI-Hy-ZDZ"/>
                                                     <constraint firstItem="jgy-Cw-w1Q" firstAttribute="top" secondItem="bPQ-JD-Bfv" secondAttribute="top" constant="20" id="bIB-KH-Ue5"/>
                                                     <constraint firstAttribute="bottom" secondItem="jgy-Cw-w1Q" secondAttribute="bottom" constant="20" id="bjj-dX-uVg"/>
                                                     <constraint firstAttribute="trailing" secondItem="jgy-Cw-w1Q" secondAttribute="trailing" constant="15" id="cwa-c6-Skx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="MFu-UQ-MbN" secondAttribute="bottom" id="k1P-aj-IrC"/>
                                                     <constraint firstItem="jgy-Cw-w1Q" firstAttribute="leading" secondItem="bPQ-JD-Bfv" secondAttribute="leading" constant="15" id="lNC-I0-ggI"/>
+                                                    <constraint firstItem="MFu-UQ-MbN" firstAttribute="leading" secondItem="bPQ-JD-Bfv" secondAttribute="leading" id="vvs-Ld-4FC"/>
+                                                    <constraint firstItem="MFu-UQ-MbN" firstAttribute="top" secondItem="bPQ-JD-Bfv" secondAttribute="top" id="y1o-Ia-Fbz"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oU3-Mn-UI4">
@@ -223,6 +234,7 @@ In more recent years, her focus has been on studying how exponentially increase 
                         <outlet property="btEvent" destination="i19-cN-Bef" id="YRE-lf-BMz"/>
                         <outlet property="btFuture" destination="rS2-6r-7S5" id="g8c-7F-D7r"/>
                         <outlet property="btVenue" destination="ma3-Db-mkg" id="iCN-6M-n6E"/>
+                        <outlet property="btnVneuLocation" destination="MFu-UQ-MbN" id="Odm-g4-Q1X"/>
                         <outlet property="descView" destination="bPQ-JD-Bfv" id="IdE-J4-FbC"/>
                         <outlet property="galleryCollectionView" destination="zt4-lP-Fgd" id="m3m-9p-Mdb"/>
                         <outlet property="imgTopView" destination="K8h-1L-Nij" id="wFX-XQ-O0u"/>

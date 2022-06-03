@@ -14,6 +14,7 @@ class SpeakersCell: UITableViewCell {
     @IBOutlet weak var imgSpeaker: UIImageView!
     @IBOutlet weak var lblSpeakerName: UILabel!
     @IBOutlet weak var lblDesignation: UILabel!
+    @IBOutlet weak var imgArrow: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

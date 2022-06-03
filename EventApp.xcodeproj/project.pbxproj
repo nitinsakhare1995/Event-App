@@ -43,6 +43,7 @@
 		1858D24F2813FF2D007BFB6B /* HomeSpeakersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1858D24D2813FF2D007BFB6B /* HomeSpeakersCell.xib */; };
 		1882C3742846832C003B8809 /* SessionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882C3732846832C003B8809 /* SessionsModel.swift */; };
 		1882C3762846882B003B8809 /* SessionReminderBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1882C3752846882B003B8809 /* SessionReminderBottomSheet.swift */; };
+		1891D4B6284A22DC00098D38 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1891D4B5284A22DC00098D38 /* ImagePreview.swift */; };
 		189ED9DD281CF74B007A3F9A /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189ED9DC281CF74B007A3F9A /* VideoModel.swift */; };
 		189ED9E0281CFDDD007A3F9A /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189ED9DF281CFDDD007A3F9A /* VideosVC.swift */; };
 		189ED9E3281D0256007A3F9A /* AgendaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189ED9E2281D0256007A3F9A /* AgendaVC.swift */; };
@@ -142,6 +143,7 @@
 		1858D24D2813FF2D007BFB6B /* HomeSpeakersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSpeakersCell.xib; sourceTree = "<group>"; };
 		1882C3732846832C003B8809 /* SessionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsModel.swift; sourceTree = "<group>"; };
 		1882C3752846882B003B8809 /* SessionReminderBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionReminderBottomSheet.swift; sourceTree = "<group>"; };
+		1891D4B5284A22DC00098D38 /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreview.swift; sourceTree = "<group>"; };
 		189ED9DC281CF74B007A3F9A /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		189ED9DF281CFDDD007A3F9A /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
 		189ED9E2281D0256007A3F9A /* AgendaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaVC.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				18B49FDE2812C77000360119 /* R.generated.swift */,
 				18B49FE52812CB0D00360119 /* Constants.swift */,
 				18DBB19228156EA400C91443 /* GlobalHelper.swift */,
+				1891D4B5284A22DC00098D38 /* ImagePreview.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -806,6 +809,7 @@
 				184D70F328279D0900EAA7EF /* MapDetailModel.swift in Sources */,
 				184D70E128270E5700EAA7EF /* AgendaModel.swift in Sources */,
 				18DBB11E281473AF00C91443 /* SideMenuRootVC.swift in Sources */,
+				1891D4B6284A22DC00098D38 /* ImagePreview.swift in Sources */,
 				18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */,
 				184D70ED282797CB00EAA7EF /* SessionsVC.swift in Sources */,
 				1829FD4F281D46D80098BCD4 /* MapGalleryCell.swift in Sources */,
@@ -967,7 +971,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 5MQ83N4DSQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventApp/Info.plist;
@@ -998,7 +1002,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 5MQ83N4DSQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventApp/Info.plist;

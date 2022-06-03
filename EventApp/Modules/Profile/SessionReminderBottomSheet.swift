@@ -28,6 +28,7 @@ class SessionReminderBottomSheet: UIViewController {
     var height: CGFloat?
     var panellistData: [PanellistData]?
     var sessiontitle: String?
+    var sessionController: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,7 @@ class SessionReminderBottomSheet: UIViewController {
         } else {
             tableHeight.constant = CGFloat(height)
         }
-       
+        
     }
     
     @IBAction func btnCancelTapped(_ sender: UIButton) {
@@ -76,7 +77,10 @@ class SessionReminderBottomSheet: UIViewController {
             Remote.shared.setReminder(userId: userId, sessionId: sessionid, speakerId: spekaerId) { userData in
                 if userData.requestStatus == "Success" {
                     self.dismiss(animated: true) {
-                        showSnackBar(message: userData.msg ?? "", duration: .middle)
+                        let alert = UIAlertController(title: "", message: userData.msg ?? "", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                        self.sessionController?.present(alert, animated: true, completion: nil)
+                        //                        showSnackBar(message: userData.msg ?? "", duration: .middle)
                     }
                 } else {
                     showSnackBar(message: userData.msg ?? "", duration: .middle)

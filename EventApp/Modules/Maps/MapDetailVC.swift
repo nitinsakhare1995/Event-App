@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class MapDetailVC: UIViewController {
     
@@ -18,6 +19,7 @@ class MapDetailVC: UIViewController {
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblWebsite: UILabel!
     @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     var gallery = [MapDetailGalleryImagesModel]()
     var content: MapDetailContentModel?

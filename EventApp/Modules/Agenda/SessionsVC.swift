@@ -91,6 +91,7 @@ extension SessionsVC: UITableViewDelegate {
         vc.panellistData = self.data[indexPath.row].panellistData ?? []
         vc.profilePicUrl = self.data[indexPath.row].profile_pic
         vc.sessiontitle = self.data[indexPath.row].session_title
+        vc.sessionController = self
         var height = 270
         if let count = self.data[indexPath.row].panellistData?.count {
             let addheight = count * 40

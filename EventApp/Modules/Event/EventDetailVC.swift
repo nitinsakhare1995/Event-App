@@ -20,6 +20,7 @@ class EventDetailVC: UIViewController {
     @IBOutlet weak var imgTopView: UIImageView!
     @IBOutlet weak var txtTop: UITextView!
     @IBOutlet weak var txtBottom: UITextView!
+    @IBOutlet weak var btnVneuLocation: UIButton!
     
     var eventId: Int?
     var galleryData1 = [EventDetail1Model]()
@@ -46,6 +47,8 @@ class EventDetailVC: UIViewController {
         shadow(Vw: descView, radius: 20)
 //        shadow(Vw: bottomDescView, radius: 20)
         
+        btnVneuLocation.isHidden = true
+        
         getEventDetail()
         
         setEventButton()
@@ -67,6 +70,7 @@ class EventDetailVC: UIViewController {
     }
     
     func setSecondData() {
+        btnVneuLocation.isHidden = false
         self.tabData = self.tabData2
         self.galleryData = self.galleryData3
         DispatchQueue.main.async {
@@ -178,6 +182,16 @@ class EventDetailVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    @IBAction func btnShowVenueLocation(_ sender: UIButton) {
+        let address = self.tabData?.eventtabs_description ?? ""
+        let mapURLStr = String(format: "https://maps.google.com/?q=\(address)")
+        if let url = URL(string: mapURLStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
+    
     @IBAction func btnGoBackTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -212,6 +226,13 @@ extension EventDetailVC: UICollectionViewDataSource {
 }
 
 extension EventDetailVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ImagePreviewVC()
+        vc.imagesArray = self.galleryData
+        vc.selectedIndex = indexPath.row
+        self.openBottomSheet(sheetSize: [.marginFromTop(250)], viewController: vc)
+    }
     
 }
 

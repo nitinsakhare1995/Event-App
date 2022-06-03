@@ -168,6 +168,7 @@ extension SpeakerDetailsVC: UICollectionViewDelegate {
             vc.sessionid = self.sessionData[indexPath.item].session_id
             vc.speakerData = self.data
             vc.sessiontitle = self.sessionData[indexPath.item].session_title
+            vc.sessionController = self
             self.openBottomSheet(sheetSize: [.fixed(300)], viewController: vc)
         }
     }

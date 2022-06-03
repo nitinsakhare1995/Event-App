@@ -89,6 +89,11 @@ extension SpeakersVC: UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.speakersCell, for: indexPath) as? SpeakersCell {
             cell.selectionStyle = .none
             cell.configureCell(data: self.data[indexPath.row])
+            if useType == .normal {
+                cell.imgArrow.isHidden = false
+            } else {
+                cell.imgArrow.isHidden = true
+            }
             return cell
         }
         return UITableViewCell()
@@ -99,9 +104,11 @@ extension SpeakersVC: UITableViewDataSource {
 extension SpeakersVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "SpeakerDetailsVC") as! SpeakerDetailsVC
-        vc.speakerId = self.data[indexPath.row].speaker_id
-        self.navigationController?.pushViewController(vc, animated: true)
+        if useType == .normal {
+            let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "SpeakerDetailsVC") as! SpeakerDetailsVC
+            vc.speakerId = self.data[indexPath.row].speaker_id
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

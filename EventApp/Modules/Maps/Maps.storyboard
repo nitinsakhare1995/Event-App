@@ -430,6 +430,7 @@
                         <outlet property="lblName" destination="Wgy-IO-uMx" id="TF0-dn-dXn"/>
                         <outlet property="lblPhone" destination="CgK-Gl-BBK" id="2A6-kO-Rvg"/>
                         <outlet property="lblWebsite" destination="whb-eZ-3Yp" id="Y8Z-TT-oKf"/>
+                        <outlet property="mapView" destination="3wl-s9-dIu" id="4If-Hh-njB"/>
                         <outlet property="navigationView" destination="lqP-Ss-CfC" id="ZPq-t3-KJA"/>
                     </connections>
                 </viewController>
