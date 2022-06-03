@@ -9,6 +9,8 @@ import UIKit
 
 class BlogsVC: UIViewController {
     
+    @IBOutlet weak var imgComingSoon: UIImageView!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet{
@@ -39,7 +41,11 @@ class BlogsVC: UIViewController {
         
         searchBar.backgroundImage = UIImage()
         
-        getBlogsList()
+        imgComingSoon.layer.masksToBounds = true
+        imgComingSoon.layer.cornerRadius = 20
+        shadow(Vw: imgComingSoon, radius: 20)
+        
+//        getBlogsList()
         
     }
     

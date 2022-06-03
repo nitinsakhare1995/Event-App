@@ -29,7 +29,7 @@ class SpeakersCell: UITableViewCell {
         let url = URL(string: "\(data?.http_url ?? "")\(data?.profile_pic ?? "")")
         imgSpeaker.kf.setImage(with: url)
         lblSpeakerName.text = data?.name
-        lblDesignation.text = data?.designation
+        lblDesignation.text = data?.company_name
     }
     
 }

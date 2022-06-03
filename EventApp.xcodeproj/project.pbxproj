@@ -57,6 +57,8 @@
 		18B49FE32812CA4D00360119 /* RemoteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FE22812CA4D00360119 /* RemoteHelper.swift */; };
 		18B49FE62812CB0D00360119 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FE52812CB0D00360119 /* Constants.swift */; };
 		18B49FE82812CCD800360119 /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B49FE72812CCD800360119 /* Remote.swift */; };
+		18CCAA852849BB44009C5F46 /* VideosTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCAA832849BB44009C5F46 /* VideosTableCell.swift */; };
+		18CCAA862849BB44009C5F46 /* VideosTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CCAA842849BB44009C5F46 /* VideosTableCell.xib */; };
 		18DBB0EE28140ABA00C91443 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0ED28140ABA00C91443 /* NotificationsVC.swift */; };
 		18DBB0F128140ACC00C91443 /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBB0EF28140ACC00C91443 /* NotificationsCell.swift */; };
 		18DBB0F228140ACC00C91443 /* NotificationsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DBB0F028140ACC00C91443 /* NotificationsCell.xib */; };
@@ -154,6 +156,8 @@
 		18B49FE22812CA4D00360119 /* RemoteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteHelper.swift; sourceTree = "<group>"; };
 		18B49FE52812CB0D00360119 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18B49FE72812CCD800360119 /* Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
+		18CCAA832849BB44009C5F46 /* VideosTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosTableCell.swift; sourceTree = "<group>"; };
+		18CCAA842849BB44009C5F46 /* VideosTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosTableCell.xib; sourceTree = "<group>"; };
 		18DBB0ED28140ABA00C91443 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		18DBB0EF28140ACC00C91443 /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		18DBB0F028140ACC00C91443 /* NotificationsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsCell.xib; sourceTree = "<group>"; };
@@ -421,6 +425,8 @@
 				1858D2492813F76B007BFB6B /* HomeVideosCell.xib */,
 				1858D24C2813FF2D007BFB6B /* HomeSpeakersCell.swift */,
 				1858D24D2813FF2D007BFB6B /* HomeSpeakersCell.xib */,
+				18CCAA832849BB44009C5F46 /* VideosTableCell.swift */,
+				18CCAA842849BB44009C5F46 /* VideosTableCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				18DBB16F2815193100C91443 /* UserProfileVC.xib in Resources */,
 				1858D2442813DC3F007BFB6B /* Gordita Medium.otf in Resources */,
 				18DBB0F528140AF200C91443 /* Other.storyboard in Resources */,
+				18CCAA862849BB44009C5F46 /* VideosTableCell.xib in Resources */,
 				18DBB10528141FB000C91443 /* SpeakersSessionsCell.xib in Resources */,
 				1858D2432813DC3F007BFB6B /* Gordita Light.otf in Resources */,
 				184D70F12827981200EAA7EF /* SessionsCell.xib in Resources */,
@@ -771,6 +778,7 @@
 				184D70E32827753E00EAA7EF /* BlogModel.swift in Sources */,
 				18DBB10A281467F500C91443 /* SponsorsVC.swift in Sources */,
 				18B49FCB2812BB4000360119 /* SceneDelegate.swift in Sources */,
+				18CCAA852849BB44009C5F46 /* VideosTableCell.swift in Sources */,
 				18DBB187281557C800C91443 /* ForgotPasswordVC.swift in Sources */,
 				18DBB177281525CE00C91443 /* ProfileResourcesCell.swift in Sources */,
 				1858D24E2813FF2D007BFB6B /* HomeSpeakersCell.swift in Sources */,
@@ -951,7 +959,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 5MQ83N4DSQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventApp/Info.plist;
@@ -982,7 +990,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 5MQ83N4DSQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EventApp/Info.plist;

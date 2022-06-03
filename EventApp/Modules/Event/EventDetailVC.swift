@@ -101,7 +101,7 @@ class EventDetailVC: UIViewController {
             self.galleryData3 = userData.content?.eventtabImages?.em3 ?? []
             self.tabData1 = userData.content?.eventtabsData?.first
             self.tabData2 = userData.content?.eventtabsData?[1]
-            self.tabData3 = userData.content?.eventtabsData?[2]
+//            self.tabData3 = userData.content?.eventtabsData?[2]
             self.setFirstData()
         }
     }

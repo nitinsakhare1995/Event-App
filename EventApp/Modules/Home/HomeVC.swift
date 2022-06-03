@@ -82,7 +82,7 @@ class HomeVC: UIViewController {
     }
     
     func getFeaturedVideoList() {
-        Remote.shared.getVideoList(id: VideoType.featuredVideos.rawValue) { userData in
+        Remote.shared.getVideoList(id: VideoType.sessionVideo.rawValue) { userData in
             self.featuredVideos = userData.content ?? []
             DispatchQueue.main.async {
                 self.videosCollectionView.reloadData()
@@ -93,6 +93,7 @@ class HomeVC: UIViewController {
     func getSpeakersList() {
         Remote.shared.getSpeakersList() { userData in
             self.speakers = userData.content ?? []
+            self.speakers = self.speakers.sorted { $0.name ?? "" < $1.name ?? "" }
             DispatchQueue.main.async {
                 self.speakersCollectionView.reloadData()
             }

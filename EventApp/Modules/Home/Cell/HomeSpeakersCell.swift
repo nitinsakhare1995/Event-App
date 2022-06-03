@@ -24,7 +24,7 @@ class HomeSpeakersCell: UICollectionViewCell {
         let imgURL = URL(string: "\(data?.http_url ?? "")\(data?.profile_pic ?? "")")
         imgSpeaker.kf.setImage(with: imgURL)
         lblSpeakerName.text = data?.name
-        lblDesignation.text = data?.designation
+        lblDesignation.text = data?.company_name
     }
     
 

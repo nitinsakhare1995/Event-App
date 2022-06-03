@@ -10,6 +10,7 @@ import UIKit
 class SponsorsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var vwMessaage: UIView!
     
     var data = [SponsorsContentModel]()
     
@@ -21,6 +22,9 @@ class SponsorsVC: UIViewController {
         
         tableView.register(UINib(nibName: "SponsorsCell", bundle: nil), forCellReuseIdentifier: "SponsorsCell")
       
+        vwMessaage.layer.masksToBounds = true
+        vwMessaage.layer.cornerRadius = 20
+        
         getSponsorsList()
     }
     
@@ -63,7 +67,7 @@ extension SponsorsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 310
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

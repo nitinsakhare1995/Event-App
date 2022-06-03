@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gordita Regular.otf">
+            <string>Gordita-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--NotificationsVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -48,26 +53,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zHS-Pz-Wj6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="694"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuH-po-r8l">
+                                <rect key="frame" x="12" y="56" width="390" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiB-hj-gT7">
+                                        <rect key="frame" x="12" y="15" width="366" height="70"/>
+                                        <string key="text">Thanks to our sponsors for supporting Hydrogen For Life 2022. Interested to become a partner with us next year? Email us at events@leaders-live.com</string>
+                                        <fontDescription key="fontDescription" name="Gordita-Regular" family="Gordita" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="DarkGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="DWp-rH-IT7"/>
+                                    <constraint firstAttribute="trailing" secondItem="LiB-hj-gT7" secondAttribute="trailing" constant="12" id="Hay-uO-uha"/>
+                                    <constraint firstItem="LiB-hj-gT7" firstAttribute="top" secondItem="EuH-po-r8l" secondAttribute="top" constant="15" id="KF5-yQ-qW5"/>
+                                    <constraint firstItem="LiB-hj-gT7" firstAttribute="leading" secondItem="EuH-po-r8l" secondAttribute="leading" constant="12" id="uIc-1M-TKI"/>
+                                    <constraint firstAttribute="bottom" secondItem="LiB-hj-gT7" secondAttribute="bottom" constant="15" id="uze-wf-6BS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vON-Sh-FWM"/>
                         <color key="backgroundColor" name="VCBackground"/>
                         <constraints>
+                            <constraint firstItem="zHS-Pz-Wj6" firstAttribute="top" secondItem="EuH-po-r8l" secondAttribute="bottom" constant="12" id="EHW-xa-fGP"/>
+                            <constraint firstItem="EuH-po-r8l" firstAttribute="top" secondItem="vON-Sh-FWM" secondAttribute="top" constant="12" id="GCE-od-xvT"/>
                             <constraint firstItem="vON-Sh-FWM" firstAttribute="bottom" secondItem="zHS-Pz-Wj6" secondAttribute="bottom" id="KbP-yt-fGO"/>
                             <constraint firstItem="vON-Sh-FWM" firstAttribute="trailing" secondItem="zHS-Pz-Wj6" secondAttribute="trailing" id="Mq3-fh-M5K"/>
+                            <constraint firstItem="EuH-po-r8l" firstAttribute="leading" secondItem="vON-Sh-FWM" secondAttribute="leading" constant="12" id="N1I-Dm-lDx"/>
                             <constraint firstItem="zHS-Pz-Wj6" firstAttribute="leading" secondItem="vON-Sh-FWM" secondAttribute="leading" id="fS6-uD-K6a"/>
-                            <constraint firstItem="zHS-Pz-Wj6" firstAttribute="top" secondItem="vON-Sh-FWM" secondAttribute="top" id="vGb-9h-y1n"/>
+                            <constraint firstItem="vON-Sh-FWM" firstAttribute="trailing" secondItem="EuH-po-r8l" secondAttribute="trailing" constant="12" id="vYH-h4-T2x"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="zHS-Pz-Wj6" id="uu6-6A-Z1z"/>
+                        <outlet property="vwMessaage" destination="EuH-po-r8l" id="BN3-Mt-Bs0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLa-Qx-WAT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="135"/>
+            <point key="canvasLocation" x="771.01449275362324" y="134.59821428571428"/>
         </scene>
         <!--ResourcesVC-->
         <scene sceneID="l1t-xg-ndb">
@@ -101,6 +130,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="DarkGreen">
+            <color red="0.086274509803921567" green="0.54509803921568623" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="VCBackground">
             <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
