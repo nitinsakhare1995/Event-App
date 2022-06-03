@@ -12,6 +12,7 @@ public enum APIRequest: URLRequestConvertible {
     
     case login(email: String, password: String)
     case getSpeakersList
+    case getSessionSpeakersList(agendaId: String)
     case registerUser(userName: String, password: String, email: String)
     case verifyOtp(userId: String, otp: String)
     case getVideoList(id: Int)
@@ -48,6 +49,8 @@ public enum APIRequest: URLRequestConvertible {
             return "?reqAction=login&userregid=2&email=\(email)&pass=\(password)"
         case .getSpeakersList:
             return "?reqAction=speakers"
+        case .getSessionSpeakersList(let agendaId):
+            return "?reqAction=sessionspeakers&agendaid=\(agendaId)"
         case .registerUser(let userName, let password, let email):
             return "?reqAction=signup&name=\(userName)&email_id=\(email)&password=\(password)"
         case .verifyOtp(let userId, let otp):

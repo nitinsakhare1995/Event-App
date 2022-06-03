@@ -30,14 +30,8 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1322"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7i-64-9Ll">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventlowerBG" translatesAutoresizingMaskIntoConstraints="NO" id="N2G-9f-yq0">
-                                                <rect key="frame" x="0.0" y="1230" width="414" height="70"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="8Cz-Cv-iqO"/>
-                                                </constraints>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkW-GR-b0M">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                                 <subviews>
@@ -98,7 +92,7 @@
                                                 <rect key="frame" x="10" y="380" width="394" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i19-cN-Bef">
-                                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="50"/>
                                                         <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="12"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="#H4Life 2022">
@@ -108,8 +102,8 @@
                                                             <action selector="showEventTapped:" destination="R6r-4M-7Ix" eventType="touchUpInside" id="V5z-Fz-IX8"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS2-6r-7S5">
-                                                        <rect key="frame" x="134.5" y="0.0" width="125" height="50"/>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS2-6r-7S5">
+                                                        <rect key="frame" x="197" y="0.0" width="0.0" height="50"/>
                                                         <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="12"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Our Future">
@@ -120,7 +114,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ma3-Db-mkg">
-                                                        <rect key="frame" x="269.5" y="0.0" width="124.5" height="50"/>
+                                                        <rect key="frame" x="202" y="0.0" width="192" height="50"/>
                                                         <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="12"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Venue">
@@ -136,10 +130,10 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-JD-Bfv">
-                                                <rect key="frame" x="20" y="460" width="374" height="250"/>
+                                                <rect key="frame" x="20" y="460" width="374" height="220"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jgy-Cw-w1Q">
-                                                        <rect key="frame" x="15" y="20" width="344" height="210"/>
+                                                        <rect key="frame" x="15" y="20" width="344" height="180"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <string key="text">Dr Angela Needle is a key part of the event, who champions the importance and benefits of hydrogen in our life.
 
@@ -153,25 +147,25 @@ In more recent years, her focus has been on studying how exponentially increase 
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="DLo-CO-Xmc"/>
+                                                    <constraint firstAttribute="height" constant="220" id="DLo-CO-Xmc"/>
                                                     <constraint firstItem="jgy-Cw-w1Q" firstAttribute="top" secondItem="bPQ-JD-Bfv" secondAttribute="top" constant="20" id="bIB-KH-Ue5"/>
                                                     <constraint firstAttribute="bottom" secondItem="jgy-Cw-w1Q" secondAttribute="bottom" constant="20" id="bjj-dX-uVg"/>
                                                     <constraint firstAttribute="trailing" secondItem="jgy-Cw-w1Q" secondAttribute="trailing" constant="15" id="cwa-c6-Skx"/>
                                                     <constraint firstItem="jgy-Cw-w1Q" firstAttribute="leading" secondItem="bPQ-JD-Bfv" secondAttribute="leading" constant="15" id="lNC-I0-ggI"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oU3-Mn-UI4">
-                                                <rect key="frame" x="25" y="742" width="364" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oU3-Mn-UI4">
+                                                <rect key="frame" x="25" y="712" width="364" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="Ix6-Vg-DSm"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Gordita-Medium" family="Gordita" pointSize="18"/>
                                                 <color key="textColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zt4-lP-Fgd">
-                                                <rect key="frame" x="12" y="775" width="390" height="240"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zt4-lP-Fgd">
+                                                <rect key="frame" x="12" y="745" width="390" height="245"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="240" id="Lgq-0Q-Lwk"/>
-                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CPI-yI-Ygb">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -180,59 +174,29 @@ In more recent years, her focus has been on studying how exponentially increase 
                                                 </collectionViewFlowLayout>
                                                 <cells/>
                                             </collectionView>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmJ-tW-FXh">
-                                                <rect key="frame" x="20" y="1040" width="374" height="230"/>
-                                                <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T8D-tJ-jYZ">
-                                                        <rect key="frame" x="15" y="20" width="344" height="190"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <string key="text">Dr Angela Needle is a key part of the event, who champions the importance and benefits of hydrogen in our life.
-
-She discovered her interest in the study of this nobel gas while attending a talk at her  alma mater, on the importance of hydrogen and its impact on our future
-
-In more recent years, her focus has been on studying how exponentially increase the benefits of hydrogen in daily use.</string>
-                                                        <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Gordita-Regular" family="Gordita" pointSize="12"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    </textView>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="T8D-tJ-jYZ" secondAttribute="trailing" constant="15" id="3ih-ER-BlQ"/>
-                                                    <constraint firstItem="T8D-tJ-jYZ" firstAttribute="leading" secondItem="fmJ-tW-FXh" secondAttribute="leading" constant="15" id="ALt-B3-0kZ"/>
-                                                    <constraint firstAttribute="bottom" secondItem="T8D-tJ-jYZ" secondAttribute="bottom" constant="20" id="DWC-Y4-bj8"/>
-                                                    <constraint firstItem="T8D-tJ-jYZ" firstAttribute="top" secondItem="fmJ-tW-FXh" secondAttribute="top" constant="20" id="dsy-iq-qUI"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="AkW-GR-b0M" firstAttribute="top" secondItem="t7i-64-9Ll" secondAttribute="top" id="0Qd-ZN-gku"/>
                                             <constraint firstItem="oU3-Mn-UI4" firstAttribute="leading" secondItem="t7i-64-9Ll" secondAttribute="leading" constant="25" id="1G0-fe-MbY"/>
-                                            <constraint firstItem="fmJ-tW-FXh" firstAttribute="top" secondItem="zt4-lP-Fgd" secondAttribute="bottom" constant="25" id="1uf-wk-rFN"/>
                                             <constraint firstItem="JnC-Ij-g0f" firstAttribute="top" secondItem="t7i-64-9Ll" secondAttribute="top" constant="110" id="4Qw-La-ZyM"/>
                                             <constraint firstAttribute="trailing" secondItem="bPQ-JD-Bfv" secondAttribute="trailing" constant="20" id="6TA-62-u1d"/>
-                                            <constraint firstItem="N2G-9f-yq0" firstAttribute="leading" secondItem="t7i-64-9Ll" secondAttribute="leading" id="A8T-8O-SzQ"/>
                                             <constraint firstItem="JnC-Ij-g0f" firstAttribute="leading" secondItem="t7i-64-9Ll" secondAttribute="leading" constant="20" id="Bdi-zr-Yb8"/>
                                             <constraint firstAttribute="trailing" secondItem="JnC-Ij-g0f" secondAttribute="trailing" constant="20" id="EgC-Et-OFp"/>
                                             <constraint firstItem="oU3-Mn-UI4" firstAttribute="top" secondItem="bPQ-JD-Bfv" secondAttribute="bottom" constant="32" id="HDv-LM-IDS"/>
-                                            <constraint firstAttribute="height" constant="1300" id="HxQ-fo-EDj"/>
+                                            <constraint firstAttribute="height" constant="1000" id="HxQ-fo-EDj"/>
                                             <constraint firstAttribute="trailing" secondItem="oU3-Mn-UI4" secondAttribute="trailing" constant="25" id="OkV-oh-KCU"/>
                                             <constraint firstItem="bPQ-JD-Bfv" firstAttribute="top" secondItem="l5p-xe-ny6" secondAttribute="bottom" constant="30" id="Ouu-OI-Q94"/>
                                             <constraint firstAttribute="trailing" secondItem="AkW-GR-b0M" secondAttribute="trailing" id="QTh-t3-JMr"/>
                                             <constraint firstAttribute="trailing" secondItem="zt4-lP-Fgd" secondAttribute="trailing" constant="12" id="SKg-mX-Olr"/>
-                                            <constraint firstAttribute="trailing" secondItem="N2G-9f-yq0" secondAttribute="trailing" id="Tab-VY-0c0"/>
-                                            <constraint firstAttribute="trailing" secondItem="fmJ-tW-FXh" secondAttribute="trailing" constant="20" id="Tju-Uu-Ow4"/>
                                             <constraint firstItem="zt4-lP-Fgd" firstAttribute="leading" secondItem="t7i-64-9Ll" secondAttribute="leading" constant="12" id="ahi-0c-Rdx"/>
                                             <constraint firstItem="zt4-lP-Fgd" firstAttribute="top" secondItem="oU3-Mn-UI4" secondAttribute="bottom" constant="15" id="alg-gp-CTg"/>
-                                            <constraint firstAttribute="bottom" secondItem="fmJ-tW-FXh" secondAttribute="bottom" constant="30" id="arX-Wa-bLb"/>
                                             <constraint firstAttribute="trailing" secondItem="l5p-xe-ny6" secondAttribute="trailing" constant="10" id="cnL-Df-Bl7"/>
                                             <constraint firstItem="l5p-xe-ny6" firstAttribute="leading" secondItem="t7i-64-9Ll" secondAttribute="leading" constant="10" id="enf-q3-ZZr"/>
                                             <constraint firstItem="l5p-xe-ny6" firstAttribute="top" secondItem="JnC-Ij-g0f" secondAttribute="bottom" constant="30" id="nK5-lP-YtP"/>
                                             <constraint firstItem="AkW-GR-b0M" firstAttribute="leading" secondItem="t7i-64-9Ll" secondAttribute="leading" id="p7W-cN-h2q"/>
+                                            <constraint firstAttribute="bottom" secondItem="zt4-lP-Fgd" secondAttribute="bottom" constant="10" id="ptm-Pd-ckI"/>
                                             <constraint firstItem="bPQ-JD-Bfv" firstAttribute="leading" secondItem="t7i-64-9Ll" secondAttribute="leading" constant="20" id="ss9-gx-SxW"/>
-                                            <constraint firstItem="fmJ-tW-FXh" firstAttribute="leading" secondItem="t7i-64-9Ll" secondAttribute="leading" constant="20" id="xRG-zH-rKM"/>
-                                            <constraint firstAttribute="bottom" secondItem="N2G-9f-yq0" secondAttribute="bottom" id="ySt-tZ-AA1"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -256,7 +220,6 @@ In more recent years, her focus has been on studying how exponentially increase 
                     </view>
                     <size key="freeformSize" width="414" height="1400"/>
                     <connections>
-                        <outlet property="bottomDescView" destination="fmJ-tW-FXh" id="NNB-jh-d9I"/>
                         <outlet property="btEvent" destination="i19-cN-Bef" id="YRE-lf-BMz"/>
                         <outlet property="btFuture" destination="rS2-6r-7S5" id="g8c-7F-D7r"/>
                         <outlet property="btVenue" destination="ma3-Db-mkg" id="iCN-6M-n6E"/>
@@ -264,7 +227,6 @@ In more recent years, her focus has been on studying how exponentially increase 
                         <outlet property="galleryCollectionView" destination="zt4-lP-Fgd" id="m3m-9p-Mdb"/>
                         <outlet property="imgTopView" destination="K8h-1L-Nij" id="wFX-XQ-O0u"/>
                         <outlet property="topView" destination="AkW-GR-b0M" id="gV1-4Q-fyl"/>
-                        <outlet property="txtBottom" destination="T8D-tJ-jYZ" id="q8v-nk-THq"/>
                         <outlet property="txtTop" destination="jgy-Cw-w1Q" id="1BM-EG-L6Y"/>
                     </connections>
                 </viewController>
@@ -275,7 +237,6 @@ In more recent years, her focus has been on studying how exponentially increase 
     </scenes>
     <resources>
         <image name="ArrowWhite" width="13" height="23"/>
-        <image name="eventlowerBG" width="390" height="78"/>
         <image name="evntDet" width="360" height="250"/>
         <namedColor name="DarkGreen">
             <color red="0.086274509803921567" green="0.54509803921568623" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -87,7 +87,7 @@ class MapDetailVC: UIViewController {
     }
     
     func showlocationAction() {
-        let address = self.content?.map0?.agenda_address ?? ""
+        let address = "The London Science Museum, Exhibiton Road, South Kensington, London SW7 2DD"
         let mapURLStr = String(format: "https://maps.google.com/?q=\(address)")
         if let url = URL(string: mapURLStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) {
             if UIApplication.shared.canOpenURL(url) {
@@ -97,7 +97,7 @@ class MapDetailVC: UIViewController {
     }
     
     @IBAction func openLink(_ sender: UIButton) {
-        let urlString = self.content?.map0?.agenda_websiteurl ?? ""
+        let urlString = "https://www.sciencemuseum.org.uk/"
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         }

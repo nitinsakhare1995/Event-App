@@ -88,7 +88,17 @@ extension SessionsVC: UITableViewDelegate {
         vc.speakerId = self.data[indexPath.row].session_speakerid
         vc.speakerName = self.data[indexPath.row].speaker_name
         vc.speakerDesignataion = self.data[indexPath.row].speaker_designation
-        self.openBottomSheet(sheetSize: [.fixed(230)], viewController: vc)
+        vc.panellistData = self.data[indexPath.row].panellistData ?? []
+        vc.profilePicUrl = self.data[indexPath.row].profile_pic
+        vc.sessiontitle = self.data[indexPath.row].session_title
+        var height = 270
+        if let count = self.data[indexPath.row].panellistData?.count {
+            let addheight = count * 40
+            height += addheight
+        }
+        vc.height = CGFloat(height)
+        print("HEIGHT \(height)")
+        self.openBottomSheet(sheetSize: [.fixed(CGFloat(height))], viewController: vc)
     }
     
 }

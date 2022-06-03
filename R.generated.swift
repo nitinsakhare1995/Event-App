@@ -311,7 +311,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 47 images.
+  /// This `R.image` struct is generated, and contains static references to 48 images.
   struct image {
     /// Image `Angela Needle`.
     static let angelaNeedle = Rswift.ImageResource(bundle: R.hostingBundle, name: "Angela Needle")
@@ -383,6 +383,8 @@ struct R: Rswift.Validatable {
     static let resourcesSide = Rswift.ImageResource(bundle: R.hostingBundle, name: "resourcesSide")
     /// Image `savee`.
     static let savee = Rswift.ImageResource(bundle: R.hostingBundle, name: "savee")
+    /// Image `science_museum-1`.
+    static let science_museum1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "science_museum-1")
     /// Image `science_museum`.
     static let science_museum = Rswift.ImageResource(bundle: R.hostingBundle, name: "science_museum")
     /// Image `settingsSide`.
@@ -661,6 +663,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "science_museum-1", bundle: ..., traitCollection: ...)`
+    static func science_museum1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.science_museum1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "settingsSide", bundle: ..., traitCollection: ...)`
     static func settingsSide(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.settingsSide, compatibleWith: traitCollection)
@@ -771,7 +780,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 16 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 17 nibs.
   struct nib {
     /// Nib `AgendaCell`.
     static let agendaCell = _R.nib._AgendaCell()
@@ -787,6 +796,8 @@ struct R: Rswift.Validatable {
     static let mapGalleryCell = _R.nib._MapGalleryCell()
     /// Nib `NotificationsCell`.
     static let notificationsCell = _R.nib._NotificationsCell()
+    /// Nib `PanelistCell`.
+    static let panelistCell = _R.nib._PanelistCell()
     /// Nib `ProfileEventCell`.
     static let profileEventCell = _R.nib._ProfileEventCell()
     /// Nib `ProfileResourcesCell`.
@@ -859,6 +870,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.notificationsCell) instead")
     static func notificationsCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.notificationsCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PanelistCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.panelistCell) instead")
+    static func panelistCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.panelistCell)
     }
     #endif
 
@@ -962,6 +981,10 @@ struct R: Rswift.Validatable {
       return R.nib.notificationsCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NotificationsCell
     }
 
+    static func panelistCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PanelistCell? {
+      return R.nib.panelistCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PanelistCell
+    }
+
     static func profileEventCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProfileEventCell? {
       return R.nib.profileEventCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProfileEventCell
     }
@@ -1001,7 +1024,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 11 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 12 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `BlogsCell`.
     static let blogsCell: Rswift.ReuseIdentifier<BlogsCell> = Rswift.ReuseIdentifier(identifier: "BlogsCell")
@@ -1011,6 +1034,8 @@ struct R: Rswift.Validatable {
     static let homeVideosCell: Rswift.ReuseIdentifier<HomeVideosCell> = Rswift.ReuseIdentifier(identifier: "HomeVideosCell")
     /// Reuse identifier `NotificationsCell`.
     static let notificationsCell: Rswift.ReuseIdentifier<NotificationsCell> = Rswift.ReuseIdentifier(identifier: "NotificationsCell")
+    /// Reuse identifier `PanelistCell`.
+    static let panelistCell: Rswift.ReuseIdentifier<PanelistCell> = Rswift.ReuseIdentifier(identifier: "PanelistCell")
     /// Reuse identifier `ProfileEventCell`.
     static let profileEventCell: Rswift.ReuseIdentifier<ProfileEventCell> = Rswift.ReuseIdentifier(identifier: "ProfileEventCell")
     /// Reuse identifier `ProfileResourcesCell`.
@@ -1203,8 +1228,23 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "Arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Arrow' is used in nib 'NotificationsCell', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "videos", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'videos' is used in nib 'NotificationsCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PanelistCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = PanelistCell
+
+      let bundle = R.hostingBundle
+      let identifier = "PanelistCell"
+      let name = "PanelistCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PanelistCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PanelistCell
       }
 
       fileprivate init() {}
@@ -1439,9 +1479,7 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
-        if UIKit.UIImage(named: "Arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Arrow' is used in storyboard 'Agenda', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Session", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Session' is used in storyboard 'Agenda', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "map icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map icon' is used in storyboard 'Agenda', but couldn't be loaded.") }
         if UIKit.UIImage(named: "speakers", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'speakers' is used in storyboard 'Agenda', but couldn't be loaded.") }
         if UIKit.UIImage(named: "time", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'time' is used in storyboard 'Agenda', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -1470,7 +1508,6 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "ArrowWhite", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ArrowWhite' is used in storyboard 'Event', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "eventlowerBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'eventlowerBG' is used in storyboard 'Event', but couldn't be loaded.") }
         if UIKit.UIImage(named: "evntDet", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'evntDet' is used in storyboard 'Event', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "DarkGreen", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'DarkGreen' is used in storyboard 'Event', but couldn't be loaded.") }
@@ -1623,9 +1660,9 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "call", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'call' is used in storyboard 'Maps', but couldn't be loaded.") }
         if UIKit.UIImage(named: "direction", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'direction' is used in storyboard 'Maps', but couldn't be loaded.") }
         if UIKit.UIImage(named: "map icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'map icon' is used in storyboard 'Maps', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "mapsTableThumbnail", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mapsTableThumbnail' is used in storyboard 'Maps', but couldn't be loaded.") }
         if UIKit.UIImage(named: "navigation", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navigation' is used in storyboard 'Maps', but couldn't be loaded.") }
         if UIKit.UIImage(named: "redirect", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'redirect' is used in storyboard 'Maps', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "science_museum", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'science_museum' is used in storyboard 'Maps', but couldn't be loaded.") }
         if UIKit.UIImage(named: "web", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'web' is used in storyboard 'Maps', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "VCBackground", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'VCBackground' is used in storyboard 'Maps', but couldn't be loaded.") }

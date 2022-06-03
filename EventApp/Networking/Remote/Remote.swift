@@ -45,6 +45,21 @@ class Remote {
         }
     }
     
+    func getSessionsSpeakersList(agendaId: String, completionHandler: @escaping (_ userData: SpeakerModel) -> ()) {
+        showLoader()
+        AF.request(APIRequest.getSessionSpeakersList(agendaId: agendaId)).responseJSON { (response) in
+            hideLoader()
+            switch response.result {
+            case .success(let value):
+                guard let castingValue = value as? [String: Any] else { return }
+                guard let userData = Mapper<SpeakerModel>().map(JSON: castingValue) else { return }
+                completionHandler(userData)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func registerUser(userName: String, password: String, email: String, completionHandler: @escaping (_ userData: LoginModel) -> ()) {
         showLoader()
         AF.request(APIRequest.registerUser(userName: userName, password: password, email: email)).responseJSON { (response) in

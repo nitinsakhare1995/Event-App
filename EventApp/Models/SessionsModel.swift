@@ -36,6 +36,7 @@ struct SessionsReminderContentModel : Mappable {
     var speaker_designation : String?
     var profile_pic : String?
     var http_url : String?
+    var panellistData : [PanellistData]?
 
     init?(map: Map) {
 
@@ -52,6 +53,21 @@ struct SessionsReminderContentModel : Mappable {
         speaker_designation <- map["speaker_designation"]
         profile_pic <- map["profile_pic"]
         http_url <- map["http_url"]
+        panellistData <- map["panellistData"]
+    }
+
+}
+
+struct PanellistData : Mappable {
+    var panellist_name : String?
+
+    init?(map: Map) {
+
+    }
+
+    mutating func mapping(map: Map) {
+
+        panellist_name <- map["panellist_name"]
     }
 
 }

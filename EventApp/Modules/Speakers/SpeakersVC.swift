@@ -7,11 +7,18 @@
 
 import UIKit
 
+enum SpeakerListType {
+    case session
+    case normal
+}
+
 class SpeakersVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     var data = [SpeakerContentModel]()
+    var agendaId: String?
+    var useType: SpeakerListType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +28,11 @@ class SpeakersVC: UIViewController {
         
         tableView.register(UINib(nibName: "SpeakersCell", bundle: nil), forCellReuseIdentifier: "SpeakersCell")
         
+        if useType == .normal {
         showSpeakersList()
+        } else {
+            showSessionsSpeakersList()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +62,17 @@ class SpeakersVC: UIViewController {
         }
     }
     
+    func showSessionsSpeakersList() {
+        if let agendaId = self.agendaId {
+            Remote.shared.getSessionsSpeakersList(agendaId: agendaId) { userData in
+                self.data = userData.content ?? []
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
 }
 
 extension SpeakersVC: UITableViewDataSource {
@@ -60,7 +82,7 @@ extension SpeakersVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return 95
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

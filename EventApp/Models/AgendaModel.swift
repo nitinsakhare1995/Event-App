@@ -120,8 +120,9 @@ struct SessionsContentModel : Mappable {
     var session_speakerid: String?
     var speaker_name: String?
     var speaker_designation: String?
+    var panellistData : [PanellistData]?
+    var profile_pic: String?
     
-
     init?(map: Map) {
 
     }
@@ -135,6 +136,8 @@ struct SessionsContentModel : Mappable {
         session_speakerid <- map["session_speakerid"]
         speaker_name <- map["speaker_name"]
         speaker_designation <- map["speaker_designation"]
+        panellistData <- map["panellistData"]
+        profile_pic <- map["profile_pic"]
     }
 
 }

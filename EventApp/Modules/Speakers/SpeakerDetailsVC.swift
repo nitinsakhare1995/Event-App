@@ -19,6 +19,7 @@ class SpeakerDetailsVC: UIViewController {
     @IBOutlet weak var lblSpeakerName: UILabel!
     @IBOutlet weak var lblProfession: UILabel!
     @IBOutlet weak var txtDescription: UITextView!
+    @IBOutlet weak var lblCompany: UILabel!
     
     var speakerId: String?
     var data: SpeakerDetail0Model?
@@ -79,6 +80,7 @@ class SpeakerDetailsVC: UIViewController {
                 }
                 self.lblSpeakerName.text = self.data?.name
                 self.lblProfession.text = self.data?.speaker_profession
+                self.lblCompany.text = self.data?.company_name
                 let baseImgURL = Constants.baseImgURL
                 let imgURL = self.data?.profile_pic ?? ""
                 let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
@@ -165,7 +167,8 @@ extension SpeakerDetailsVC: UICollectionViewDelegate {
             vc.speakerId = self.speakerId
             vc.sessionid = self.sessionData[indexPath.item].session_id
             vc.speakerData = self.data
-            self.openBottomSheet(sheetSize: [.fixed(230)], viewController: vc)
+            vc.sessiontitle = self.sessionData[indexPath.item].session_title
+            self.openBottomSheet(sheetSize: [.fixed(300)], viewController: vc)
         }
     }
     
@@ -181,7 +184,7 @@ extension SpeakerDetailsVC: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: height)
         } else {
             let width = (self.view.frame.size.width - 60)
-            let height = self.sessionsCollectionView.frame.size.height
+            let height = self.sessionsCollectionView.frame.size.height - 40
             return CGSize(width: width, height: height)
         }
     }

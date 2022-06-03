@@ -102,6 +102,7 @@ class HomeVC: UIViewController {
     
     @IBAction func openSpeakersScreen(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "SpeakersVC") as! SpeakersVC
+        vc.useType = .normal
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -126,7 +127,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func openMapsScreen(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Maps", bundle: nil).instantiateViewController(withIdentifier: "MapsVC") as! MapsVC
+        let vc = UIStoryboard(name: "Maps", bundle: nil).instantiateViewController(withIdentifier: "MapDetailVC") as! MapDetailVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

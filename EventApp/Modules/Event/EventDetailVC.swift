@@ -44,7 +44,7 @@ class EventDetailVC: UIViewController {
         topView.roundCorners([.layerMaxXMaxYCorner, .layerMinXMaxYCorner], radius: 20)
         topView.backgroundColor = UIColor.fromGradientWithDirection(.topToBottom, frame: topView.frame, colors:  [.lightGreen, .darkGreen])
         shadow(Vw: descView, radius: 20)
-        shadow(Vw: bottomDescView, radius: 20)
+//        shadow(Vw: bottomDescView, radius: 20)
         
         getEventDetail()
         
@@ -63,12 +63,12 @@ class EventDetailVC: UIViewController {
         let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
         imgTopView.kf.setImage(with: imgURLKF)
         txtTop.text = self.tabData?.eventtabs_description
-        txtBottom.text = self.tabData?.eventtabs_getinvolved
+//        txtBottom.text = self.tabData?.eventtabs_getinvolved
     }
     
     func setSecondData() {
         self.tabData = self.tabData2
-        self.galleryData = self.galleryData2
+        self.galleryData = self.galleryData3
         DispatchQueue.main.async {
             self.galleryCollectionView.reloadData()
         }
@@ -77,7 +77,7 @@ class EventDetailVC: UIViewController {
         let imgURLKF = URL(string: "\(baseImgURL)\(imgURL)")
         imgTopView.kf.setImage(with: imgURLKF)
         txtTop.text = self.tabData?.eventtabs_description
-        txtBottom.text = self.tabData?.eventtabs_getinvolved
+//        txtBottom.text = self.tabData?.eventtabs_getinvolved
     }
     
     func setThirdData() {
@@ -148,7 +148,8 @@ class EventDetailVC: UIViewController {
     
     func setVenueButton() {
         
-        setThirdData()
+//        setThirdData()
+        setSecondData()
         
         btEvent.backgroundColor = UIColor.white
         btEvent.setTitleColor(.darkGreen, for: .normal)

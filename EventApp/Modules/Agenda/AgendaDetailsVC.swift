@@ -65,7 +65,7 @@ class AgendaDetailsVC: UIViewController {
                 let imgURLKF = URL(string: "\(baseURL)\(imgURL)")
                 self.imgAgenda.kf.setImage(with: imgURLKF)
                 self.lblAgendaName.text = userData.content?.first?.agenda_category ?? ""
-                self.lblAddress.text = userData.content?.first?.agenda_address ?? ""
+//                self.lblAddress.text = userData.content?.first?.agenda_address ?? ""
                 self.lblDescription.text = userData.content?.first?.agenda_description ?? ""
             }
         }
@@ -80,6 +80,8 @@ class AgendaDetailsVC: UIViewController {
     
     @IBAction func openSpeakers(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Speakers", bundle: nil).instantiateViewController(withIdentifier: "SpeakersVC") as! SpeakersVC
+        vc.agendaId = self.agendaId
+        vc.useType = .session
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
